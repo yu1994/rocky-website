@@ -1,28 +1,39 @@
 <template>
   <div class="detail">
     <section class="container">
-      <breadcrumb></breadcrumb>
-      <div class="chapter">
-        <div class="title">
-          <h2>{{ news.title }}</h2>
-          <p class="date">{{ news.createdTime }}</p>
+      <div class="navigation col-md-2">
+        <div class="list-group">
+          <!--<a href="#" class="list-group-item active">
+            Cras justo odio
+          </a>-->
+          <a :class="{active: page.type === item.id}" v-for="(item, key) in $t('mediaPage.reportList')" href="javascript:void 0" @click="skipNewsHandler(item.id)" class="list-group-item" :key="key">{{item.title}}</a>
         </div>
-        <!--<div class="img">
-          <img :src="news.pictureUrl" width="100%" />
-        </div>-->
-        <div class="content" v-html="news.content"></div>
       </div>
-      <div class="article">
-        <p v-if="up.show">
-          <a href="javascript:void 0" @click="getNewsDetailApi(up.id)"
+      <div class="col-md-10">
+        <breadcrumb
+                :essay="
+          news.title.length > 20 ? news.title.slice(0, 20) + '...' : news.title
+        "
+        ></breadcrumb>
+        <div class="chapter">
+          <div class="title">
+            <h2>{{ news.title }}</h2>
+            <p class="date">{{ news.createdTime }}</p>
+          </div>
+          <div class="content" v-html="news.content"></div>
+        </div>
+        <div class="article">
+          <p v-if="up.show">
+            <a href="javascript:void 0" @click="getNewsDetailApi(up.id)"
             >上一篇：{{ up.title }}</a
-          >
-        </p>
-        <p v-if="blow.show">
-          <a href="javascript:void 0" @click="getNewsDetailApi(blow.id)"
+            >
+          </p>
+          <p v-if="blow.show">
+            <a href="javascript:void 0" @click="getNewsDetailApi(blow.id)"
             >下一篇：{{ blow.title }}</a
-          >
-        </p>
+            >
+          </p>
+        </div>
       </div>
     </section>
   </div>
@@ -32,6 +43,7 @@
 import breadcrumb from "@/components/breadcrumb";
 import { newsDetailApi, newsListApi } from "../api/mediaAPI";
 import { cliceTime } from "../utils/index";
+import vm from '../utils/events'
 export default {
   name: "newsDetail",
   data() {
@@ -42,7 +54,9 @@ export default {
       blow: {
         show: false
       },
-      news: {},
+      news: {
+        title: ""
+      },
       newsList: [],
       page: {}
     };
@@ -89,6 +103,10 @@ export default {
           this.blow.show = false;
         }
       }
+    },
+    skipNewsHandler(id) {
+      this.$router.push({name: 'media'});
+      vm.$emit("newsTypeToggle", id);
     }
   },
   components: { breadcrumb },
@@ -106,7 +124,13 @@ export default {
 .content img {
   width: 100%;
 }
-.content strong >span, .content strong >a,.content strong >p,.content strong >b{
+.content video {
+  width: 100%;
+}
+.content strong > span,
+.content strong > a,
+.content strong > p,
+.content strong > b {
   font-weight: 700;
 }
 </style>
@@ -115,13 +139,15 @@ export default {
 .detail
     background-color #F7F7F7
     padding-top $distanceHead
+    .navigation
+      margin-top 38px
     .chapter
         font-size 16px
         font-family Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
         padding 18px 38px
         border-radius 2px
         background:rgba(255,255,255,1)
-        box-shadow 1px 1px 1px rgba(0,0,0,.1)
+        /*box-shadow 5px 5px 1px rgba(0,0,0,.1)*/
         .title
             text-align left
             h2
@@ -149,4 +175,13 @@ export default {
                 font-weight:bold;
                 text-decoration none
                 color:rgba(51,51,51,1);
+    .navigation
+      a
+        font-size 16px
+        &:hover
+          color #5695f2
+      .active
+        background-color #5695f2
+        &:hover
+          color #ffffff
 </style>

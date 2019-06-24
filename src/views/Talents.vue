@@ -11,31 +11,43 @@
     </section>
     <section class="container nationChunk">
       <breadcrumb></breadcrumb>
-      <underline :title="'公司福利'"></underline>
-      <carousel class="packing" :translateXNumber="260" :maxWidth="'539px'">
-        <swiper-slide
-        ><img class="img-responsive" src="../assets/talents/welfare01.jpg"
-        /></swiper-slide>
-        <swiper-slide
-        ><img class="img-responsive" src="../assets/talents/welfare02.jpg"
-        /></swiper-slide>
-        <swiper-slide
-        ><img class="img-responsive" src="../assets/talents/welfare03.jpg"
-        /></swiper-slide>
-        <swiper-slide
-        ><img class="img-responsive" src="../assets/talents/welfare04.jpg"
-        /></swiper-slide>
-        <swiper-slide
-        ><img class="img-responsive" src="../assets/talents/welfare05.jpg"
-        /></swiper-slide>
-      </carousel>
-      <underline :title="'全球人才战略'"></underline>
-      <div class="globalList">
-        <ul class="clearfix">
-          <li class="col-md-4 col-sm-6" v-for="(item, key) in globalList" :key="key">
-            <img class="img-responsive" v-lazy="item" />
-          </li>
-        </ul>
+      <div>
+        <underline :title="'公司福利'"></underline>
+        <carousel class="packing" :translateXNumber="260" :maxWidth="'539px'">
+          <swiper-slide class="swiper-slide"
+            v-for="(item, key) in $t('talentsPage.nationList')"
+            :key="key"
+            ><img class="img-responsive" :src="item"
+          /></swiper-slide>
+        </carousel>
+      </div>
+      <div class="niceTeam">
+        <underline :title="'团队风采'"></underline>
+        <div>
+          <row-carousel>
+            <swiper-slide
+              class="swiper-slide"
+              v-for="(item, key) in $t('talentsPage.teamList')"
+              :key="key"
+            >
+              <img class="img-responsive" :src="item"/>
+            </swiper-slide>
+          </row-carousel>
+        </div>
+      </div>
+      <div>
+        <underline :title="'全球人才战略'"></underline>
+        <div class="globalList">
+          <ul class="clearfix">
+            <li
+              class="col-md-4 col-sm-6"
+              v-for="(item, key) in $t('talentsPage.globalList')"
+              :key="key"
+            >
+              <img class="img-responsive" v-lazy="item" />
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
     <section class="invite container">
@@ -56,25 +68,25 @@
             <div class="remark col-md-5">
               <h5>职位描述:</h5>
               <div v-html="item.jobDescription"></div>
-              <!--{{item.jobDescription}}-->
-              <!--<ol>
-                <li v-for="(val, key) in item.remark" :key="key">
-                  {{ val }}
-                </li>
-              </ol>-->
             </div>
             <div class="requested col-md-5 col-md-offset-2">
               <h5>任职要求:</h5>
               <div v-html="item.jobRequirements"></div>
-              <!--<ol>
-                <li v-for="(val, key) in item.requested" :key="key">
-                  {{ val }}
-                </li>
-              </ol>-->
             </div>
           </div>
         </li>
       </ul>
+    </section>
+    <section class="relationChunk container">
+      <underline :title="'人才联系方式'"></underline>
+      <div class="EmailWrap">
+        <div class="EmailWrap_box">
+          <p>如果您符合我们的人才计划，</p>
+          <p>或者想加入盘石，</p>
+          <p> 那么请发送邮件至：</p>
+          <p>  xxxxxxxxxxx@adpanshi.com</p>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -85,26 +97,16 @@ import breadcrumb from "@/components/breadcrumb";
 import { talentsListApi } from "../api/talentsAPI";
 import Underline from "../components/underline";
 import Carousel from "../components/carousel";
+import RowCarousel from "../components/rowCarousel";
 export default {
   name: "talents",
   data() {
     return {
       configPage: {
         page: 1,
-        rows: 8,
+        rows: 100,
         positionId: ""
       },
-      globalList: [
-        require("../assets/talents/yd.png"),
-        require("../assets/talents/flb.png"),
-        require("../assets/talents/mjl.png"),
-        require("../assets/talents/jpz.png"),
-        require("../assets/talents/tg.png"),
-        require("../assets/talents/nbe.png"),
-        require("../assets/talents/md.png"),
-        require("../assets/talents/ydnxy.png"),
-        require("../assets/talents/more.png")
-      ],
       inviteList: []
     };
   },
@@ -113,7 +115,7 @@ export default {
       this.inviteList = res.data.list;
     });
   },
-  components: {Carousel, Underline, aboveBg, breadcrumb }
+  components: { RowCarousel, Carousel, Underline, aboveBg, breadcrumb }
 };
 </script>
 
@@ -130,8 +132,12 @@ export default {
         margin 0 auto
         li
           margin-bottom 16px
+  .niceTeam
+    margin-bottom 80px
+    .swiper-slide
+      padding 0 15px
   .invite
-      margin 0 auto 87px
+      margin 0 auto
       .invite_list
         li
           margin-bottom 60px
@@ -155,4 +161,27 @@ export default {
               padding 0
             .requested
               padding 0
+  .relationChunk
+    .EmailWrap
+      position relative
+      margin 0 auto 66px
+      width 100%
+      height 250px
+      background-image url("../assets/talents/relation.png")
+      background-repeat no-repeat
+      background-size cover
+      .EmailWrap_box
+        position absolute
+        top 50%
+        left 86px
+        transform translateY(-50%)
+        P
+          margin 0
+          font-size:18px;
+          font-family:PingFang-SC-Medium;
+          font-weight:500;
+          color:rgba(255,255,255,1);
+          text-align left
+          line-height:30px;
+
 </style>

@@ -26,24 +26,27 @@
             </div>
           </div>
           <div class="detail">
-            <ul class="discover clearfix">
-              <li class="zh"><strong>田宁</strong>盘石创始人，董事长兼CEO</li>
-              <li class="en">
+            <div class="discover clearfix">
+              <div class="discover_text">
+                <p class="zh"><strong>田宁</strong>盘石创始人，董事长兼CEO</p>
+                <p class="en clearfix">
+                  <strong>Tom</strong>
+                <span>Panshi Founder, Chairman and CEO</span>
+                </p>
+              </div>
+            <!--  <li class="en">
                 <strong>Tom</strong>Panshi Founder, Chairman and CEO
-              </li>
-            </ul>
+              </li>-->
+            </div>
             <div>
               <p>
-                央视财经频道（CCTV-2）5月26日讯
-                2019中国国际大数据产业博览会在贵州省贵阳开幕，国家主席习近平向会议致贺信，习近平指出，当前以互联网、大数据、人工智能为代表的新一代信息技术蓬勃发展，对各国经济发展、社会进步、人民生活带来重大而深远的影响。
+                田宁，盘石集团董事长，RockyMobi董事会主席，毕业于浙江大学。2004年创立盘石集团，并担任董事长，RockyMobi为盘石集团的全资子公司。盘石集团致力于以大数据、人工智能技术为核心驱动的全球新经济建设与发展。田宁被世界经济论坛(WEF)授予
+                "全球青年领袖"，同时担任浙商全球总会互联网委员会主席,
+                中国移动通信联合会副会长，杭州电子商务协会理事长。田宁多次受邀出席世界互联网大会、G20峰会、金砖峰会、达沃斯论坛等活动并发表演讲，为全球经济发展建言献策。
               </p>
-              <p>
-                Panshi Founder, Chairman and CEOPanshi Founder, Chairman and
-                CEOPanshi Founder, Chairman and CEOPanshi Founder, Chairman and
-                CEOPanshi Founder, Chairman and CEOPanshi Founder, Chairman and
-                CEOPanshi Founder, Chairman and CEOPanshi Founder, Chairman and
-                CEOPanshi Founder, Chairman and CEO
-              </p>
+              <div  v-html="$t('aboutPage.description.en.introduce')">
+             <!--   {{$t('aboutPage.description.en.introduce')}}-->
+              </div>
             </div>
           </div>
           <div class="icon hidden-md hidden-xs hidden-sm">
@@ -57,9 +60,18 @@
         <underline :title="'公司介绍'"></underline>
       </div>
       <div class="carousel">
-          <carousel :translateXNumber="260">
-          <swiper-slide v-for="(item,key) in $t('aboutPage.carouselList')" :key="key"><img :src="item.url" width="100%"/><div class="explain" data-swiper-parallax="-300"><div class="explain_box"><p>{{item.intro}}</p></div></div></swiper-slide>
-         </carousel>
+        <carousel :translateXNumber="260">
+          <swiper-slide
+            v-for="(item, key) in $t('aboutPage.carouselList')"
+            :key="key"
+            ><img :src="item.url" width="100%" />
+            <div class="explain" data-swiper-parallax="-300">
+              <div class="explain_box">
+                <p>{{ item.intro }}</p>
+              </div>
+            </div></swiper-slide
+          >
+        </carousel>
         <!--<myswiper>
           <div
             class="swiper-slide"
@@ -76,6 +88,26 @@
         </myswiper>-->
       </div>
     </section>
+    <section class="developChunk container" >
+      <div>
+        <underline :title="'发展历程'"></underline>
+      </div>
+      <div>
+        <row-carousel :is-button="false" :navigation="{}" :isProgress="isProgress" :autoplay="false" :loop="false" :slides-per-view="5" :centered-slides="false" :breakpoints="developBreakpoints">
+          <swiper-slide
+            class="swiper-slide"
+            v-for="(item, key) in $t('aboutPage.developList')"
+            :key="key"
+          >
+            <div class="carousel_img"><img :src="item.url" class="img-responsive" /> <div class="developLine"><i></i></div></div>
+            <div class="carousel_sign">
+              <strong>{{item.year}}</strong>
+              <p>{{item.sign}}</p>
+            </div>
+          </swiper-slide>
+        </row-carousel>
+      </div>
+    </section>
     <section class="destiny">
       <div><underline :title="'使命与愿景'"></underline></div>
       <div class="destiny_bg">
@@ -83,10 +115,10 @@
         <div v-show="destinySlogan" class="slogan container">
           <div class="left col-lg-5">
             <p>使命</p>
-            <p>让全球共享数字科技带来的极致体验</p>
+            <p>让世界没有落后的经济!</p>
           </div>
           <div class=" sloganClose col-lg-2 hidden-xs">
-            <i @click="close"></i>
+            <i @click="close">&</i>
           </div>
           <div class="right col-lg-5">
             <p>愿景</p>
@@ -95,91 +127,59 @@
         </div>
       </div>
     </section>
-    <section class="sword defineContainer container">
+    <section class="swordChunk container">
       <div><underline :title="'七剑文化'"></underline></div>
       <div class="sword_bg">
         <ul class="clearfix ">
           <li class="col-lg-4 col-sm-6 big">
             <img src="../assets/about/sword.png" width="99%" />
           </li>
-          <li class="col-lg-4  col-sm-6">
+          <li
+            class="col-lg-4  col-sm-6"
+            v-for="(item, key) in $t('aboutPage.cultureList')"
+            :key="key"
+          >
             <div class="cover">
-              <img src="../assets/about/sword1.png" width="100%" />
+              <img :src="item.url" width="100%" />
               <div class="wish">
                 <div class="wish_box">
-                  <p class="title">莫问剑</p>
-                  <p>一切以结果为导向，客户是衣食父母</p>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="col-lg-4  col-sm-6">
-            <div class="cover">
-              <img src="../assets/about/sword2.png" width="100%" />
-              <div class="wish">
-                <div class="wish_box">
-                  <p class="title">竞星剑</p>
-                  <p>共享共担，坚持团队集体奋斗</p>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="col-lg-4  col-sm-6">
-            <div class="cover">
-              <img src="../assets/about/sword3.png" width="100%" />
-              <div class="wish">
-                <div class="wish_box">
-                  <p class="title">天瀑剑</p>
-                  <p>随时迎接变化，敢于创新</p>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="col-lg-4  col-sm-6">
-            <div class="cover">
-              <img src="../assets/about/sword4.png" width="100%" />
-              <div class="wish">
-                <div class="wish_box">
-                  <p class="title">日月剑</p>
-                  <p>积极乐观，永不放弃</p>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="col-lg-4  col-sm-6">
-            <div class="cover">
-              <img src="../assets/about/sword5.png" width="100%" />
-              <div class="wish">
-                <div class="wish_box">
-                  <p class="title">青干剑</p>
-                  <p>不断超越，天道酬勤</p>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="col-lg-4  col-sm-6">
-            <div class="cover">
-              <img src="../assets/about/sword6.png" width="100%" />
-              <div class="wish">
-                <div class="wish_box">
-                  <p class="title">游龙剑</p>
-                  <p>正直诚信，言出必践</p>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="col-lg-4  col-sm-6">
-            <div class="cover">
-              <img src="../assets/about/sword7.png" width="100%" />
-              <div class="wish">
-                <div class="wish_box">
-                  <p class="title">舍神剑</p>
-                  <p>敬业担责，担当责任，为自己和家人的幸福而不懈努力</p>
+                  <p class="title">{{ item.title }}</p>
+                  <p>{{ item.remark }}</p>
                 </div>
               </div>
             </div>
           </li>
         </ul>
+      </div>
+    </section>
+    <section class="influenceChunk container">
+      <div>
+        <div><underline :title="'全球影响力'"></underline></div>
+        <div>
+          <news
+            :router-url="''"
+            :news-list="$t('aboutPage.influenceList')"
+            :config-page="configPage"
+            :img-height="'auto'"
+          ></news>
+        </div>
+      </div>
+    </section>
+    <section class="missionChunk container">
+      <div>
+        <div><underline :title="'公益使命'"></underline></div>
+      </div>
+      <div>
+        <row-carousel>
+          <swiper-slide
+            class="swiper-slide"
+            v-for="(item, key) in $t('aboutPage.missionList')"
+            :key="key"
+          >
+            <img :src="item.url" class="img-responsive"/>
+            <p>{{item.sign}}</p>
+          </swiper-slide>
+        </row-carousel>
       </div>
     </section>
   </div>
@@ -188,11 +188,30 @@
 import breadcrumb from "@/components/breadcrumb";
 import underline from "@/components/underline";
 import carousel from "@/components/carousel";
- // import Myswiper from "../components/myswiper";
+import News from "../components/news";
+import RowCarousel from "../components/rowCarousel";
+// import Myswiper from "../components/myswiper";
 export default {
   name: "About",
   data() {
     return {
+      isProgress: {
+        el: ".swiper-scrollbar",
+        draggable: true,
+        dragSize:400
+      },
+      developBreakpoints: {
+        1200: {
+          slidesPerView: 5
+        },
+        992: {
+          slidesPerView: 4
+        },
+        768: {
+          slidesPerView: 3
+        }
+      },
+      configPage: {},
       destinySlogan: true
     };
   },
@@ -205,7 +224,7 @@ export default {
       this.destinySlogan = false;
     }
   },
-  components: {  breadcrumb, underline, carousel }
+  components: { RowCarousel, News, breadcrumb, underline, carousel }
 };
 </script>
 <style lang="stylus" scoped>
@@ -245,29 +264,34 @@ export default {
         font-size 14px
         text-align left
         .discover
-          text-align left
-          .zh
+          margin-bottom 43px
+          .discover_text
             float left
+            p
+              margin 0 auto
+          .zh
             border-bottom 1px solid rgba(51,51,51,1)
-            font-size:19px;
+            font-size:20px;
             font-weight:bold;
             color:rgba(51,51,51,1);
+            padding-bottom 18px
+            text-align right
             strong
-              padding-right 15px
-              font-size 30px
+              text-align left
+              padding-right 9px
+              font-size 38px
               font-weight:bold;
               color:rgba(51,51,51,1);
           .en
-            width 100%
-            float left
-            font-size 15px
-            font-weight:bold;
-            margin 17px 0 35px
+            padding-top 18px
+            font-size 16px
+            font-weight:bold
             strong
-              padding-right 26px
-        p
-          font-weight:bold;
-          font-size 15px
+              float left
+              text-align left
+            span
+              font-weight:bold
+              float right
       @media (max-width: 768px){
         .photo {
           float none
@@ -298,6 +322,44 @@ export default {
           min-height 150px
           p
             box-shadow none
+  .developChunk
+    margin-bottom 60px
+    .carousel_img
+      img
+        padding 0 15px
+    .swiper-slide:last-child
+      .developLine
+        padding-right -15px
+        box-sizing border-box
+    .carousel_sign
+      margin 18px auto 50px
+      strong
+        font-size:20px;
+        font-weight:bold;
+        color:rgba(86,149,242,1);
+      p
+        padding  0 15px
+        margin 16px 0 0 0
+        font-size:16px;
+        font-weight:500;
+        color:rgba(51,51,51,1);
+        line-height:23px;
+    .developLine
+      position relative
+      width 100%
+      display block
+      margin-top 26px
+      padding-right 30px
+      border-bottom:1px solid rgba(220,220,220,1)
+      i
+        position absolute
+        left 50%
+        top 50%
+        width:14px;
+        height:14px;
+        margin -7px 0 0 -7px
+        background:rgba(220,220,220,1);
+        border-radius:50%;
   .destiny
     .destiny_bg
       position relative
@@ -307,7 +369,7 @@ export default {
         top 50%
         transform translate(-50%,-50%)
         color #ffffff
-        font-size 30px
+        font-size 34px
       @media (max-width 768px) {
         .slogan{
           font-size 16px;
@@ -319,11 +381,8 @@ export default {
         i
           display block
           margin 0 auto
-          width 34px
-          height 34px
-          background-image url("../assets/about/vs.png")
 
-  .sword /*defineContainer*/
+  .swordChunk
     margin 64px auto 22px
     .sword_bg
       /*max-width 980px*/
@@ -367,4 +426,17 @@ export default {
           &:hover .wish
             left 50%
             background-color #6291EE
+  .influenceChunk
+    margin-bottom 80px
+  .missionChunk
+    margin-bottom 44px
+    .swiper-slide
+      padding: 0 15px
+      p
+        font-size:12px;
+        font-family:MicrosoftYaHei;
+        font-weight:bold;
+        overflow hidden
+        color:rgba(51,51,51,1);
+        margin 12px auto 0
 </style>

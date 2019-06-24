@@ -449,12 +449,12 @@ export default {
       ],
       numGame: {
         article: {
-          title: "数字游戏时代",
+          title: "数字游戏",
           sign: "Digital game era",
           content:
-            "500+ 内容提供商,（content provider） 3000+ 游戏产品，广泛的游戏种类服务于不同玩家。The main content begins with the rise of the digital economy era, and draws a panoramic view of data science and wisdom culture from a grand perspective, expounds the historical process of digital economic development, how China lays out the digital economy, and how the digital economy and the country.",
+            "数字游戏平台是RockyMobi打造的泛游戏互动娱乐平台，集精品在线云游戏、丰富会员权益、海量道具礼包和时尚玩家社交于一体，为用户提供游戏试玩、在线游戏、社交互动、游戏资讯、会员权益等全方位互动娱乐服务体验，全面丰富用户的娱乐生活。",
           iconSign:
-            "<p>500+内容提供商,(content provider) 3000+游戏产品，广泛的游戏种类服务于不同玩家</p>",
+            "<p>500+内容提供商，提供海量多样的游戏内容</p>",
           imgUrl: require("../assets/product/action-blur-close-up.png")
         },
         list: [
@@ -469,10 +469,10 @@ export default {
       },
       contact: {
         head: {
-          title: "互动社交平台",
+          title: "互动社交",
           mark: "Interactive social platform",
           sign:
-            "互动社交基于人们之间的交往沟通产生，面对热闹非凡的线上交流平台，以用户交流和关注点为基本，从个人在社交媒体中的信息足迹和人际关系链出发，将产品和服务巧妙融入社交互动这个无形推手中\n"
+            "互动社交平台是RockyMobi打造的社交类短视频互动分享平台，提供海量短视频内容、高质量影视、综艺、直播等优质内容，应用人工智能技术为用户创造丰富多样的玩法，视频随机互动，同时提供直播社交流媒体，打造素人KOL，让用户在生活中轻松快速享受并分享优质短视频。"
         },
         proImage_1: {
           url: require("../assets/product/shortVideo.png"),
@@ -486,10 +486,10 @@ export default {
       },
       study: {
         article: {
-          title: "知识学习圈",
+          title: "知识学习",
           sign: "Knowledge learning circle",
           content:
-            "基于移动互联网的在线教育平台通过共同知识的需学习，去解决个人学习过程中遇到的各种问题。 从小学校教育、到只技能培训、到专业能力学校都有专业课程帮你解答一切问题，并为其他用户提供帮助，让你的知识更有价值。",
+            "知识学习是RockyMobi研发的一款专注知识分享的在线学习平台，该平台面向学习者提供海量优质课程，创新的个性化学习体验， 自由开放的交流互动环境。通过知识学习圈这个知识分享平台，用户可以自主寻找兴趣点并学习所需技能；也可以通过这个平台分享知识。",
           iconSign:
             "<p>学龄前教育</p><p>幼儿基础兴趣点培养，将娱乐与学习有机结合</p>",
           imgUrl: require("../assets/product/contactImage.png")
@@ -503,10 +503,10 @@ export default {
       },
       recreation: {
         head: {
-          title: "轻娱乐生活",
+          title: "娱乐生活",
           mark: "Light entertainment life",
           sign:
-            "不占用大量时间，不做重度用户沉淀，小而美的应用让用户在碎片化的时间，获得更多轻松娱乐的内容。"
+            "轻娱乐生活是RockyMobi打造的一个专注于轻娱乐分享的一站式生活化平台。平台面向用户提供优质、丰富的在线产品装扮素材,装扮用户的线上精彩生活。平台上拥有海量图铃资源，支持在线试听、浏览和下载使用，让用户的线上生活更加多姿多彩。"
         },
         proImage_1: {
           url: require("../assets/product/media_chunk_1.png"),
@@ -520,10 +520,10 @@ export default {
       },
       culture: {
         article: {
-          title: "神秘的东方文化",
-          sign: "Mysterious oriental culture",
+          title: "东方文化",
+          sign: "Oriental culture",
           content:
-            "在揭开神秘东方文化面纱的那一刹那，你会知道，那绵延五千年的瑰丽年化，是多么吸引人。",
+            "东方文化是RockyMobi创建的中国传统文化在线分享体验平台。平台为用户提供海量中国传统文化课程分享。让用户能够近距离深刻的感受中国传统文化的独特的魅力，让用户怀一颗赤子之心走近、感悟和践行中国传统文化。",
           iconSign:
             "<p>中国茶艺</p>" +
             "<p>茶艺是一门艺术，一种文化，中国茶艺，带你领略另样风情。</p>",
@@ -538,15 +538,15 @@ export default {
       },
       readIP: {
         head: {
-          title: "打造全球阅读IP",
+          title: "全球阅读IP",
           mark: "Create a global reading IP",
           sign:
-            "让文字的魅力发挥到极致，打造全球化IP经济，覆盖小说、漫画、游戏、影视剧等，让创造，让文学在世界更加流行。"
+            "阅读平台是RockyMobi开发的一款集阅读、互动等多种功能于一体的全能型阅读平台，打造全球化IP经济，覆盖小说、漫画、游戏、影视剧书等多种内容形态，培养用户的阅读习惯，打造符合当地文化的时尚流行小说，支持多语言多平台的支持与发行。"
         },
         proImage_1: {
           url: require("../assets/product/read_02.png"),
           text_1: "小说阅读",
-          text_2: "打造符合当地文化的时尚流行小说。"
+          text_2: "根据不同国家、地区的文化，打造符合当地文化的时尚流行小说。"
         },
         proImage_2: {
           url: require("../assets/product/read_01.png"),

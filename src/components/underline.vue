@@ -27,8 +27,7 @@ export default {
     position relative
     display block
     width 100%
-    border-bottom 1px solid rgba(145,145,145,.5)
-    /*background:rgba(145,145,145,.5);*/
+    border-bottom 1.5px solid rgba(145,145,145,.5)
     border-radius:50%;
     h3
       position absolute
