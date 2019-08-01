@@ -1,0 +1,104 @@
+body, html
+  width 100%
+  /*height 100%*/
+  font-family "Microsoft YaHei",'Avenir', Helvetica, Arial, sans-serif !important
+  /*user-select: none*/
+  -webkit-tap-highlight-color: transparent
+  background-color rgba(255, 255, 255, 1)
+  color #333
+  font-size 16px
+  p
+    font-size 16px;
+body
+  position relative
+@media (max-width:768px){ //小屏幕 小于 768
+  #app{
+    h1 {
+      font-size 20px;
+    }
+    p {
+      font-size 14px;
+    }
+    h2{
+      font-size 18px;
+      font-weight 400
+    }
+    h4 {
+      font-size 16px;
+    }
+    h5 {
+      font-size 14px;
+    }
+    h6{
+      font-size 12px;
+    }
+  }
+}
+@media (min-width:768px){ // 大于 768 小于 9992
+  #app{
+    h1 {
+      font-size 28px;
+    }
+    h2 {
+      font-size 24px;
+      font-weight 400
+    }
+    h5{
+      font-size 16px;
+    }
+  }
+}
+@media (min-width:992px){ // 大于 992 小于 1200
+  #app{
+    h1 {
+      font-size 32px !important;
+    }
+    h2 {
+      font-size 28px;
+      font-weight 400
+    }
+    h5{
+      font-size 16px ;
+    }
+  }
+}
+@media (min-width:1200px){  // 大于 1200
+  #app{
+    h1 {
+      font-size 42px !important;
+    }
+    h2 {
+      font-size 32px !important;
+      font-weight 400
+    }
+    h4 {
+      font-size 28px !important;
+    }
+  
+    h5 {
+      font-size 18px !important;
+    }
+    h6 {
+      font-size 16px;
+    }
+    .lg-size-32{
+      font-size 32px !important;
+    }
+  }
+
+}
+//@media (min-width: @screen-sm-min) {
+//
+//}
+//
+///* 中等屏幕（桌面显示器，大于等于 992px） */
+//@media (min-width: @screen-md-min) {
+//
+//}
+//
+///* 大屏幕（大桌面显示器，大于等于 1200px） */
+//@media (min-width: @screen-lg-min) {
+//
+//}
+
+
