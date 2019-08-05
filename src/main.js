@@ -14,8 +14,12 @@ Vue.use(VueAwesomeSwiper);
 Vue.use(VueLazyload);
 Vue.config.productionTip = false;
 Vue.prototype.WOW = new WOW();
-router.afterEach(() => {
-  window.scrollTo(0, 0);
+router.afterEach((to,from) => {
+  console.log(to);
+  console.log(from);
+  if (from.path.indexOf("/product") < 0 || to.path.indexOf("/product") < 0){
+    window.scrollTo(0, 0);
+  }
 });
 new Vue({
   router,

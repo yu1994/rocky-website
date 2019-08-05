@@ -34,6 +34,10 @@ export default {
     carouselButton: {
       type: Boolean,
       default: true
+    },
+    modify: {
+      type: Number,
+      default: 2
     }
   },
   data() {
@@ -46,7 +50,7 @@ export default {
         centeredSlides: true,
         loopedSlides: 5,
         loop: true,
-        autoplay: 3000,
+        // autoplay: 3000,
         autoplayDisableOnInteraction: false,
         prevButton: '.carousel-button-prev',
         nextButton: '.carousel-button-next',
@@ -65,13 +69,13 @@ export default {
             for (let i = 0; i < swiper.slides.length; i++) {
               var slide = swiper.slides.eq(i);
               var slideProgress = swiper.slides[i].progress;
-              let modify = 1.9;
-              if (Math.abs(slideProgress) > 1) {
+               let modify = vm.modify;
+              if (Math.abs(slideProgress) > 2) {
                 modify = (Math.abs(slideProgress) - 1) * 0.5 + 1;
               }
               let translate =
                 slideProgress * modify * vm.translateXNumber + "px";
-              let scale = 1 - Math.abs(slideProgress) / 5;
+              let scale = 1 - Math.abs(slideProgress) / 8;
               let zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
               slide.transform(
                 "translateX(" + translate + ")" +vm.scaleImg+"(" + scale + ")"

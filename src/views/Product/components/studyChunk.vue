@@ -1,152 +1,160 @@
 <template>
-  <div>
-    <div>
-      <pro-detail :lang="'productPage.studyChunk.article'"></pro-detail>
-      <pro-layout-left
-              :content="study.pro_1"
-              :stylus_box="study.pro_1.style_box"
-              :img-place="'right'"
-      >
-      </pro-layout-left>
-      <div class="language">
-        <div class="container">
-          <div class="titleBar">
-            <title-bar
-                    :color-style="{title: '#ffffff',remark: '#ffffff',cover: 'rgba(223,223,223,0.2)'}"
-                    :lang-string="'productPage.studyChunk.pro_2'"
-            ></title-bar>
-          </div>
-          <div class="languageList">
-            <ul class="clearfix">
-              <li class="person"><img src="../../../assets/product/study/icon_head.png" class="img-responsive"/></li>
-              <li class="visible-lg language-big" v-for="(item, key) in $t('productPage.studyChunk.pro_2.genreList')"  :style="item.style" v-lazy:background-image="item.bgUrl">
-                <p class="wow fadeInUp">{{item.name}}</p>
-              </li>
-              <li class="language-small hidden-lg col-xs-6" v-for="(item, key) in $t('productPage.studyChunk.pro_2.genreList')"  >
-                <p class="wow fadeInUp" :style="{width:item.style.width}"  v-lazy:background-image="item.bgUrl">{{item.name}}</p>
-              </li>
-            </ul>
-          </div>
+  <div class="container">
+    <product-title :styles="study.pro_1.styles" :content="study.pro_1.content"></product-title>
+    <product-layout-stock :styles="study.pro_2.styles" :content="study.pro_2.content"></product-layout-stock>
+    <product-layout-center :styles="study.pro_3.styles" :content="study.pro_3.content"></product-layout-center>
+    <product-layout-vertical class="studyChunk_4">
+      <div slot="left" class="left">
+        <div class="left-title">
+          <h5>{{study.pro_4.content.title}}</h5>
+        </div>
+        <div class="left-remark">
+          <p>{{study.pro_4.content.remark}}</p>
         </div>
       </div>
-      <!--<pro-layout-left
-        :content="study.pro_2"
-        :stylus_box="study.pro_2.style_box"
-        :img-place="'right'"
-      ></pro-layout-left>-->
-      <pro-layout-left
-        :content="study.pro_3"
-        :stylus_box="study.pro_3.style_box"
-      ></pro-layout-left>
-      <pro-layout-left
-        :content="study.pro_4"
-        :stylus_box="study.pro_4.style_box"
-        :img-place="'right'"
-      ></pro-layout-left>
-    </div>
+      <div slot="right" class="right">
+        <div class="img">
+          <img v-lazy="study.pro_4.styles.url"/>
+        </div>
+      </div>
+      <div class="sign">
+        <i></i>
+      </div>
+    </product-layout-vertical>
   </div>
 </template>
-
 <script>
-import TitleBar from "./temp/titleBar";
-import ProLayoutLeft from "./temp/proLayoutLeft";
-import ProDetail from "./temp/proDetail";
-export default {
-  name: "studyChunk",
-  data() {
-    return {
-      study: {
-        pro_1: {
-          title: this.$t('productPage.studyChunk.pro_1.title'),
-          titleCover: this.$t('productPage.studyChunk.pro_1.titleCover'),
-          url: require("../../../assets/product/study/pro_01.png"),
-          remark: this.$t('productPage.studyChunk.pro_1.remark'),
-          style_box: {
-            backgroundColor:'#F7F7F7',
-            padding: "100px 0 74px"
-          }
-        },
-        pro_2: {
-          style_box: {
-            backgroundImage:
-              "url(" +
-              require("../../../assets/product/study/pro_bg_02.png") +
-              ")",
-            padding: "100px 0 74px"
-          }
-        },
-        pro_3: {
-          title: this.$t('productPage.studyChunk.pro_3.title'),
-          titleCover: this.$t('productPage.studyChunk.pro_3.titleCover'),
-          url: require("../../../assets/product/study/pro_03.png"),
-          remark: this.$t('productPage.studyChunk.pro_3.remark'),
-          style_box: {
-            backgroundImage:
-              "url(" +
-              require("../../../assets/product/study/pro_bg_03.png") +
-              ")",
-            padding: "118px 0 13px"
-          }
-        },
-        pro_4: {
-          title: this.$t('productPage.studyChunk.pro_4.title'),
-          titleCover: this.$t('productPage.studyChunk.pro_4.titleCover'),
-          url: require("../../../assets/product/study/pro_04.png"),
-          remark: this.$t('productPage.studyChunk.pro_4.remark'),
-          style_box: {
-            backgroundImage:
-              "url(" +
-              require("../../../assets/product/study/pro_bg_04.png") +
-              ")",
-            padding: "94px 0"
+  import ProductTitle from "./temp/productTitle";
+  import ProductLayoutCenter from "./temp/productLayoutCenter";
+  import ProductLayoutStock from "./temp/productLayoutStock";
+  import ProductLayoutVertical from "./temp/productLayoutVertical";
+  const color = "#9985D6";
+  export default {
+    name: "studyChunk",
+    data() {
+      return {
+        study: {
+          pro_1: {
+            content: {
+              title: this.$t('productPage.studyChunk.pro_1.title'),
+              remark: this.$t('productPage.studyChunk.pro_1.remark')
+            },
+            styles: {
+              url: require("../../../assets/product/study/pro_1.png"),
+              remark: {
+                left: '33px',
+                width: '637px'
+              },
+              title: {
+                backgroundColor: color,
+                top: "21px",
+                right: "-31px"
+              }
+
+            }
+          },
+          pro_2: {
+            content: {
+              title: this.$t('productPage.studyChunk.pro_2.title'),
+              remark: this.$t('productPage.studyChunk.pro_2.remark')
+            },
+            styles: {
+              url: require("../../../assets/product/study/pro_2.png"),
+              title: {
+                backgroundColor: color,
+                right: "0px",
+                top: "0px"
+              },
+              remark: {
+                left: '186px',
+                width: '550px'
+              },
+              content: {
+                right: "0px",
+                bottom: "126px",
+                width: "416px",
+                backgroundColor: "#F4F4F4"
+              },
+              box: {
+                padding: "66px 0",
+                backgroundColor: "#CEEBF4"
+              }
+            }
+          },
+          pro_3: {
+            content: {
+              title: this.$t('productPage.studyChunk.pro_3.title'),
+              remark: this.$t('productPage.studyChunk.pro_3.remark'),
+            },
+            styles: {
+              url: require("../../../assets/product/study/pro_3.png"),
+              title: {
+                backgroundColor: color,
+                top: "58px",
+                left: "-109px"
+              },
+              remark: {
+                left: '486px',
+                maxWidth: '416px'
+              }
+            }
+          },
+          pro_4: {
+            content: {
+              title: this.$t('productPage.readIPChunk.pro_4.title'),
+              remark: this.$t('productPage.readIPChunk.pro_4.remark'),
+            },
+            styles: {
+              url: require("../../../assets/product/study/pro_4.png"),
+            }
           }
         }
-      }
-    };
-  },
-  components: {ProDetail, ProLayoutLeft, TitleBar }
-};
+      };
+    },
+    components: {ProductLayoutVertical, ProductLayoutStock, ProductLayoutCenter, ProductTitle }
+  };
 </script>
 
 <style scoped lang="stylus">
-.language
-  background-image url("../../../assets/product/study/pro_bg_02.png")
-  background-repeat no-repeat
-  background-position center
-  padding 118px 0 72px
-  .languageList
-    ul
-      position relative
-      margin 0
-      height 482px
-      .person
-        position absolute
-      .language-small
-        background-size 100% 100%
-        margin 30px auto 15px
-        p
-          margin 0 auto
-          height 70px
-          background-size 100% 100%
-      .language-big
-        position absolute
-        background-size 100% 100%
-      p
-        width 100%
-        margin 0
-        font-size 26px
-        line-height 70px
-        font-weight:400;
-        color:rgba(255,255,255,1);
-      .person
-        width 151px
-        height 151px
-        left 50%
-        top 50%
-        transform translate(-50%,-50%)
-
+  .studyChunk_4
+    .left
+      display inline-block
+      vertical-align middle
+      margin 0 82px 0 107px
+      width 332px
+      text-align left
+      .left-title
+        margin-bottom 37px
+        h5
+          width 134px
+          height 35px
+          line-height @height
+          background-color #9985D6
+          color #ffffff
+          margin 0
+          text-align center
+      .left-remark
+        color: rgba(0, 0, 0, 1);
+        line-height 35px
+    .right
+      display inline-block
+      vertical-align middle
+      margin-right 30px
+    .sign
+      position absolute
+      bottom 53px
+      left -56px
+      i
+        display block
+        width 214px
+        height 61px
+        background-image url("../../../assets/product/study/share.png")
+    img
+      max-width 470px
+    p
+      margin-bottom 0
 </style>
-<style lang="stylus" scoped>
+<!--<style lang="stylus" scoped>
   @media (max-width:1200px){
     #app{
       .language{
@@ -171,4 +179,4 @@ export default {
       }
     }
   }
-</style>
+</style>-->

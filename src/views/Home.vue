@@ -12,6 +12,17 @@
         <h1 >{{ $t("homePage.titleChunk.text_2") }}</h1>
       </div>
     </section>
+    <section class="globalChunk" v-on:click="startHandler">
+      <div class="container">
+        <div class="title">
+          <h2>{{$t('homePage.globalChunk.content.title')}}</h2>
+          <p>{{$t('homePage.globalChunk.content.slogan')}}</p>
+        </div>
+        <div class="img">
+          <img v-lazy="$t('homePage.globalChunk.url')" class="img-responsive">
+        </div>
+      </div>
+    </section>
     <section class="container operateChunk" @click="operateHandler">
       <div class="operate_text">
         <h2>{{$t('homePage.operateTextChunk.title')}}</h2>
@@ -29,7 +40,7 @@
         <global-map></global-map>
       </div>
     </section>
-    <section class="carouselChapter">
+ <!--   <section class="carouselChapter">
       <div class="title">
         <h2>{{ $t("homePage.tierCarousel.title") }}</h2>
       </div>
@@ -48,7 +59,7 @@
           </div>
         </swiper-slide>
       </carousel>
-    </section>
+     </section>-->
     <section class="globalBg">
       <div>
         <img class="img-responsive"  v-lazy="$t('homePage.economy.url')" />
@@ -103,6 +114,14 @@ export default {
       transform translate(-50%,-50%)
       font-weight:400
       color:rgba(255,255,255,1);
+  .globalChunk
+    padding-top 98px
+    cursor pointer
+    .title
+      h2
+        margin 0 auto 29px
+      p
+        margin-bottom 30px
   .map
     position relative
     background-repeat no-repeat
@@ -138,13 +157,14 @@ export default {
         width 100%
         max-width 468px
   .carouselChapter
-    padding 52px 0 65px
+    padding 52px 0 0 0
     background-color #F7F7F7
     .title
       h2
         margin 0 0 43px 0
         color:rgba(70,70,70,1);
   .globalBg
+    margin-top 65px
     position relative
     overflow hidden
     .start
@@ -176,6 +196,9 @@ export default {
       }
       .operateChunk{
         padding 30px 15px;
+      }
+      .globalChunk{
+        padding-top 30px
       }
       .carouselChapter{
         padding 30px 0;

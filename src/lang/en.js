@@ -15,8 +15,15 @@ export default {
   },
   homePage: {
     titleChunk: {
-      text_1: "RockyMobi",
+      text_1: "RockyPlay",
       text_2: "致力于让全球用户共享数字娱乐的极致体验",
+    },
+    globalChunk: {
+      content: {
+        title: "世界互联 内容出海",
+        slogan: "阅读、视频、音乐、社交、游戏……多元之美，世界尽在眼前"
+      },
+      url: require("../assets/home/global.png")
     },
     operateTextChunk: {
       title: "大数据时代，精细化运营",
@@ -61,7 +68,7 @@ export default {
     },
     economy: {
       title: "全球数娱经济",
-      btnText: "start T",
+      btnText: "start",
       url: require("../assets/home/up_bg.png")
     }
   },
@@ -300,7 +307,7 @@ export default {
         name: "田宁",
         position: "盘石创始人，董事长兼CEO"
       },
-      introduce: `<p>                田宁，盘石集团董事长，RockyMobi董事会主席，毕业于浙江大学。2004年创立盘石集团，并担任董事长，RockyMobi为盘石集团的全资子公司。盘石集团致力于以大数据、人工智能技术为核心驱动的全球新经济建设与发展。田宁被世界经济论坛(WEF)授予
+      introduce: `<p>                田宁，盘石集团董事长，RockyPlay董事会主席，毕业于浙江大学。2004年创立盘石集团，并担任董事长，RockyPlay为盘石集团的全资子公司。盘石集团致力于以大数据、人工智能技术为核心驱动的全球新经济建设与发展。田宁被世界经济论坛(WEF)授予
                 "全球青年领袖"，同时担任浙商全球总会互联网委员会主席,
                 中国移动通信联合会副会长，杭州电子商务协会理事长。田宁多次受邀出席世界互联网大会、G20峰会、金砖峰会、达沃斯论坛等活动并发表演讲，为全球经济发展建言献策。
 </p>`
@@ -309,17 +316,17 @@ export default {
       {
         url: require("../assets/about/companyIntro_1.jpg"),
         intro:
-          "RockyMobi创立于2014年，是盘石集团旗下专注于全球移动产品研发、运营的全资子公司，致力于通过互联网大数据、人工智能及移动应用，让全球用户更方便、快捷的享受到数字娱乐带来的极致体验。"
+          "RockyPlay创立于2014年，是盘石集团旗下专注于全球移动产品研发、运营的全资子公司，致力于通过互联网大数据、人工智能及移动应用，让全球用户更方便、快捷的享受到数字娱乐带来的极致体验。"
       },
       {
         url: require("../assets/about/companyIntro_2.jpg"),
         intro:
-          "RockyMobi拥有中国中央电视台、中国移动、中国地方卫视，海内外各大影视剧公司等海外版权，同步通过全球本地化采购IP，涵盖海外影视、游戏、文学、工具等内容，建立起了极其丰富的内容生态，并打磨和发布了数千款移动内容产品，产品服务覆盖全球数十亿的用户，充分满足了全球用户的娱乐、阅读、生活等需要。"
+          "RockyPlay拥有中国中央电视台、中国移动、中国地方卫视，海内外各大影视剧公司等海外版权，同步通过全球本地化采购IP，涵盖海外影视、游戏、文学、工具等内容，建立起了极其丰富的内容生态，并打磨和发布了数千款移动内容产品，产品服务覆盖全球数十亿的用户，充分满足了全球用户的娱乐、阅读、生活等需要。"
       },
       {
         url: require("../assets/about/companyIntro_3.jpg"),
         intro:
-          "RockyMobi已经在在泰国、印度、印尼、菲律宾、西班牙、俄罗斯、乌克兰、南非等20余个国家设有分子公司或办事处。整合了全球各大移动运营商、200多个国家和地区的广告位和手机应用等资源，打造了庞大的流量资源平台，加速RockyMobi产品在海外的落地。同时，帮助全球数千家移动广告企业实现移动用户全球增长，为他们提供最优的变现方案。"
+          "RockyPlay已经在在泰国、印度、印尼、菲律宾、西班牙、俄罗斯、乌克兰、南非等20余个国家设有分子公司或办事处。整合了全球各大移动运营商、200多个国家和地区的广告位和手机应用等资源，打造了庞大的流量资源平台，加速RockyPlay产品在海外的落地。同时，帮助全球数千家移动广告企业实现移动用户全球增长，为他们提供最优的变现方案。"
       }
     ],
     cultureList: [
@@ -458,407 +465,122 @@ export default {
       recreation: "掌上娱乐",
       study: "智能学习",
       culture: "文化传播",
-
     },
+    productNav: [
+      {
+        route: 'read',
+        url: require("../assets/product/Bitmap1.png"),
+        sign: "阅读"
+      },
+      {
+        route: 'game',
+        url: require("../assets/product/Bitmap2.png"),
+        sign: "游戏"
+      },
+      {
+        route: 'video',
+        url: require("../assets/product/Bitmap3.png"),
+        sign: "视频"
+      },
+      {
+        route: 'study',
+        url: require("../assets/product/Bitmap4.png"),
+        sign: "学习"
+      },
+      {
+        route: 'recreation',
+        url: require("../assets/product/Bitmap5.png"),
+        sign: "轻娱乐"
+      }
+    ],
     readIPChunk: {
-      article: {
-        title: "全球IP",
-        url: require("../assets/product/readIP/readIP_bg.png"),
-        slogan: "阅读多元之美，世界尽在眼前",
-        remark:
-              "全球IP是RockyMobi打造的一个集阅读、互动等多种功能于一体的全能型阅读平台。平台通过大数据和人工智能技术，根据不同国家和地区的用户兴趣爱好、习惯，打造符合当地文化的流行小说、漫画、游戏、影视剧等多种形态IP，并支持多语言多平台的支持与发行，全面助推全球IP经济的发展。"
-      },
       pro_1: {
-        title: "小说",
-        titleCover: "Novel",
-        remark: "根据不同国家、地区的文化，打造符合当地文化的时尚流行小说。",
+        title: "阅读",
+        remark: "全球数字阅读IP平台，致力于打造“平台+写手+内容+终端+应用”的产业链条一体化服务，形成阅读IP的立体化运作，让阅读IP在各环节形成生态圈，相互影响，共同发展，让用户享受沉浸式体验。",
       },
       pro_2: {
-        title: "漫画",
-        titleCover: "Cartoon",
-        remark: "将全球精品漫画分享给世界各地的用户"
+        title: "IP共创",
+        remark: "打通原创作者与用户的沟通屏障，让网络文学实现IP共创。从最基础的故事大纲，到世界观的完善，到周边的衍生，让用户全面参与到原创作者的写作，成为优质内容产生的新驱动力。 "
       },
       pro_3: {
-        title: "影视剧",
-        titleCover: "Movies",
-        remark: "为全球用户提供当下热门的精彩电视剧",
-      },
-      pro_4: {
-        title: "IP衍生链路",
-        titleCover: "Link",
-        remark: "将全球精品作品分享给世界各地的用户",
-      },
-      pro_5: {
-        remark: "多语言多平台的支持与发行，让现象成为趋势",
-        url: require('../assets/product/readIP/pro_bg_04.png')
-      }
-    },
-    numGameChunk: {
-      article: {
-        title: "数字游戏",
-        url: require("../assets/product/NumberGame/numGame_bg.png"),
-        slogan: "体验极致的掌上娱乐",
-        remark:
-          "数字游戏是RockyMobi打造的全类型数字游戏互动娱乐平台，集精品在线云游戏、丰富会员权益、海量道具礼包和游戏社交于一体的平台。平台不仅能够以数据算法和人功能为用户量身定制推送不同类型游戏的需求，而且能够为用户提供游戏社交、游戏资讯、会员权益等全方位互动娱乐体验，全面丰富全球用户的娱乐生活。"
-      },
-      pro_1: {
-        title: "优质内容提供商",
-        titleCover: "Quality",
-        remark: "提供海量多样的游戏内容",
-      },
-      pro_2: {
-        title: "3000+游戏产品全类型覆盖",
-        titleCover: "3000+",
-        remark:
-          "拥有动作、冒险、射击、格斗、音乐、益智、赛车、战略、棋牌、体育等多个游戏种类",
-      },
-      pro_3: {
-        title: "全职业覆盖",
-        titleCover: "All",
-        remark:
-          "广泛的游戏种类服务于不同职业、不同年龄和不同兴趣爱好的玩家。",
-        occupationList: {
-          list_1: [
-            {
-              url: require("../assets/product/NumberGame/icon_all_head01.png"),
-              slogan: "程序员",
-              position: 'left'
-            },
-            {
-              url: require("../assets/product/NumberGame/icon_all_head02.png"),
-              slogan: "学生",
-              position: 'center'
-            }, {
-              url: require("../assets/product/NumberGame/icon_all_head03.png"),
-              slogan: "工人",
-              position: 'right'
-            }
-          ],
-          list_2: [
-            {
-              url: require("../assets/product/NumberGame/icon_all_head04.png"),
-              slogan: "医生",
-              position: 'center'
-            },
-            {
-              url: require("../assets/product/NumberGame/icon_all_head05.png"),
-              slogan: "农民",
-              position: 'center'
-            }
-          ],
-          list_3: [
-            {
-              url: require("../assets/product/NumberGame/icon_all_head06.png"),
-              slogan: "销售",
-              position: 'left'
-            },
-            {
-              url: require("../assets/product/NumberGame/icon_all_head07.png"),
-              slogan: "服务",
-              position: 'center'
-            }, {
-              url: require("../assets/product/NumberGame/icon_all_head08.png"),
-              slogan: "网红",
-              position: 'right'
-            }
-          ]
-        }
-      },
-      pro_5: {
-        title: "多语种覆盖",
-        titleCover: "More",
-        remark:
-          "英语、西班牙语、法语、中文、印地语、泰语、马来西亚语、俄罗斯语、阿拉伯语等",
-      },
-      carouselList: [
-        {
-          title: 'JUMPEE LAND',
-          href: "http://uacms.stayrocky.com/wapengame/jumpee-land/",
-          slogan: '用手指点击屏幕让小鸟向前跳跃，同时躲避飞来的障碍，通过跳跃的高度增加而得分。',
-          url_01: require('../assets/product/NumberGame/game_slide01_1.jpg'),
-          url_02: require('../assets/product/NumberGame/game_slide01_2.jpg')
-        },
-        {
-          title: 'Bubble war',
-          href: "http://uacms.stayrocky.com/wapengame/bubble-pop-adventures/",
-          slogan: '一款多关卡泡泡射击游戏，在有限的射击次数下将画面中的泡泡消灭掉，解救藏在泡泡中的萌宠。',
-          url_01: require('../assets/product/NumberGame/game_slide02_1.png'),
-          url_02: require('../assets/product/NumberGame/game_slide02_2.png')
-        },
-        {
-          title: 'Valet Parking',
-          href: "http://uacms.stayrocky.com/wapgame/valet-parking-rockymobi",
-          slogan: '一款经典的赛车类游戏，玩家可控制轿车使其停到指定位置上得分。指尖倒车，来一较高下吧！',
-          url_01: require('../assets/product/NumberGame/game_slide03_1.jpg'),
-          url_02: require('../assets/product/NumberGame/game_slide03_2.jpg')
-        },
-        {
-          title: 'Monster fantasy',
-          href: "http://uacms.stayrocky.com/wapgame/monster-tower-defense-rockymobi/",
-          slogan: '一款经典的策略类塔防游戏，从怪物的袭击中，建设属于你自己的塔防，保卫王国的安宁。',
-          url_01: require('../assets/product/NumberGame/game_slide04_1.jpg'),
-          url_02: require('../assets/product/NumberGame/game_slide04_2.jpg')
-        },
-        {
-          title: 'ESCAPE  FROM AZTEC',
-          href: "http://uacms.stayrocky.com/wapengame/escape-from-aztec/",
-          slogan: '全球经典跑酷游戏，用奔跑、跳跃、滑行等多种技巧躲避阿兹特克各种神秘的陷阱，赶紧开始你的逃亡之旅!',
-          url_01: require('../assets/product/NumberGame/game_slide05_1.png'),
-          url_02: require('../assets/product/NumberGame/game_slide05_2.png')
-        }
-      ]
-    },
-    contactChunk: {
-      article: {
-        title: "视频社交",
-        url: require("../assets/product/contact/contact_bg.png"),
-        slogan: "让你的社交动起来",
-        remark:
-          "视频社交是RockyMobi打造的机遇智能数据算法的社交类短视频记录、互动和分享平台。平台拥有海量的短视频、高质量影视、综艺、直播等优质内容，同时应用人工智能技术为用户创造丰富多样的玩法，视频随机互动，提供直播社交流媒体，打造素人KOL，让全球用户在生活中轻松快速向全世界展示精彩的生活。"
-      },
-      pro_1: {
-        title: "短视频互动平台",
-        titleCover: "Video",
-        remark: "视频随机互动，以兴趣爱好为切入点，营造UGC良好氛围",
-      },
-      pro_2: {
-        title: "高品质短片分享",
-        titleCover: "Superior",
-        remark: "汇集优秀视频短片及微电影创作人,实时不断分享全球优秀视频短片",
-        url: require("../assets/product/contact/share_bg.png")
-      },
-      pro_3: {
-        title: "直播社交流媒体",
-        titleCover: "Live",
-        remark: "打造素人KOL,实时不断分享全球优秀视频短片"
-      },
-      pro_4: {
-        title: "特色",
-        titleCover: "Feature",
-        featureList: [
-          {
-            url: require("../assets/product/contact/feature_01.png"),
-            title: "专注社交",
-            remark: "随着移动互联网全面升级，线上流量入口也开始了社交化的转移"
-          },
-          {
-            url: require("../assets/product/contact/feature_02.png"),
-            title: "以用户为核心",
-            remark: "抓住了用户，就占据了市场，顺应了用户，就适应了市场，发展了用户，就开拓了市场"
-          },
-          {
-            url: require("../assets/product/contact/feature_03.png"),
-            title: "捕捉用户足迹",
-            remark: "抓住了用户，顺应了用户，根据用户习惯，发展市场，开拓市场"
-          },
-          {
-            url: require("../assets/product/contact/feature_04.png"),
-            title: "无缝融合产品和服务",
-            remark: "将产品与用户无缝密切联系起来，提供优质的服务体验"
-          }
-        ]
-      }
-    },
-    recreationChunk: {
-      article: {
-        title: "掌上娱乐",
-        url: require("../assets/product/recreation/recreation_bg.png"),
-        slogan: "个性生活一键触达",
-        remark:
-          "掌上娱乐是RockyMobi打造的一个专注于轻娱乐服务的一站式生活化平台，帮助用户一键式掌控线上生活。平台不仅汇集了全世界的优质壁纸、铃声等资源，支持在线试听、浏览和下载使用，帮助用户拥有更精彩的线上生活；而且平台上个性化的日历、天气等轻工具，帮助用户的生活更智能。"
-      },
-      pro_1: {
-        title: "丰富壁纸",
-        titleCover: "Paper",
-        remark: "让媒体的生活随着更新一张手机壁纸开始吧。"
-      },
-      pro_2: {
-        title: "个性化铃音",
-        titleCover: "CRBT",
-        remark: "让每一次联络都更美好",
-        crbtList: [
-          {
-            url: require("../assets/product/recreation/crbt_icon_01.png"),
-            remark: '真人铃声'
-          },
-          {
-            url: require("../assets/product/recreation/crbt_icon_02.png"),
-            remark: '特效'
-          },
-          {
-            url: require("../assets/product/recreation/crbt_icon_03.png"),
-            remark: '搞笑'
-          },
-          {
-            url: require("../assets/product/recreation/crbt_icon_04.png"),
-            remark: '音乐'
-          }
-
-        ]
-      },
-      pro_3: {
-        title: "全设备应用",
-        titleCover: "All",
-        remark: "适用安卓和苹果等各类移动设备"
-      }
-    },
-    studyChunk: {
-      article: {
-        title: "智能学习",
-        url: require("../assets/product/study/study_bg.png"),
-        slogan: "书香何止于油墨 知识何止于独乐",
-        remark:
-          "智能学习是RockyMobi研发的一款专注知识分享的在线学习平台，该平台面向全球用户提供海量优质课程，创新的个性化学习体验，自由开放的交流互动环境。知识学习平台能够帮助全球的用户，自主的寻找兴趣点并学习所需技能，也可以通过这个平台分享知识，让学习更有趣、智能，让知识创造更大的价值。"
-      },
-      pro_1: {
-        title: "幼儿启蒙",
-        titleCover: "Education",
-        remark: "幼儿基础兴趣点培养，将娱乐与学习有机结合",
-      },
-      pro_2: {
-        title: "全语言培训",
-        titleCover: "Language",
-        remark: "充分应用AI数据，分析用户的行为兴趣爱好，辅以合适的培训模式",
-        genreList: [
-          {
-            name: "篮球",
-            style: {
-              width: '179px',
-              height: '70px',
-              top: "81px", left: "283px"
-            },
-            bgUrl: require('../assets/product/study/icon_01.png')
-          },
-          {
-            name: "美食",
-            style: {
-              width: '226px',
-              height: '70px',
-              top: "219px", left: "150px"
-            },
-            bgUrl: require('../assets/product/study/icon_02.png')
-          },
-          {
-            name: "旅游",
-            style: {
-              width: '241px',
-              height: '70px',
-              top: "388px", left: "261px"
-            },
-            bgUrl: require('../assets/product/study/icon_03.png')
-          },
-          {
-            name: "弹吉他",
-            style: {
-              width: '148px',
-              height: '70px',
-              top: "412px", left: "713px"
-            },
-            bgUrl: require('../assets/product/study/icon_04.png')
-          },
-          {
-            name: "拼图",
-            style: {
-              width: '241px',
-              height: '70px',
-              top: "253px", left: "742px"
-            },
-            bgUrl: require('../assets/product/study/icon_05.png')
-          },
-          {
-            name: "绘画",
-            style: {
-              width: '226px',
-              height: '70px',
-              top: "56px", left: "642px"
-            },
-            bgUrl: require('../assets/product/study/icon_06.png')
-          }
-        ]
-      },
-      pro_3: {
-        title: "交互阅读",
-        titleCover: "Teach",
-        remark:
-          "提供最优质的学习咨讯、阅读内容和成长美文，在集合AI人工智能交互式阅读，让用户更加开拓自己的学习氛围"
+        title: "优质内容",
+        remark: "以用户为中心，持续生产和输出优质内容，吸引新用户，增强用户黏性，从而更好的激发生产市场，激活消费潜力，孵化粉丝经济。",
       },
       pro_4: {
         title: "私人定制",
-        titleCover: "Coach",
-        remark:
-          "可以根据自身的情况量身定制有规律的周期性计划、打卡。"
+        remark: "千人千面的矩阵发行系统、多语言的同步翻译能力、大数据精准挖掘和强力渗透能力，能更好的支持海内外多国家同步实时更新，及时满足粉丝对于内容的需求。 ",
       }
     },
-    cultureChunk: {
-      article: {
-        title: "文化传播",
-        url: require("../assets/product/culture/culture_bg.png"),
-        slogan: "让技术造福文化传承",
-        remark:
-          "文化传播是RockyMobi创建的中国传统文化在线智能分享体验平台。平台为全球用户提供海量中国传统文化课程分享，包涵功夫、茶文化、语言等各个方面，让全球用户能够近距离深刻的感受中国传统文化的独特的魅力，让全球用户走近、感悟和践行中国传统文化。"
-        },
+    numGameChunk: {
       pro_1: {
-        title: "特色文化",
-        titleCover: "Culture",
-        remark: "带你领略中国文化、中国风情",
-        cultureCarouselList: [
-          { name: '汉语', url: require("../assets/product/culture/culture_carousel_1.png")},
-          { name: '京剧', url: require("../assets/product/culture/culture_carousel_2.png")},
-          { name: '功夫', url: require("../assets/product/culture/culture_carousel_3.png")},
-          { name: '书法', url: require("../assets/product/culture/culture_carousel_4.png")},
-          { name: '茶艺', url: require("../assets/product/culture/culture_carousel_5.png")}
-        ],
+        title: "游戏",
+        remark: "全球数字IP游戏互动娱乐平台，以全新的数字技术，全新的理念，以强有力的游戏IP概念去唤醒游戏的生命力，从而与玩家建立更深层次的联系，激发用户对游戏的兴趣和联想，让用户自主参与与分享。 "
       },
       pro_2: {
-        head: {
-          title: "数字传播",
-          titleCover: "Digital",
-          remark: '多屏幕支持，触达多类生活场景'
-        },
-        platformBg: require('../assets/product/culture/pro_bg_02.png'),
-        digitalList: [
-          {
-            url: require('../assets/product/culture/icon_01.png'),
-            sign: '手机'
-          },
-          {
-            url: require('../assets/product/culture/icon_02.png'),
-            sign: '电脑'
-          },
-          {
-            url: require('../assets/product/culture/icon_03.png'),
-            sign: '平板电脑'
-          },
-          {
-            url: require('../assets/product/culture/icon_04.png'),
-            sign: '电视'
-          },
-        ]
+        title: "经典游戏",
+        remark: "汇聚全球简便的经典游戏，让全球用户能够体验到不同年代的经典，降低用户进入游戏的门槛，减少用户初次体验游戏的学习成本。 ",
       },
       pro_3: {
-        head: {
-          title: "平台优势",
-          titleCover: "Platform",
-          remark: ''
-        },
-        platformList: [
-          {
-            url: require('../assets/product/culture/platform_1.png'),
-            title: '创新性',
-            remark: '创造更高效的数字化体验式内容生产与分发，化解语言障碍，传播中国文化精髓。'
-          },
-          {
-            url: require('../assets/product/culture/platform_2.png'),
-            title: '体验性',
-            remark: '让中国传统文化以全新方式呈现，推动中国文化在不同文化语境中被喜爱、被接纳。'
-          },
-          {
-            url: require('../assets/product/culture/platform_3.png'),
-            title: '互动性',
-            remark: '增强全球用户的互动性和参与感，满足用户感知和互动需求，加强用户对中国文化的认知理解。'
-          }
-        ]
-
+        title: "类目全覆盖",
+        remark: "3000+游戏，覆盖动作、冒险、射击、格斗、音乐、益智、赛车、战略、棋牌、体育等全类型 。利用大数据精准算法根据玩家喜好精准推送游戏，使玩家能够高效进行选择与深度体验。 ",
+      },
+      pro_4: {
+        title: "互动社交",
+        remark: "精精彩的游戏剧情、海量会员权益、互动的社交模式，为用户提供全面丰富的娱乐生活。多国家多语言的全球发行模式， 让全球玩家聚集到游戏平台，形成良好的国际文化交流氛围。 "
+      }
+    },
+    videoChunk: {
+      pro_1: {
+        title: "视频",
+        remark: "全球视频IP平台，致力于将全球优质影视与短视频充分结合，在保障视频质量的同时开启全球视频社交模式，充分满足不同用户的各类需求，为用户开启视频盛宴，打造属于全球用户的优质IP、独家IP。"
+      },
+      pro_2: {
+        title: "影视剧",
+        remark: "汇聚全球海量的优秀影视剧，为全球用户带来震撼的视听盛宴， 丰富的强IP全球性储备，也会让全球用户，感受到不同民族地区的不同风情。同时让用户深度参与到影视IP内容生产和营销中， 推动影视产业由传统的“内容+渠道”制胜进入“IP 为王”时代。",
+      },
+      pro_3: {
+        title: "短视频",
+        remark: "基于智能数据算法的社交类短视频记录、互动和分享平台， 旨在打造素人KOL，实时分享全球优秀视频短片 ，为用户创造丰富多样的玩法，让全球用户在生活中轻松快速向世界展示精彩的生活。 ",
+      },
+      pro_4: {
+        title: "特色",
+        remark: "<p>专注社交</p> <p>以用户为核心</p><p>无缝融合产品和服务 </p><p>捕捉用户足迹</p>"
+      }
+    },
+    studyChunk: {
+      pro_1: {
+        title: "学习",
+        remark: "全球知识学习平台，充分应用AI数据技术，对知识进行分类、更新、关联、挖掘、监管，并记录并分析用户行为及兴趣，建立用户学习智库，为全球用户提供海量优质课程，平台专注知识的在线学习和共享，打造独特的个性化学习体验。 "
+      },
+      pro_2: {
+        title: "知识星球",
+        remark: "涵盖语言学习、运动健身、塑型美妆、演讲口才、幼儿启蒙等多样优质资源，满足各年龄段的学习需求，打造星球级的知识库。 "
+      },
+      pro_3: {
+        title: "AI数据",
+        remark: "基于大数据技术的用户偏好分析，进行用户画像，发掘触达用户兴趣的通道，结合兴趣进行多种语言培训，达到精准高效的培训效果。"
+      },
+      pro_4: {
+        title: "知识分享",
+        remark: "高质量信息的实时更新，为用户传播价值，自由的思想传播平台，让世界听到你的意见。 "
+      }
+    },
+    recreationChunk: {
+      pro_1: {
+        title: "轻娱乐",
+        remark: "全球轻娱乐平台专注开发一站式智能生活服务，在云端汇集全球优质资源，全球用户可根据需求浏览、试用、下载。同时平台具备多样化轻工具箱，“打包”服务，一键享受，为用户的工具需求量体裁衣，帮助用户轻松管理线上生活。 "
+      },
+      pro_2: {
+        title: "一站式平台",
+        remark: "为全球用户提供娱乐生活的各种资源，包括精美壁纸、个性铃声、星座测试等内容，以及日历、天气等轻工具。实时更新，不断优化，提供全方位精致的线上生活。"
+      },
+      pro_3: {
+        title: "全设备共享",
+        remark: "以互联网和大数据实现智慧互联，帮助用户进行即时互动。稳定的服务系统，支持多地域、多时间、多设备访问，不论何时何地，都能满足用户的信息或娱乐需求。 "
+      },
+      pro_4: {
+        title: "个性化生活",
+        remark: "AI技术记录用户的兴趣偏好和行为数据，预测用户的喜好并自动推送相关内容，帮助用户定制娱乐产品，为用户提供丰富智能生活的更多方案。 "
       }
     }
   },

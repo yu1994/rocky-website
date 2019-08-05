@@ -23,7 +23,35 @@ export default new Router({
       path: "/product",
       name: "product",
       meta: { name: "nav.product" },
-      component: () => import("./views/Product/Product.vue")
+      redirect: "/product/read",
+      component: () => import("./views/Product/Product.vue"),
+      children: [
+        {
+          path: '/product/read',
+          name: 'read',
+          component: () => import("./views/Product/components/readIpChunk.vue")
+        },
+        {
+          path: '/product/game',
+          name: 'game',
+          component: () => import("./views/Product/components/numGameChunk.vue")
+        },
+        {
+          path: '/product/video', /*视频娱乐*/
+          name: 'video',
+          component: () => import("./views/Product/components/videoChunk.vue")
+        },
+        {
+          path: '/product/study',
+          name: 'study',
+          component: () => import("./views/Product/components/studyChunk.vue")
+        },
+        {
+          path: '/product/recreation',
+          name: 'recreation',
+          component: () => import("./views/Product/components/recreationChunk.vue")
+        }
+      ]
     },
     {
       path: "/investment",
@@ -32,24 +60,24 @@ export default new Router({
       meta: { name: "nav.investment" },
       children: [
         {
-          path: "main",
+          path: "/investment/main",
           name: "main",
           component: () => import("./views/Investment/index.vue")
         },
         {
-          path: "governance",
+          path: "/investment/governance",
           meta: { name: "nav.governance" },
           name: "governance",
           component: () => import("./views/Investment/governance.vue")
         },
         {
-          path: "newsList",
+          path: "/investment/newsList",
           meta: { name: "nav.newsList" },
           name: "newsList",
           component: () => import("./views/Investment/newsList.vue")
         },
         {
-          path: "finance",
+          path: "/investment/finance",
           meta: { name: "nav.finance" },
           name: "financeList",
           component: () => import("./views/Investment/finance.vue")

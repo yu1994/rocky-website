@@ -56,25 +56,25 @@ export default {
           workTime: "工作时间：周一 至 周五 9:00-11:30,13:30-17:00"
         },
         {
-          name: "Rockymobi Nepal private limited",
+          name: "RockyPlay Nepal private limited",
           address: "Durbar Marg-1, Kathmandu, Nepal",
           //mobile: "电话：400-100-1110；400-100-1110",
           workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00"
         },
         {
-          name: "Rockymobi Myanmar Corporation Ltd",
+          name: "RockyPlay Myanmar Corporation Ltd",
           address: "Room 6, Building 232, QUARTER 6, YANKIN. YANGON",
         //  mobile: "电话：959964480636",
           workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00"
         },
         {
-          name: "Rockymobi International Technology INC",
+          name: "RockyPlay International Technology INC",
           address: "4TH Floor PCCI corporate center 118L.P.LEVISTE BEL-AIR CITY OF MARKTI FOURTH DISTRICT,PHILIPPINES",
           //mobile: "电话：400-100-1110；400-100-1110",
           workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00"
         },
         {
-          name: "PT. Rockymobi Information Technology Indonesia",
+          name: "PT. RockyPlay Information Technology Indonesia",
           address: "30th Floor,Sampoerna Strategic Square, South Tower,JL.Jend Sudirman KAV 45-48 RT 003 RW 004,Karet Semanggi Setiabudi.Jakarta Selatan, DKI Jakarta 12930",
         //  mobile: "电话：400-100-1110；400-100-1110",
           workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00"

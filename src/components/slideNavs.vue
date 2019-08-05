@@ -28,7 +28,7 @@
     .swiper-wrapper
       justify-content center
     .swiper-slide
-      width 190px
+      width auto
     li
       width 100%
     a

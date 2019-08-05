@@ -157,6 +157,9 @@ export default {
     margin: 0 auto;
     text-align: center;
     justify-content: center;
+    a{
+      width 190px
+    }
   }
   @media (max-width:768px){
     #app{

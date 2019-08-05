@@ -30,15 +30,16 @@
         >
           <ul class="nav navbar-nav">
             <li>
-              <router-link :to="{ name: 'product' }" class="dropdown-toggle" data-toggle="dropdown"
+              <router-link :to="{name: 'product'}" class="dropdown-toggle" data-toggle="dropdown"
               >{{ $t("nav.product") }} <i class="underline"></i
               ></router-link>
               <ul class="dropdown-menu">
-                <li v-for="(item, key) in proNavList" :key="key"  >
-                  <a href="javascript:void (0)" @click="skipHandler($event,item)">{{
-                    $t("productPage.chunkHead." + item)
-                    }} <i class="dropdown-line"></i
-                    ></a>
+                <li v-for="(item, key) in $t('productPage.productNav')" :key="key"  >
+                  <router-link :to="{name: item.route}">
+                    {{item.sign}}
+                    <i class="dropdown-line"></i
+                    >
+                  </router-link>
                 </li>
               </ul>
             </li>
@@ -81,14 +82,6 @@
           'about',
           'contact'
         ],
-        proNavList: [
-          "readIP",
-          "numGame",
-          "contact",
-          "recreation",
-          "study",
-          "culture"
-        ],
         navShow: true
       };
     },
@@ -96,16 +89,6 @@
       vm.$on("navScrollFixed", arg => {
         this.navShow = !arg;
       });
-    },
-    methods: {
-      skipHandler(event,id) {
-        const e = event || window.event;
-        const node = document.getElementById(id);
-              node.scrollIntoView({
-                block: 'start',
-                behavior: 'instant'
-              });
-      }
     }
   };
 </script>
@@ -152,6 +135,11 @@
     background-color rgba(0, 0, 0, .5)
     li
       position relative
+      .router-link-exact-active
+        i
+          left: 50%;
+          width: 0;
+          opacity 0
       a
         font-size 16px
         &:hover .dropdown-line

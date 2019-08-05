@@ -1,88 +1,97 @@
 <template>
-  <div>
-    <div>
-      <pro-detail :lang="'productPage.recreationChunk.article'"></pro-detail>
-      <div>
-        <pro-layout-left
-          :content="recreation.pro_1"
-          :stylus_box="recreation.pro_1.style_box"
-          :img-place="'right'"
-        ></pro-layout-left>
-      </div>
-      <div class="crbt">
-        <div class="container">
-          <div class="titleBar">
-            <title-bar
-                    :color-style="{title: '#ffffff',remark: '#ffffff',cover: 'rgba(223,223,223,0.2)'}"
-                    :lang-string="'productPage.recreationChunk.pro_2'"
-            ></title-bar>
-          </div>
-          <div class="crbtList">
-            <ul class="clearfix">
-              <li class="col-md-3 col-xs-6" v-for="(item, key) in $t('productPage.recreationChunk.pro_2.crbtList')" :key="key">
-                <div class="crbtList_box">
-                  <img class="wow fadeInUp" v-lazy="item.url" />
-                  <p>{{item.remark}}</p>
-                </div>
-              </li>
-            </ul>
-          </div>
+  <div class="container">
+    <product-title :styles = "recreation.pro_1.styles" :content="recreation.pro_1.content"></product-title>
+    <product-layout-left :styles="recreation.pro_2.styles" :content="recreation.pro_2.content"></product-layout-left>
+    <product-layout-center :styles="recreation.pro_3.styles" :content="recreation.pro_3.content"></product-layout-center>
+    <product-layout-vertical class="recreationChunk_pro4" :styles="recreation.pro_4.styles">
+      <div slot="left" class="left">
+        <div class="img">
+          <img v-lazy="recreation.pro_4.styles.url" />
         </div>
       </div>
-      <div>
-        <pro-layout-left
-          :content="recreation.pro_3"
-          :stylus_box="recreation.pro_3.style_box"
-        ></pro-layout-left>
+      <div slot="right" class="right">
+        <div class="r-title">
+          <h5>{{recreation.pro_4.content.title}}</h5>
+        </div>
+        <div class="r-remark">
+          <p>{{recreation.pro_4.content.remark}}</p>
+        </div>
       </div>
-    </div>
+      <div class="sign">
+        <i></i>
+      </div>
+    </product-layout-vertical>
   </div>
 </template>
 
 <script>
-import TitleBar from "./temp/titleBar";
-import ProLayoutLeft from "./temp/proLayoutLeft";
-import ProDetail from "./temp/proDetail";
-import ProLayoutCenter from "./temp/proLayoutCenter";
+import ProductTitle from "./temp/productTitle";
+import ProductLayoutCenter from "./temp/productLayoutCenter";
+import ProductLayoutVertical from "./temp/productLayoutVertical";
+import ProductLayoutLeft from "./temp/productLayoutLeft";
+const color = "#FFB071";
 export default {
   name: "recreationChunk",
-  components: {ProLayoutCenter, ProDetail, ProLayoutLeft, TitleBar },
+  components: {ProductLayoutLeft, ProductLayoutVertical, ProductLayoutCenter, ProductTitle },
   data() {
     return {
       recreation: {
         pro_1: {
-          title: this.$t('productPage.recreationChunk.pro_1.title'),
-          titleCover: this.$t('productPage.recreationChunk.pro_1.titleCover'),
-          url: require("../../../assets/product/recreation/pro_01.png"),
-          remark: this.$t('productPage.recreationChunk.pro_1.remark'),
-          style_box: {
-            backgroundImage:
-              "url(" +
-              require("../../../assets/product/recreation/pro_bg_01.png") +
-              ")",
-            padding: "121px 0 98px 0"
+          content: {
+            title: this.$t('productPage.recreationChunk.pro_1.title'),
+            remark: this.$t('productPage.recreationChunk.pro_1.remark'),
+          },
+          styles: {
+            url: require("../../../assets/product/recreation/pro_1.png"),
+            remark: {
+              left:'340px',
+              width: '548px'
+            },
+            title: {
+              backgroundColor: color
+            }
           }
         },
         pro_2: {
-          title: this.$t('productPage.recreationChunk.pro_2.title'),
-          titleCover: this.$t('productPage.recreationChunk.pro_2.titleCover'),
-          bgUrl: require("../../../assets/product/recreation/pro_bg_02.png"),
-          remark: this.$t('productPage.recreationChunk.pro_2.remark'),
-          style_box: {
-            padding: "121px 0 98px 0"
+          content: {
+            title: this.$t('productPage.recreationChunk.pro_2.title'),
+            remark: this.$t('productPage.recreationChunk.pro_2.remark')
+          },
+          styles: {
+            url: require("../../../assets/product/recreation/pro_2.png"),
+            title: {
+              backgroundColor: color
+            }
           }
         },
         pro_3: {
-          title: this.$t('productPage.recreationChunk.pro_3.title'),
-          titleCover: this.$t('productPage.recreationChunk.pro_3.titleCover'),
-          url: require("../../../assets/product/recreation/pro_03.png"),
-          remark: this.$t('productPage.recreationChunk.pro_3.remark'),
-          style_box: {
-            backgroundImage:
-              "url(" +
-              require("../../../assets/product/recreation/pro_bg_01.png") +
-              ")",
-            padding: "180px 0 118px 0"
+          content: {
+            title: this.$t('productPage.recreationChunk.pro_3.title'),
+            remark: this.$t('productPage.recreationChunk.pro_3.remark')
+          },
+          styles: {
+            url: require("../../../assets/product/recreation/pro_3.png"),
+            title: {
+              backgroundColor: color,
+              left: "442px",
+              top: "53px"
+            },
+            remark: {
+              left: '494px',
+              maxWidth: '473px'
+            }
+          }
+        },
+        pro_4: {
+          content: {
+            title: this.$t('productPage.recreationChunk.pro_4.title'),
+            remark: this.$t('productPage.recreationChunk.pro_4.remark')
+          },
+          styles: {
+            url: require("../../../assets/product/recreation/pro_4.png"),
+            box: {
+              backgroundColor: "rgb(244,244,244)"
+            }
           }
         }
       }
@@ -92,46 +101,46 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-.crbt
-  padding 98px 0 200px
-  background-image url("../../../assets/product/recreation/pro_bg_02.png")
-  background-position center
-  background-size cover
-  .crbtList
-    li
-      margin-bottom 15px
-    .crbtList_box
-      background-color #ffffff
-      box-shadow:0px 0px 13px 0px rgba(90,97,212,0.2)
-      padding 47px 0
-      img
-        width 117px
-        height 117px
-        cursor pointer
-        transition all 2s ease-in
-        &:hover
-          transform rotate(360deg)
-      p
-        color:rgba(51,51,51,1);
-        margin 50px 0 0 0
-  .titleBar
-    margin-bottom 80px
+  .recreationChunk_pro4
+    p
+      margin-bottom 0
+    .left
+      display inline-block
+      vertical-align middle
+      margin-left 257px
+    .right
+      display inline-block
+      width 452px
+      vertical-align middle
+      margin-left 46px
+      margin-right 83px
+      .r-title
+        margin-bottom 42px
+        h5
+          width 134px
+          height 35px
+          line-height @height
+          background-color #FFB071
+          color #ffffff
+          margin 0
+          text-align center
+      .r-remark
+        color:rgba(0,0,0,1);
+        line-height 35px
+        text-align left
+    .sign
+      position absolute
+      top 221px
+      left -41px
+      i
+        display block
+        width 423px
+        height 60px
+        background-image url("../../../assets/product/recreation/convenient.png")
 </style>
 <style lang="stylus" scoped>
   @media (max-width:768px){
     #app{
-      .crbt{
-        padding 30px 0 30px
-        .titleBar{
-          margin-bottom 30px
-        }
-        .crbtList_box{
-          padding 30px 0
-          p{
-            margin-top 30px
-          }
-        }
-      }
     }
   }
 
