@@ -66,6 +66,15 @@
               url: require("../../../assets/product/video/pro_2.png"),
               title: {
                 backgroundColor: color
+              },
+              imgBox: {
+                width: '421px'
+              },
+              img: {
+                left: '24px'
+              },
+              content: {
+                width: '434px'
               }
             }
           },

@@ -61,6 +61,12 @@ export default {
             url: require("../../../assets/product/readIP/pro_02_img.png"),
             title: {
               backgroundColor: color
+            },
+            imgBox: {
+              width: '531px'
+            },
+            content: {
+              width: '364px'
             }
           }
         },

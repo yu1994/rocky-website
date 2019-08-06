@@ -81,7 +81,14 @@ export default {
               backgroundColor: "#CEEBF4"
             },
             box: {
-              padding : "0px"
+              padding : "0px",
+              border: "4px solid #CEEBF4",
+              boxSizing: "border-box"
+            },
+            imgBox: {
+              position: "absolute",
+              left: "-4px",
+              top: "-4px"
             }
           }
         },

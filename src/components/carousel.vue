@@ -50,7 +50,7 @@ export default {
         centeredSlides: true,
         loopedSlides: 5,
         loop: true,
-        // autoplay: 3000,
+        autoplay: 3000,
         autoplayDisableOnInteraction: false,
         prevButton: '.carousel-button-prev',
         nextButton: '.carousel-button-next',
@@ -61,6 +61,17 @@ export default {
               }
               let activeNode = swiper.slides[swiper.activeIndex];
               activeNode.querySelector(".explain").style.display = "block";
+            } else if (swiper.slides[0].querySelector('.img-cover')) {
+              for (let i = 0, len = swiper.slides.length; i < len; i++) {
+                let node = swiper.slides[i].querySelector(".img-cover");
+                if (i < swiper.activeIndex){
+                  vm.gradient(node, 'left');
+                } else {
+                  vm.gradient(node, 'right');
+                }
+              }
+              let activeNode = swiper.slides[swiper.activeIndex];
+              activeNode.querySelector(".img-cover").style.background = "transparent";
             } else {
               return false;
             }
@@ -83,7 +94,7 @@ export default {
               slide[0].style.zIndex = zIndex;
               slide[0].style.opacity = 1;
               if (Math.abs(slideProgress) > 3) {
-                slide[0].style.opacity = 0;
+                slide[0].style.opacity = 0.5;
               }
             }
           },
@@ -98,6 +109,14 @@ export default {
   },
   created() {
     vm = this;
+  },
+  methods: {
+    gradient(node, direction) {
+       node.style.background = "-webkit-linear-gradient(to "+direction+", rgba(0,0,0,0), rgba(121,121,121,0.5),rgba(51,51,51,0.9), rgba(19,19,19,1))";
+       node.style.background = "-o-linear-gradient("+direction+", rgba(0,0,0,0), rgba(121,121,121,0.5),rgba(51,51,51,0.9), rgba(19,19,19,1))";
+       node.style.background = "-moz-linear-gradient("+direction+", rgba(0,0,0,0), rgba(121,121,121,0.5),rgba(51,51,51,0.9), rgba(19,19,19,1))";
+      node.style.background = "linear-gradient(to "+direction+", rgba(0,0,0,0), rgba(121,121,121,0.5),rgba(51,51,51,0.9), rgba(19,19,19,1))";
+    }
   }
 };
 </script>

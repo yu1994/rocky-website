@@ -94,7 +94,7 @@ export default {
   },
   beforeRouteEnter(from,to,next){
     next(vm => {
-      vm.$refs.courseVideo.play(); //
+      vm.$refs.courseVideo.play();
     })
   },
   components: {Carousel, globalMap }

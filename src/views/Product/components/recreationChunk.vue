@@ -61,6 +61,12 @@ export default {
             url: require("../../../assets/product/recreation/pro_2.png"),
             title: {
               backgroundColor: color
+            },
+            imgBox: {
+              width: '423px'
+            },
+            content: {
+              width: '434px'
             }
           }
         },

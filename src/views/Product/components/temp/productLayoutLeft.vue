@@ -1,10 +1,10 @@
 <template>
   <div class="productLayoutLeft">
     <div class="productLayoutLeft-box">
-      <div class="img">
-        <img class="wow zoomIn" v-lazy="styles.url" />
+      <div class="img" :style="styles.imgBox">
+        <img class="wow zoomIn" v-lazy="styles.url" :style="styles.img"/>
       </div>
-      <div class="content">
+      <div class="content" :style="styles.content">
         <div class="content-title">
           <h5 :style="styles.title">{{content.title}}</h5>
         </div>
@@ -43,20 +43,36 @@
 <style scoped lang="stylus">
 .productLayoutLeft
   width 100%
-  padding 0 36px 0 24px
+  height 507px
+  padding 0 36px 0 0
   margin-bottom 68px
-  background-color #F4F4F4
+  box-sizing border-box
+  /*background-image url("../../../../assets/product/border.png")*/
+  background-repeat no-repeat
+  background-position center
+  background-size 100% 100%
+  background-color #CEEBF4
   .productLayoutLeft-box
     display flex
-    min-height 507px
+    position relative
+    height @height
     justify-content space-between
     align-items center
     text-align left
   .img
     display inline-block /* ie 9*/
+    height 100%
+    border 4px solid #CEEBF4
+    box-sizing border-box
+    background-color rgb(240,242,245)
+    img
+      position absolute
+      left 0
+      top 50%
+      transform translateY(-50%)
   .content
     display inline-block /* ie 9*/
-    max-width 390px   /* ie 10 不设置的话有问题*/
+    /*max-width 390px*/   /* ie 10 不设置的话有问题*/
     margin-left 84px
     .content-title
       margin-bottom 43px

@@ -7,6 +7,7 @@
                 :key="key"
         ><div class="img-box">
           <img :src="item.url" />
+          <div class="img-cover"></div>
         </div>
         </swiper-slide>
       </carousel>
@@ -53,9 +54,6 @@
       width 307px
       padding 0 50px
       box-sizing border-box
-      background-color rgba(0,0,0,.3)
-      background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.7) , rgba(0,0,0,1), rgba(0,0,0,0.7), rgba(0,0,0,0.1) )
-      /*background-color rgba(0,0,0,.1)*/
     .certify
       position absolute
       width 100%
@@ -64,4 +62,16 @@
       transform translateY(-50%)
       .swiper-slide
         width 307px
+    .img-cover
+      position absolute
+      width 207px
+      height 100%
+      top 0
+      left 50%
+      transform translateX(-50%)
+/*
+      background: linear-gradient(to right, rgba(0,0,0,0), rgba(121,121,121,0.3), rgba(57,57,57,1))
+*/
+
+
 </style>

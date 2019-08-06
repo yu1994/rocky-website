@@ -3,15 +3,26 @@
     <section class="productHead">
       <div>
         <above-bg>
-          <img slot="bg" src="../../assets/product/above.png" class="img-responsive" width="100%" ref="productHeadImg" />
+          <div class="productVideo" slot="bg" ref="productHeadImg">
+            <video autoplay loop width="100%"  muted  ref="courseVideo" >
+              <source src="../../assets/product/video.mp4" type="video/mp4" >
+              <source src="../../assets/product/video.ogg" type="video/ogg">
+              您的浏览器不支持 HTML5 video 标签。
+            </video>
+            <div class="cover"></div>
+          </div>
+          <!--<img slot="bg" src="../../assets/product/above.png" class="img-responsive" width="100%" ref="productHeadImg" />-->
         </above-bg>
       </div>
-      <div class="productHead-list" ref="proHeadChunk" :class="{'productHead-list-fixed': barFixed}">
+      <div class="productHead-list" ref="proHeadChunk" > <!--:class="{'productHead-list-fixed': barFixed}"-->
         <div class="container">
           <slide-navs>
             <swiper-slide v-for="(item, key) in $t('productPage.productNav')" :key="key" >
               <ul  class="nav nav-pills bs-js-navbar-scrollspy" >
                 <li v-for="(n) in 1" :key="n">
+                  <!--<router-link :to="{path: item.route}">
+                    <h5>{{ item.sign }}</h5>
+                  </router-link>-->
                   <router-link :to="{path: item.route}" :style="{ backgroundImage:'url(' + item.url + ')' }">
                     <h5>{{ item.sign }}</h5>
                   </router-link>
@@ -22,7 +33,7 @@
         </div>
       </div>
     </section>
-    <section class="product-content">
+    <section class="product-content" ref="productContent">
       <transition enter-active-class="animated bounceInLeft">
         <keep-alive>
           <router-view />
@@ -66,6 +77,12 @@ export default {
     this.WOW.init();
     this.proHeadChunk = this.$refs.proHeadChunk;
     this.proHeadImg = this.$refs.productHeadImg;
+  //  window.proHeadImgHeight = this.proHeadImg.offsetHeight;
+    window.proHeadImgHeight = this.$refs.productContent.offsetTop;
+
+    // this.$refs.productHeadImg.onload = ()=> {
+    //   window.proHeadImgHeight = this.proHeadImg.height;
+    // }
   },
   methods: {
     throttle(func, wait) {
@@ -104,7 +121,8 @@ export default {
         document.documentElement.scrollTop ||
         document.body.scrollTop;
      // const offsetTop = this.proHeadChunk.offsetTop;
-      const offsetTop = this.proHeadImg.height/2;
+      const offsetTop = this.proHeadImg.height-50;
+
       if (scrollTop > offsetTop) {
         this.barFixed = true;
         vm.$emit("navScrollFixed", true);
@@ -112,17 +130,11 @@ export default {
         this.barFixed = false;
         vm.$emit("navScrollFixed", false);
       }
-    },
-    scrollTop(event,id) {
-      const e = event || window.event;
-      $("html, body").animate(
-        { scrollTop: $($(e.target).attr("href")).offset().top + "px" },
-        60
-      );
     }
   },
   beforeRouteEnter(to, from, next) {
     next(vm => {
+      vm.$refs.courseVideo.play();
    //   window.addEventListener("scroll", vm.throttle(vm.handleScroll, 1000));
     });
   },
@@ -152,17 +164,24 @@ export default {
         position absolute
         left 50%
         bottom -84px
+        /*bottom 0*/
         transform translate(-50%)
-        z-index 99999
+        z-index 99
         .slideNavPanel
           border none
         a
           display block
           width 221px
+          /*height 78px*/
           height 271px
+          /*padding 0*/
           background-size 100% 100%
           background-repeat no-repeat
+          /*background-image url("../../assets/product/nav_bg.png")*/
           h5
+            /*height 100%
+            line-height 78px
+            margin 0 auto*/
             margin 214px 0 0 0
             color:rgba(0,0,0,1)
             font-weight 400
@@ -181,11 +200,22 @@ export default {
       .productHead-list-fixed
         position fixed
         top 0
-        bottom 0
+        height 78px
     .product-content
       margin-top 152px
+      /*margin-top 80px*/
+    .productVideo
+      position relative
+      .cover
+        position absolute
+        left 0
+        width 100%
+        height 278px
+        bottom -(@height/2)px
+        background-image url("../../assets/product/Shape.png")
+        background-size 100% auto
 </style>
-<style scoped lang="stylus">
+<!--<style scoped lang="stylus">
   $proChunkBottom($num)
     padding-top 80px
     /*padding-bottom $num*/
@@ -231,5 +261,5 @@ export default {
     margin: 0 auto;
     text-align: center;
   }
-</style>
+</style>-->
 

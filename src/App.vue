@@ -16,7 +16,11 @@
     <div id="footer">
       <Footer/>
     </div>
-    <div class="upward hidden-md hidden-lg" v-show="upwardShow" v-on:click="upwardHandler">
+    <div class="upward hidden-md hidden-lg" v-show="upwardShow" v-on:click="upwardHandler(0,0)">
+      <i class="glyphicon glyphicon-chevron-up"></i>
+    </div>
+    <!-- 产品里面需要-->
+    <div class="upward hidden-xs hidden-sm" v-show="productUpwardShow" v-on:click="upwardHandler(0,0)">
       <i class="glyphicon glyphicon-chevron-up"></i>
     </div>
   </div>
@@ -28,7 +32,8 @@
     data() {
       return {
         introShow: false,
-        upwardShow: false
+        upwardShow: false,
+        productUpwardShow: false
       }
     },
     created() {
@@ -49,14 +54,27 @@
           document.documentElement.scrollTop ||
           document.body.scrollTop;
         const h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        if (self.$route && self.$route.fullPath.indexOf("product") > -1){
+          if (scrollTop >= Math.abs(h/2)){
+            self.productUpwardShow = true
+          } else{
+            self.productUpwardShow = false;
+          }
+        } else {
+          self.productUpwardShow = false;
+        }
+
         if (scrollTop >= Math.abs(h/2)){
           self.upwardShow = true
-        } else self.upwardShow = false;
+        } else{
+          self.upwardShow = false;
+        }
       })
     },
     methods:{
-      upwardHandler() {
-        window.scrollTo(0,0)
+      upwardHandler(x,y) {
+        window.scrollTo(x,y)
       }
     },
     components:{ navs, Footer }
@@ -82,7 +100,7 @@
     background-color #5695f2
     i
       margin auto
-      font-size 24px
+      /*font-size 24px*/
       color #ffffff
 #nav
   a

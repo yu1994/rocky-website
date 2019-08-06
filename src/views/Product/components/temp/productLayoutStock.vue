@@ -1,7 +1,7 @@
 <template>
   <div class="productLayoutStock">
     <div class="productLayoutStock-box" :style="styles.box">
-      <div class="img">
+      <div class="img" :style="styles.imgBox">
         <img v-lazy="styles.url" />
       </div>
       <div class="content" :style="styles.content">
@@ -47,8 +47,13 @@
     position relative
     width 100%
     height 506px
+    /*border 4px solid #CEEBF4
+    box-sizing border-box*/
     .img
-        text-align left
+      /*position absolute
+      left -4px
+      top -4px*/
+      text-align left
     .content
       position absolute
       text-align left

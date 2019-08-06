@@ -35,6 +35,7 @@
     position relative
     display table-cell
     vertical-align middle
+    background-color #CEEBF4 !important
     .left
       display inline-block
     .right
