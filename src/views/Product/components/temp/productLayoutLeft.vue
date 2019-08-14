@@ -41,11 +41,13 @@
 </script>
 
 <style scoped lang="stylus">
+$boxH = 507px
+$boxHSmall = 254px
 .productLayoutLeft
   width 100%
-  height 507px
+  height $boxH
   padding 0 36px 0 0
-  margin-bottom 68px
+  margin-bottom $productChunkMarginBottom
   box-sizing border-box
   /*background-image url("../../../../assets/product/border.png")*/
   background-repeat no-repeat
@@ -55,7 +57,7 @@
   .productLayoutLeft-box
     display flex
     position relative
-    height @height
+    height $boxH
     justify-content space-between
     align-items center
     text-align left
@@ -90,4 +92,26 @@
         line-height 35px
   p
     margin 0
+</style>
+<style scoped lang="stylus">
+  $boxH = 507px
+  $boxHSmall = 254px;
+  @media (max-width:768px){
+    #app{
+      .productLayoutLeft{
+        margin-bottom $productChunkMarginBottom-small
+        height $boxHSmall
+        padding 0 (36/2)px 0 0
+        .productLayoutLeft-box{
+          height:$boxHSmall;
+        }
+        .img{
+          img{
+            width (302/2)px
+            height (201/2)px
+          }
+        }
+      }
+    }
+  }
 </style>

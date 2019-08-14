@@ -144,6 +144,7 @@ export default {
       text-align left
       background-color rgba(0,0,0,.3)
       p
+        margin 0
         color #ffffff
   .report
     margin-top 69px

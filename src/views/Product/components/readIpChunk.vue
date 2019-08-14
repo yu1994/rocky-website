@@ -44,8 +44,9 @@ export default {
           styles: {
             url: require("../../../assets/product/readIP/pro_1.png"),
             remark: {
-              left:'197px',
-              width: '445px'
+              left:'17.01%',
+              width: '39.03%',
+              minWidth: '223px'
             },
             title: {
               backgroundColor: color
@@ -63,7 +64,7 @@ export default {
               backgroundColor: color
             },
             imgBox: {
-              width: '531px'
+              width: '46.57%'
             },
             content: {
               width: '364px'

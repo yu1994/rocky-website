@@ -316,7 +316,7 @@ export default {
       {
         url: require("../assets/about/companyIntro_1.jpg"),
         intro:
-          "RockyPlay创立于2014年，是盘石集团旗下专注于全球移动产品研发、运营的全资子公司，致力于通过互联网大数据、人工智能及移动应用，让全球用户更方便、快捷的享受到数字娱乐带来的极致体验。"
+          "RockyPlay创立于2014年，是盘石集团旗下专注于全球数字娱乐产品研发、运营的全资子公司，致力于通过互联网大数据、人工智能及移动应用，让全球用户更方便、快捷的享受到数字娱乐带来的极致体验。"
       },
       {
         url: require("../assets/about/companyIntro_2.jpg"),
@@ -588,15 +588,15 @@ export default {
     carouselList: [
       {
         url: require('../assets/media/banner3.jpg'),
-        remark: '央视财经《创业英雄汇》，田宁霸气支持创业者:他们不投我投!'
+        remark: '2016秋季产品发布会'
       },
       {
         url: require('../assets/media/banner4.jpg'),
-        remark: '央视财经《创业英雄汇》，田宁霸气支持创业者:他们不投我投!'
+        remark: 'MWC2018世界移动大会'
       },
       {
         url: require('../assets/media/banner5.jpg'),
-        remark: '央视财经《创业英雄汇》，田宁霸气支持创业者:他们不投我投!'
+        remark: 'MWC2018世界移动大会'
       }
     ],
     reportList: [

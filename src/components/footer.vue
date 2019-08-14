@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="container">
       <div class="introduce clearfix">
-        <div class="title hidden-xs col-sm-4 col-lg-6">全球移动</div>
+        <div class="title hidden-xs col-sm-4 col-lg-6">全球数字娱乐平台</div>
         <div class="detail hidden-xs col col-sm-8 col-lg-6">
           <ul>
             <li>

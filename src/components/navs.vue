@@ -30,7 +30,7 @@
         >
           <ul class="nav navbar-nav">
             <li>
-              <router-link :to="{name: 'product'}" class="dropdown-toggle" data-toggle="dropdown"
+              <router-link :to="{path: '/product'}" class="dropdown-toggle" data-toggle="dropdown"
               >{{ $t("nav.product") }} <i class="underline"></i
               ></router-link>
               <ul class="dropdown-menu">
@@ -46,7 +46,7 @@
             <li class="hidden-xs hidden-sm"
                 v-for="(item, key) in navList" :key="key"
             >
-              <router-link :to="{ name: item }"
+              <router-link :to="{ path: '/'+item }"
               >{{ $t("nav."+item) }} <i class="underline"></i
               ></router-link>
             </li>
@@ -56,7 +56,7 @@
                 data-toggle="collapse"
                 data-target="#bs-example-navbar-collapse-1"
             >
-              <router-link :to="{ name: item }"
+              <router-link :to="{ path: '/'+item }"
               >{{ $t("nav."+item) }} <i class="underline"></i
               ></router-link>
             </li>
@@ -113,7 +113,7 @@
       opacity: 1;
       width: 100%;
       left: 0
-    .router-link-exact-active
+    .router-link-active
       i
         left 0
         width 100%

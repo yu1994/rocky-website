@@ -1,7 +1,6 @@
 import axios from 'axios'
 // import Toast from '@/components/toast'
 // 创建axios实例
-console.log(process.env.BASE_API)
 const service = axios.create({
   baseURL: process.env.BASE_API, // api 的 base_url
   // headers: {

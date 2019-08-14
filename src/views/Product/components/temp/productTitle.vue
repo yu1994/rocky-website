@@ -35,7 +35,7 @@
 </script>
 <style scoped lang="stylus">
 .productTitle
-  margin-bottom 68px
+  margin-bottom $productChunkMarginBottom
   p
     margin 0
   .productTitle-box
@@ -45,10 +45,10 @@
     background-size 100% 100%
     .title
       position absolute
-      top 31px
+      top 10%
       width 100px
-      height 35px
-      right -31px
+      height 36px
+      right -2.71%
       h5
         height @height
         line-height @height
@@ -65,4 +65,29 @@
       text-align left
       background-color #ffffff
       box-sizing border-box
+</style>
+<style scoped lang="stylus">
+  @media (max-width:768px){
+    #app{
+      .productTitle{
+        margin-bottom $productChunkMarginBottom-small
+        .productTitle-box{
+          height 160px
+          .title{
+            width 50px
+            height 18px
+            h5{
+              height 18px
+              line-height 18px
+            }
+          }
+          .remark{
+            padding 8px
+            font-size 14px
+            line-height:18px;
+          }
+        }
+      }
+    }
+  }
 </style>

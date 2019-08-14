@@ -75,12 +75,12 @@
         .swiper-wrapper{
           justify-content: left;
         }
-        .swiper-slide{
+        /*.swiper-slide{
           width 90px;
           a{
             font-size 18px
           }
-        }
+        }*/
       }
 
     }

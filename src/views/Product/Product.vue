@@ -11,7 +11,6 @@
             </video>
             <div class="cover"></div>
           </div>
-          <!--<img slot="bg" src="../../assets/product/above.png" class="img-responsive" width="100%" ref="productHeadImg" />-->
         </above-bg>
       </div>
       <div class="productHead-list" ref="proHeadChunk" > <!--:class="{'productHead-list-fixed': barFixed}"-->
@@ -170,6 +169,7 @@ export default {
         .slideNavPanel
           border none
         a
+          position relative
           display block
           width 221px
           /*height 78px*/
@@ -179,10 +179,14 @@ export default {
           background-repeat no-repeat
           /*background-image url("../../assets/product/nav_bg.png")*/
           h5
+            position absolute
+            width 100%
+            left 0
+            bottom 14.76%
             /*height 100%
             line-height 78px
             margin 0 auto*/
-            margin 214px 0 0 0
+            margin 0
             color:rgba(0,0,0,1)
             font-weight 400
             text-align center
@@ -214,6 +218,20 @@ export default {
         bottom -(@height/2)px
         background-image url("../../assets/product/Shape.png")
         background-size 100% auto
+</style>
+<style lang="stylus">
+  @media (max-width:768px){
+    #app{
+      .product{
+        .productHead-list{
+          a{
+            width (221/2)px
+            height (271/2)px
+          }
+        }
+      }
+    }
+  }
 </style>
 <!--<style scoped lang="stylus">
   $proChunkBottom($num)
