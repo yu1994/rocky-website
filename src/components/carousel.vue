@@ -19,8 +19,7 @@
 </template>
 
 <script>
-let vm = null;
-export default {
+  export default {
   name: "carousel",
   props: {
     translateXNumber: {
@@ -54,7 +53,7 @@ export default {
         autoplayDisableOnInteraction: false,
         prevButton: '.carousel-button-prev',
         nextButton: '.carousel-button-next',
-          onTransitionStart(swiper) {
+          onTransitionStart:(swiper) =>{
             if (swiper.slides[0].querySelector(".explain")) {
               for (let i = 0, len = swiper.slides.length; i < len; i++) {
                 swiper.slides[i].querySelector(".explain").style.display = "none";
@@ -65,9 +64,9 @@ export default {
               for (let i = 0, len = swiper.slides.length; i < len; i++) {
                 let node = swiper.slides[i].querySelector(".img-cover");
                 if (i < swiper.activeIndex){
-                  vm.gradient(node, 'left');
+                  this.gradient(node, 'left');
                 } else {
-                  vm.gradient(node, 'right');
+                  this.gradient(node, 'right');
                 }
               }
               let activeNode = swiper.slides[swiper.activeIndex];
@@ -76,20 +75,20 @@ export default {
               return false;
             }
           },
-          onProgress(swiper) {
+          onProgress:(swiper)=> {
             for (let i = 0; i < swiper.slides.length; i++) {
               var slide = swiper.slides.eq(i);
               var slideProgress = swiper.slides[i].progress;
-               let modify = vm.modify;
+               let modify = this.modify;
               if (Math.abs(slideProgress) > 2) {
                 modify = (Math.abs(slideProgress) - 1) * 0.5 + 1;
               }
               let translate =
-                slideProgress * modify * vm.translateXNumber + "px";
+                slideProgress * modify * this.translateXNumber + "px";
               let scale = 1 - Math.abs(slideProgress) / 8;
               let zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
               slide.transform(
-                "translateX(" + translate + ")" +vm.scaleImg+"(" + scale + ")"
+                "translateX(" + translate + ")" +this.scaleImg+"(" + scale + ")"
               );
               slide[0].style.zIndex = zIndex;
               slide[0].style.opacity = 1;
@@ -107,15 +106,12 @@ export default {
         }
     };
   },
-  created() {
-    vm = this;
-  },
   methods: {
     gradient(node, direction) {
-       node.style.background = "-webkit-linear-gradient(to "+direction+", rgba(0,0,0,0), rgba(121,121,121,0.5),rgba(51,51,51,0.9), rgba(19,19,19,1))";
-       node.style.background = "-o-linear-gradient("+direction+", rgba(0,0,0,0), rgba(121,121,121,0.5),rgba(51,51,51,0.9), rgba(19,19,19,1))";
-       node.style.background = "-moz-linear-gradient("+direction+", rgba(0,0,0,0), rgba(121,121,121,0.5),rgba(51,51,51,0.9), rgba(19,19,19,1))";
-      node.style.background = "linear-gradient(to "+direction+", rgba(0,0,0,0), rgba(121,121,121,0.5),rgba(51,51,51,0.9), rgba(19,19,19,1))";
+      node.style.background = "-webkit-linear-gradient(to "+direction+", rgba(0,0,0,0),rgba(51,51,51,0.9), rgba(19,19,19,1))";
+      node.style.background = "-o-linear-gradient("+direction+", rgba(0,0,0,0),rgba(51,51,51,0.9), rgba(19,19,19,1))";
+      node.style.background = "-moz-linear-gradient("+direction+", rgba(0,0,0,0),rgba(51,51,51,0.9), rgba(19,19,19,1))";
+      node.style.background = "linear-gradient(to "+direction+", rgba(0,0,0,0),rgba(51,51,51,0.9), rgba(19,19,19,1))";
     }
   }
 };

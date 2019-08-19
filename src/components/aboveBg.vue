@@ -29,6 +29,8 @@
         font-family: Constantia;
         font-weight: 400;
         color: rgba(255, 255, 255, 1)
+        h2
+          margin 0 auto
         p
           margin-bottom 0
 </style>

@@ -11,6 +11,11 @@ import partner from "../utils/partnerData";
 import { debounce } from "../utils";
 export default {
   name: "globalMap",
+  data() {
+    return {
+      chart: null
+    }
+  },
   mounted() {
     this.$nextTick(() => {
       this.initMapChart();

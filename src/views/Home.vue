@@ -23,6 +23,15 @@
         </div>
       </div>
     </section>
+
+    <section class="map" v-lazy:background-image="$t('homePage.globalMap.bgUrl')">
+      <div class="title">
+        <h2>{{ $t("homePage.globalMap.title") }}</h2>
+      </div>
+      <div>
+        <global-map></global-map>
+      </div>
+    </section>
     <section class="container operateChunk" @click="operateHandler">
       <div class="operate_text">
         <h2>{{$t('homePage.operateTextChunk.title')}}</h2>
@@ -30,14 +39,6 @@
       </div>
       <div class="operate_img">
         <img v-lazy="$t('homePage.operateTextChunk.url')" />
-      </div>
-    </section>
-    <section class="map" v-lazy:background-image="$t('homePage.globalMap.bgUrl')">
-      <div class="title">
-        <h2>{{ $t("homePage.globalMap.title") }}</h2>
-      </div>
-      <div>
-        <global-map></global-map>
       </div>
     </section>
  <!--   <section class="carouselChapter">
@@ -60,7 +61,7 @@
         </swiper-slide>
       </carousel>
      </section>-->
-    <section class="globalBg">
+   <!-- <section class="globalBg">
       <div>
         <img class="img-responsive"  v-lazy="$t('homePage.economy.url')" />
       </div>
@@ -70,7 +71,7 @@
           {{ $t("homePage.economy.btnText") }}
         </button>
       </div>
-    </section>
+    </section>-->
   </div>
 </template>
 
@@ -115,7 +116,7 @@ export default {
       font-weight:400
       color:rgba(255,255,255,1);
   .globalChunk
-    padding-top 98px
+    padding 98px 0
     cursor pointer
     .title
       h2

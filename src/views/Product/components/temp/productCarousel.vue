@@ -1,7 +1,7 @@
 <template>
   <div class="productCarousel">
     <div class="productCarousel-box" v-if="carouselList.length > 0" :style="{ backgroundImage:'url(' + styles.url + ')' }">
-      <carousel :carousel-button="false" :translateXNumber="320" :modify="1.45">
+      <carousel  :translateXNumber="320" :modify="1.45">
         <swiper-slide
                 v-for="(item, key) in carouselList"
                 :key="key"
@@ -44,34 +44,33 @@
 <style lang="stylus">
 .productCarousel
   /*width 838px*/
-  margin 0 auto 19px
+  margin 0 auto
   .productCarousel-box
     position relative
     width 100%
-    height 507px
-    background-color #333
+    /*height 507px*/
+    background-color #ffffff
     .img-box
-      width 307px
-      padding 0 50px
-      box-sizing border-box
+      position relative
+      width 273px
+      img
+        width 100%
     .certify
-      position absolute
+      /*position absolute
       width 100%
       left 0
       top 50%
-      transform translateY(-50%)
+      transform translateY(-50%)*/
       .swiper-slide
-        width 307px
+        width 273px
     .img-cover
       position absolute
-      width 207px
+      width 100%
       height 100%
       top 0
-      left 50%
-      transform translateX(-50%)
-/*
-      background: linear-gradient(to right, rgba(0,0,0,0), rgba(121,121,121,0.3), rgba(57,57,57,1))
-*/
-
-
+      left 0
+    .carousel-button-prev
+      left 0 !important
+    .carousel-button-next
+      right 0 !important
 </style>

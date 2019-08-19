@@ -23,9 +23,14 @@ export default new Router({
       path: "/product",
       name: "product",
       meta: { name: "nav.product" },
-      redirect: "/product/read",
+      redirect: "/product/catalog",
       component: () => import("./views/Product/Product.vue"),
       children: [
+        {
+          path: '/product/catalog',
+          name: 'catalog',
+          component: () => import("./views/Product/components/catalogChunk.vue")
+        },
         {
           path: '/product/read',
           name: 'read',

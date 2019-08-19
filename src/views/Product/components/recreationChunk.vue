@@ -1,103 +1,137 @@
 <template>
-  <div class="container">
-    <product-title :styles = "recreation.pro_1.styles" :content="recreation.pro_1.content"></product-title>
-    <product-layout-left :styles="recreation.pro_2.styles" :content="recreation.pro_2.content"></product-layout-left>
-    <product-layout-center :styles="recreation.pro_3.styles" :content="recreation.pro_3.content"></product-layout-center>
-    <product-layout-vertical class="recreationChunk_pro4" :styles="recreation.pro_4.styles">
-      <div slot="left" class="left">
-        <div class="img">
-          <img v-lazy="recreation.pro_4.styles.url" />
+  <div class="recreationChunk">
+    <div class="globalChunk">
+      <div class="container">
+        <layout-article-title :styles="{backgroundColor: themeColor}" :content="recreation.articleTitle"></layout-article-title>
+        <div class="content">
+          <div class="bg-img">
+            <img :src="recreation.pro_1.path.url_1"  class="img-responsive"/>
+            <div class="img_1">
+              <img :src="recreation.pro_1.path.url_2" class="img-responsive" />
+            </div>
+            <div class="text">
+              <h4>{{recreation.pro_1.content.title}}</h4>
+              <i :style="{backgroundColor:themeColor}"></i>
+              <p class="sign">{{recreation.pro_1.content.sign}}</p>
+              <p class="remark">{{recreation.pro_1.content.remark}}</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div slot="right" class="right">
-        <div class="r-title">
-          <h5>{{recreation.pro_4.content.title}}</h5>
-        </div>
-        <div class="r-remark">
-          <p>{{recreation.pro_4.content.remark}}</p>
+    </div>
+    <div class="platformChunk">
+      <div class="container">
+        <layout-module-title :content="recreation.pro_2.title" :border-color="themeColor"></layout-module-title>
+      </div>
+      <div class="content">
+        <div class="bg-img">
+          <img v-lazy="recreation.pro_2.path.url_1" class="img-responsive" />
         </div>
       </div>
-      <div class="sign">
-        <i></i>
+    </div>
+    <div class="rapidChunk">
+      <div class="container">
+        <layout-module-title :content="recreation.pro_3.title" :border-color="themeColor"></layout-module-title>
+        <div class="content">
+          <div class="bg-img">
+            <img v-lazy="recreation.pro_3.path.url" class="img-responsive" />
+            <div class="remark">
+              <p v-html="$t('productPage.recreationChunk.pro_3.remark')"></p>
+            </div>
+          </div>
+        </div>
       </div>
-    </product-layout-vertical>
+    </div>
+    <div class="deviceChunk">
+      <div class="container">
+        <layout-module-title :content="recreation.pro_4.title" :border-color="themeColor"></layout-module-title>
+        <div class="content">
+          <img v-lazy="recreation.pro_4.path.url" class="img-responsive" />
+          <div class="bg-img">
+            <img v-lazy="recreation.pro_4.path.url_1" class="img-responsive" />
+            <ul>
+              <li v-for="(item, key) in $t('productPage.recreationChunk.pro_4.kindList')" :key="key">
+               <p v-html="item"></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lifeChunk">
+      <div class="container">
+        <layout-module-title :content="recreation.pro_5.title" :border-color="themeColor"></layout-module-title>
+        <layout-photo-center :is-line="false" :backgrounds="recreation.pro_5.backgrounds" :content="recreation.pro_5.content"></layout-photo-center>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import ProductTitle from "./temp/productTitle";
-import ProductLayoutCenter from "./temp/productLayoutCenter";
-import ProductLayoutVertical from "./temp/productLayoutVertical";
-import ProductLayoutLeft from "./temp/productLayoutLeft";
-const color = "#FFB071";
+import LayoutArticleTitle from "./temp/layoutArticleTitle";
+import LayoutModuleTitle from "./temp/layoutModuleTitle";
+import LayoutPhotoCenter from "./temp/layoutPhotoCenter";
 export default {
   name: "recreationChunk",
-  components: {ProductLayoutLeft, ProductLayoutVertical, ProductLayoutCenter, ProductTitle },
+  components: {LayoutPhotoCenter, LayoutModuleTitle, LayoutArticleTitle },
   data() {
     return {
+      themeColor: '#D25F46',
       recreation: {
+        articleTitle: {
+          title: this.$t('productPage.studyChunk.article.title'),
+          sign: this.$t('productPage.studyChunk.article.sign')
+        },
         pro_1: {
           content: {
             title: this.$t('productPage.recreationChunk.pro_1.title'),
+            sign:  this.$t('productPage.recreationChunk.pro_1.sign'),
             remark: this.$t('productPage.recreationChunk.pro_1.remark'),
+            url: require("../../../assets/product/study/pro_1.png")
           },
-          styles: {
-            url: require("../../../assets/product/recreation/pro_1.png"),
-            remark: {
-              left:'340px',
-              width: '548px'
-            },
-            title: {
-              backgroundColor: color
-            }
+          path: {
+            url_1: require("../../../assets/product/recreation/pro_1_1.png"),
+            url_2: require("../../../assets/product/recreation/pro_1_2.png"),
           }
         },
         pro_2: {
-          content: {
+          title: {
             title: this.$t('productPage.recreationChunk.pro_2.title'),
-            remark: this.$t('productPage.recreationChunk.pro_2.remark')
+            sign: this.$t('productPage.recreationChunk.pro_2.sign')
           },
-          styles: {
-            url: require("../../../assets/product/recreation/pro_2.png"),
-            title: {
-              backgroundColor: color
-            },
-            imgBox: {
-              width: '423px'
-            },
-            content: {
-              width: '434px'
-            }
+          path: {
+            url_1: require("../../../assets/product/recreation/pro_2.png"),
           }
         },
         pro_3: {
-          content: {
+          title: {
             title: this.$t('productPage.recreationChunk.pro_3.title'),
-            remark: this.$t('productPage.recreationChunk.pro_3.remark')
+            sign: this.$t('productPage.recreationChunk.pro_3.sign')
           },
-          styles: {
-            url: require("../../../assets/product/recreation/pro_3.png"),
-            title: {
-              backgroundColor: color,
-              left: "442px",
-              top: "53px"
-            },
-            remark: {
-              left: '494px',
-              maxWidth: '473px'
-            }
+          path: {
+            url: require("../../../assets/product/study/pro_6.png")
           }
         },
         pro_4: {
-          content: {
+          title: {
             title: this.$t('productPage.recreationChunk.pro_4.title'),
-            remark: this.$t('productPage.recreationChunk.pro_4.remark')
+            sign: this.$t('productPage.recreationChunk.pro_4.sign')
           },
-          styles: {
+          path: {
             url: require("../../../assets/product/recreation/pro_4.png"),
-            box: {
-              backgroundColor: "rgb(244,244,244)"
-            }
+            url_1: require("../../../assets/product/recreation/pro_4_1.png"),
+          }
+        },
+        pro_5: {
+          title: {
+            title: this.$t('productPage.recreationChunk.pro_5.title'),
+            sign: this.$t('productPage.recreationChunk.pro_5.sign')
+          },
+          content: {
+            remark: this.$t('productPage.recreationChunk.pro_5.remark')
+          },
+          backgrounds: {
+            url: require('../../../assets/product/recreation/pro_5.png')
           }
         }
       }
@@ -107,47 +141,95 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-  .recreationChunk_pro4
-    p
-      margin-bottom 0
-    .left
-      display inline-block
-      vertical-align middle
-      margin-left 257px
-    .right
-      display inline-block
-      width 452px
-      vertical-align middle
-      margin-left 46px
-      margin-right 83px
-      .r-title
-        margin-bottom 42px
-        h5
-          width 134px
-          height 35px
-          line-height @height
-          background-color #FFB071
-          color #ffffff
-          margin 0
-          text-align center
-      .r-remark
-        color:rgba(0,0,0,1);
-        line-height 35px
-        text-align left
-    .sign
-      position absolute
-      top 221px
-      left -41px
-      i
-        display block
-        width 423px
-        height 60px
-        background-image url("../../../assets/product/recreation/convenient.png")
+  .recreationChunk
+    margin-bottom $productChunkBottom
+    .globalChunk
+      .content
+        padding-bottom 163px
+        .bg-img
+          position relative
+          .img_1
+            position absolute
+            width 42.10%
+            top 5.06%
+            left (152/$main_w*100)%
+            img
+              width 100%
+          .text
+            position absolute
+            top 0
+            left (664/$main_w*100)%
+            h4
+              margin-top 0
+            i
+              display block
+              width 96px
+              height 2px
+              margin 0 auto
+            .remark
+              margin-bottom 0
+              text-align left
+            .sign
+              margin-bottom 37px
+              color #666666
+    .platformChunk
+      .content
+        .bg-img
+          position relative
+    .rapidChunk
+      .content
+        position relative
+        .bg-img
+          display inline-block
+          position relative
+          vertical-align top
+          .remark
+            position absolute
+            left 50%
+            top 0
+            height 100%
+            width (498/$main_w*100)%
+            transform translateX(-50%)
+            background-color rgba(0,0,0,.6)
+            p
+              position absolute
+              left 50%
+              top 50%
+              transform translate(-50%,-50%)
+              max-width 250px
+              color #fff
+              margin-bottom 0
+    .deviceChunk
+      .content
+        .bg-img
+          position relative
+          display inline-block
+          ul
+            margin-bottom 0
+            li
+              position absolute
+            & li:nth-child(1)
+              left (68/$main_w*100)%
+              top 27.47%
+            & li:nth-child(2)
+              left (244/$main_w*100)%
+              top 47.61%
+            & li:nth-child(3)
+              left (438/$main_w*100)%
+              top 27.47%
+            & li:nth-child(4)
+              left (616/$main_w*100)%
+              top 42.85%
+            & li:nth-child(5)
+              left (817/$main_w*100)%
+              top 27.47%
+            & li:nth-child(6)
+              left (975/$main_w*100)%
+              top  42.85%
+            p
+              margin-bottom 0
+              color #666666
+    .bg
+      background-color #5bbaff
 </style>
-<style lang="stylus" scoped>
-  @media (max-width:768px){
-    #app{
-    }
-  }
 
-</style>

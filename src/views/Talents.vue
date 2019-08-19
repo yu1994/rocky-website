@@ -157,6 +157,7 @@ export default {
             .remark
               padding 0
             .requested
+              word-break break-word
               padding 0
   .relationChunk
     .EmailWrap
