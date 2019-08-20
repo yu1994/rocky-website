@@ -1,14 +1,14 @@
 <template>
   <div class="layoutTheme">
     <div class="layoutTheme-box">
-      <div class="content">
+      <div class="content wow bounceInLeft">
         <h4>{{content.title}}</h4>
         <i :style="{backgroundColor:color}"></i>
         <p class="sign">{{content.sign}}</p>
         <p class="remark">{{content.remark}}</p>
       </div>
       <div class="img">
-        <img :src="content.url" class="img-responsive" />
+        <img :src="content.url" class="img-responsive wow zoomIn" />
       </div>
     </div>
   </div>

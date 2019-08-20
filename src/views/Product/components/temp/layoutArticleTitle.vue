@@ -39,6 +39,7 @@
 
 <style scoped lang="stylus">
 .layoutArticleTitle
+  padding-top 72px
   margin-bottom 72px
   .layoutArticleTitle-box
     .box-title

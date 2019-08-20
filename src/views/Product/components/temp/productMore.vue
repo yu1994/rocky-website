@@ -1,7 +1,7 @@
 <template>
   <div class="productMore">
     <div class="productMore-box">
-      <router-link :to="{path}">查看更多</router-link>
+      <router-link :to="{path, hash}">查看更多</router-link>
     </div>
   </div>
 </template>
@@ -13,6 +13,10 @@
       path: {
         type: String,
         default: '/'
+      },
+      hash: {
+        type: String,
+        default: ''
       }
     }
   }

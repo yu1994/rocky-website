@@ -42,7 +42,7 @@
         <div class="content-shadow">
           <img v-lazy="proData.readChunk.url" class="wow zoomIn img-responsive"/>
         </div>
-        <product-more :path="'/product/read'"></product-more>
+        <product-more :path="'/product/detail'" :hash="'read'"></product-more>
       </div>
     </section>
     <!-- 游戏 -->
@@ -52,7 +52,7 @@
         <div class="content-shadow">
           <product-carousel :carouselList="proData.gameChunk.list"></product-carousel>
         </div>
-        <product-more :path="'/product/game'"></product-more>
+        <product-more :path="'/product/detail'" :hash="'game'"></product-more>
       </div>
     </section>
     <!-- 视频 -->
@@ -62,7 +62,7 @@
         <div class="content-shadow" v-lazy:background-image="proData.videoChunk.bgUrl">
           <img v-lazy="proData.videoChunk.url" class="wow zoomIn img-responsive"/>
         </div>
-        <product-more :path="'/product/video'"></product-more>
+        <product-more :path="'/product/detail'" :hash="'video'"></product-more>
       </div>
     </section>
     <!-- 学 习 -->
@@ -72,7 +72,7 @@
         <div class="content-shadow">
           <img v-lazy="proData.studyChunk.url" class="wow zoomIn img-responsive"/>
         </div>
-        <product-more :path="'/product/study'"></product-more>
+        <product-more :path="'/product/detail'" :hash="'study'"></product-more>
       </div>
     </section>
     <!--娱乐 生活-->
@@ -82,7 +82,7 @@
         <div class="content-shadow">
           <img v-lazy="proData.recreationChunk.url" class="wow zoomIn img-responsive"/>
         </div>
-        <product-more :path="'/product/recreation'"></product-more>
+        <product-more :path="'/product/detail'" :hash="'recreation'"></product-more>
       </div>
     </section>
   </div>
@@ -150,7 +150,6 @@
 
 <style scoped  lang="stylus">
   .homePage
-    /*background-color rgb(240,242,245)*/
     background-color #FFFFFF
     .chunk
       margin-bottom 99px

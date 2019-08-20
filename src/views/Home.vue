@@ -42,37 +42,6 @@
         <img v-lazy="$t('homePage.operateTextChunk.url')" />
       </div>
     </section>
- <!--   <section class="carouselChapter">
-      <div class="title">
-        <h2>{{ $t("homePage.tierCarousel.title") }}</h2>
-      </div>
-      <carousel class="container">
-        <swiper-slide
-          v-for="(item, key) in $t('homePage.tierCarousel.list')"
-          :key="key"
-          ><img :src="item.url" class="img-responsive" />
-          <div class="explain" >
-            <h1>{{ item.time }}</h1>
-            <div class="explain_box">
-              <i class="linear"></i><span class="caret"></span
-              ><i class="arrows"></i>
-              <p>{{ item.intro }}</p>
-            </div>
-          </div>
-        </swiper-slide>
-      </carousel>
-     </section>-->
-   <!-- <section class="globalBg">
-      <div>
-        <img class="img-responsive"  v-lazy="$t('homePage.economy.url')" />
-      </div>
-      <div class="start">
-        <h2 class="hidden-xs hidden-sm">{{ $t("homePage.economy.title") }}</h2>
-        <button @click="startHandler">
-          {{ $t("homePage.economy.btnText") }}
-        </button>
-      </div>
-    </section>-->
   </div>
 </template>
 

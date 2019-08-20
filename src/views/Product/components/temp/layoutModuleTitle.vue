@@ -1,6 +1,6 @@
 <template>
   <div class="layoutModuleTitle">
-    <div class="layoutModuleTitle-box">
+    <div class="layoutModuleTitle-box wow bounceInLeft">
       <h4 :style="{ borderColor }">{{content.title}}</h4>
       <p>{{content.sign}}</p>
     </div>

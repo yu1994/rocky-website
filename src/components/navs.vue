@@ -38,7 +38,12 @@
               ></router-link>-->
               <ul class="dropdown-menu">
                 <li v-for="(item, key) in $t('productPage.productNav')" :key="key"  >
-                  <router-link :to="{name: item.route}">
+                  <router-link v-if="item.route!== 'product'" :to="{name: 'productDetail',hash: '#'+item.route}">
+                    {{item.sign}}
+                    <i class="dropdown-line"></i
+                    >
+                  </router-link>
+                  <router-link v-else :to="{name: item.route }">
                     {{item.sign}}
                     <i class="dropdown-line"></i
                     >

@@ -3,48 +3,13 @@
     <section class="productHead">
       <div ref="productHeadImg">
         <above-bg>
-          <img slot="bg" src="../../assets/product/above.png" class="img-responsive" />
+          <img slot="bg" src="../../assets/product/above.png" class="img-responsive" ref="productImg"/>
           <div slot="sign">
             <h2>产品介绍</h2>
           </div>
         </above-bg>
       </div>
     </section>
-    <nav
-      v-show="navShow"
-      class="navbar navbar-default navbar-expand-xl navbar-fixed-top hidden-xs hidden-sm">
-      <div class="container">
-        <div class="navbar-header" >
-          <button
-                  type="button"
-                  class="navbar-toggle collapsed"
-                  data-toggle="collapse"
-                  data-target="#bs-example-navbar-collapse-1"
-                  aria-expanded="false"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div
-                class="collapse navbar-collapse navbar-right"
-                id="bs-example-navbar-collapse-1"
-        >
-          <ul class="nav navbar-nav">
-            <li
-                v-for="(item, key) in $t('productPage.productNav')" :key="key"
-                v-if="key !== 0"
-            >
-              <router-link :to="{ path: '/product/'+item.route }"
-              >{{ item.sign }} <i class="underline"></i
-              ></router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
     <keep-alive>
       <router-view />
     </keep-alive>
@@ -70,7 +35,6 @@ export default {
         freeModeMomentumRatio: 0.5,
         slidesPerView: 'auto',
       },
-      navShow: false,
       barFixed: false,
       navList: [
         {},
@@ -84,9 +48,6 @@ export default {
   },
   mounted: function () {
     this.WOW.init();
-    this.proHeadChunk = this.$refs.proHeadChunk;
-    this.proHeadImg = this.$refs.productHeadImg;
-   // window.proHeadImgHeight = this.$refs.productContent.offsetTop;
   },
   methods: {
     throttle(func, wait) {
@@ -118,7 +79,7 @@ export default {
         }
       };
       return this.throttled;
-    }
+    },
   },
   components: {
     ProductCarousel,
@@ -137,11 +98,12 @@ export default {
 <style lang="stylus">
   .product
     .productHead
-      margin-bottom 58px
+      margin-bottom 0
     nav
       background-color: #5695F2;
       border: none;
-      top 100px
+      a
+        padding: 20px;
       li>a
         position: relative;
         padding: 20px;
@@ -168,7 +130,6 @@ export default {
             opacity 1
             background-color: rgba(255, 255, 255, 1);
       .navbar-default
-
         border: none;
 </style>
 

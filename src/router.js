@@ -32,6 +32,11 @@ export default new Router({
           component: () => import("./views/Product/components/catalogChunk.vue")
         },
         {
+          path: '/product/detail',
+          name: 'productDetail',
+          component: () => import("./views/Product/components/productAllDetail.vue")
+        },
+        {
           path: '/product/read',
           name: 'read',
           component: () => import("./views/Product/components/readIpChunk.vue")
@@ -134,5 +139,12 @@ export default new Router({
       path: "*",
       redirect: { name: "home" }
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        selector: to.hash
+      }
+    }
+  }
 });
