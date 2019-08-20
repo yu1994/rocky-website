@@ -1,7 +1,7 @@
 <template>
   <div class="product">
     <section class="productHead">
-      <div>
+      <div ref="productHeadImg">
         <above-bg>
           <img slot="bg" src="../../assets/product/above.png" class="img-responsive" />
           <div slot="sign">
@@ -10,6 +10,41 @@
         </above-bg>
       </div>
     </section>
+    <nav
+      v-show="navShow"
+      class="navbar navbar-default navbar-expand-xl navbar-fixed-top hidden-xs hidden-sm">
+      <div class="container">
+        <div class="navbar-header" >
+          <button
+                  type="button"
+                  class="navbar-toggle collapsed"
+                  data-toggle="collapse"
+                  data-target="#bs-example-navbar-collapse-1"
+                  aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div
+                class="collapse navbar-collapse navbar-right"
+                id="bs-example-navbar-collapse-1"
+        >
+          <ul class="nav navbar-nav">
+            <li
+                v-for="(item, key) in $t('productPage.productNav')" :key="key"
+                v-if="key !== 0"
+            >
+              <router-link :to="{ path: '/product/'+item.route }"
+              >{{ item.sign }} <i class="underline"></i
+              ></router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <keep-alive>
       <router-view />
     </keep-alive>
@@ -35,14 +70,15 @@ export default {
         freeModeMomentumRatio: 0.5,
         slidesPerView: 'auto',
       },
+      navShow: false,
       barFixed: false,
       navList: [
-        "readIP",
-        "numGame",
-        "contact",
-        "recreation",
+        {},
+        "read",
+        "game",
+        "video",
         "study",
-        "culture"
+        "recreation"
       ]
     };
   },
@@ -98,10 +134,41 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="stylus">
+<style lang="stylus">
   .product
     .productHead
       margin-bottom 58px
+    nav
+      background-color: #5695F2;
+      border: none;
+      top 100px
+      li>a
+        position: relative;
+        padding: 20px;
+        font-size 16px
+        color #fff !important
+        i, .dropdown-line
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 3px;
+          opacity: 0;
+          transition: all 0.6s ease;
+          background-color: rgba(255, 255, 255, 1);
+        &:hover .underline
+          opacity: 1;
+          width: 100%;
+          left: 0
+        .router-link-active
+          i
+            left 0
+            width 100%
+            opacity 1
+            background-color: rgba(255, 255, 255, 1);
+      .navbar-default
+
+        border: none;
 </style>
 

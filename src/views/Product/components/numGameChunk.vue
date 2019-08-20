@@ -133,7 +133,17 @@ export default {
             remark: this.$t('productPage.numGameChunk.pro_1.remark'),
           },
           backgrounds: {
-            url: require('../../../assets/product/NumberGame/pro_01_1.png')
+            url: require('../../../assets/product/NumberGame/pro_01_1.png'),
+            contentStyles: {
+              backgroundColor: 'rgba(255,255,255,.8)',
+              color: '#333333'
+            },
+            lineColor: {
+              backgroundColor: '#5695F2'
+            },
+            signColor: {
+              color: '#666666'
+            }
           }
         },
         pro_2: {
@@ -222,6 +232,7 @@ export default {
       background-position center
       .gameKind-img
         position relative
+        display inline-block
         height 100%
         img
           margin 0 auto
@@ -230,12 +241,43 @@ export default {
           li
             position absolute
             color #999999
-            transform translateX(-50%)
             p
+              font-size 24px
               margin-bottom 0
           & li:nth-child(1)
-            /*top (192/(@height)*100)%*/
-            left (582/$main_w*100)%
+            top 30.805%
+            left (582/1284*100)%
+            color #F73D3D
+          & li:nth-child(2)
+            top 16.11%
+            left (440/1284*100)%
+          & li:nth-child(3)
+            top 15.48%
+            left (806/1284*100)%
+          & li:nth-child(4)
+            top 46.12%
+            left (428/1284*100)%
+          & li:nth-child(5)
+            top 46.12%
+            left (800/1284*100)%
+          & li:nth-child(6)
+            top 61.92%
+            left (266/1284*100)%
+          & li:nth-child(7)
+            top 61.92%
+            left (961/1284*100)%
+          & li:nth-child(8)
+            top 76.77%
+            left (105/1284*100)%
+          & li:nth-child(9)
+            top 76.77%
+            left (430/1284*100)%
+          & li:nth-child(10)
+            top 76.77%
+            left (804/1284*100)%
+          & li:nth-child(11)
+            top 76.77%
+            left (1135/1284*100)%
   .pushChunk
     .content
       position relative

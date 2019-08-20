@@ -2,10 +2,10 @@
   <div class="layoutPhotoCenter">
     <div class="layoutPhotoCenter-box">
       <img v-lazy="backgrounds.url" style="width: 100%"/>
-      <div class="content">
+      <div class="content" :style="backgrounds.contentStyles">
           <h4>{{content.title}}</h4>
-          <i v-if="isLine"></i>
-          <p>{{content.sign}}</p>
+          <i v-if="isLine" :style="backgrounds.lineColor"></i>
+          <p :style="backgrounds.signColor">{{content.sign}}</p>
           <p class="remark">{{content.remark}}</p>
       </div>
     </div>

@@ -105,8 +105,8 @@
         themeColor: '#9985D6',
         study: {
           articleTitle: {
-            title: this.$t('productPage.recreationChunk.article.title'),
-            sign: this.$t('productPage.recreationChunk.article.sign')
+            title: this.$t('productPage.studyChunk.article.title'),
+            sign: this.$t('productPage.studyChunk.article.sign')
           },
           pro_1: {
             content: {
@@ -242,7 +242,7 @@
               vertical-align middle
               width 30.91%
               height 79.54%
-              background-color rebeccapurple
+              background: linear-gradient(#C6C1D6, #B6ABD6,#A696D6,#9985D6,#866BD6,#7656D6,#6640D6)
             .c-line
               display inline-block
               vertical-align middle
@@ -280,8 +280,6 @@
                 top
               & p:nth-child(2)
                 bottom 0
-
-
             .c-remark
               display inline-block
               i
@@ -295,8 +293,8 @@
                 width 50%
                 text-align left
                 vertical-align middle
+                color #666666
                 margin-bottom 0
-
     .learningChunk
       .content
         position relative
@@ -317,6 +315,7 @@
             position absolute
             width 100%
             top 50%
+            color #666666
             transform translateY(-50%)
     .intelligentChunk
       .content

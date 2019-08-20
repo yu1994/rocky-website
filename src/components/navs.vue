@@ -30,9 +30,12 @@
         >
           <ul class="nav navbar-nav">
             <li>
-              <router-link :to="{path: '/product'}" class="dropdown-toggle" data-toggle="dropdown"
+              <a href="javascript:void (0)" class="dropdown-toggle" data-toggle="dropdown"
               >{{ $t("nav.product") }} <i class="underline"></i
-              ></router-link>
+              ></a>
+              <!--<router-link :to="{path: '/product'}" class="dropdown-toggle" data-toggle="dropdown"
+              >{{ $t("nav.product") }} <i class="underline"></i
+              ></router-link>-->
               <ul class="dropdown-menu">
                 <li v-for="(item, key) in $t('productPage.productNav')" :key="key"  >
                   <router-link :to="{name: item.route}">
@@ -121,7 +124,6 @@
         background-color: rgba(255, 255, 255, 1);
 
   .navbar-default {
-    /*background-color: rgba(0, 0, 0, 0.5);*/
     background-color: #5695F2;
     border: none;
   }

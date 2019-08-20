@@ -464,32 +464,26 @@ export default {
     productNav: [
       {
         route: 'product',
-        url: require("../assets/product/Bitmap1.png"),
         sign: "首页"
       },
       {
         route: 'read',
-        url: require("../assets/product/Bitmap1.png"),
         sign: "阅读"
       },
       {
         route: 'game',
-        url: require("../assets/product/Bitmap2.png"),
         sign: "游戏"
       },
       {
         route: 'video',
-        url: require("../assets/product/Bitmap3.png"),
         sign: "视频"
       },
       {
         route: 'study',
-        url: require("../assets/product/Bitmap4.png"),
         sign: "学习"
       },
       {
         route: 'recreation',
-        url: require("../assets/product/Bitmap5.png"),
         sign: "轻娱乐"
       }
     ],
@@ -779,7 +773,7 @@ export default {
     recreationChunk: {
       article: {
         title: "ENTERTAINMENT",
-        sign: "全球轻娱乐平台平台",
+        sign: "全球轻娱乐平台",
       },
       pro_1: {
         title: "全球轻娱乐平台",
@@ -796,7 +790,30 @@ export default {
         title: "一站式平台",
         sign: "One-stop platform",
         kindList: [
-          // { url: require("")}
+           {
+             sign: "娱乐生活资源",
+             url: require("../assets/product/recreation/platform_1.png")
+           },
+          {
+            sign: "星座测试",
+            url: require("../assets/product/recreation/platform_2.png")
+          },
+          {
+            sign: "精美壁纸",
+            url: require("../assets/product/recreation/platform_3.png")
+          },
+          {
+            sign: "天气",
+            url: require("../assets/product/recreation/platform_4.png")
+          },
+          {
+            sign: "个性铃声",
+            url: require("../assets/product/recreation/platform_5.png")
+          },
+          {
+            sign: "日历",
+            url: require("../assets/product/recreation/platform_6.png")
+          }
         ]
       },
       pro_3: {

@@ -11,6 +11,7 @@
         <h1 >{{ $t("homePage.titleChunk.text_1") }}</h1>
         <h1 >{{ $t("homePage.titleChunk.text_2") }}</h1>
       </div>
+      <div class="cover"></div>
     </section>
     <section class="globalChunk" v-on:click="startHandler">
       <div class="container">
@@ -115,6 +116,15 @@ export default {
       transform translate(-50%,-50%)
       font-weight:400
       color:rgba(255,255,255,1);
+      z-index 200
+    .cover
+      position absolute
+      left 0
+      top 0
+      width 100%
+      height 100%
+      z-index 10
+      background-color rgba(86,194,242,.5)
   .globalChunk
     padding 98px 0
     cursor pointer

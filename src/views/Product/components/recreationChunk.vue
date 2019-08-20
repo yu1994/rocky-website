@@ -26,6 +26,12 @@
       <div class="content">
         <div class="bg-img">
           <img v-lazy="recreation.pro_2.path.url_1" class="img-responsive" />
+          <ul>
+            <li v-for="(item, key) in $t('productPage.recreationChunk.pro_2.kindList')" :key="key">
+              <img v-lazy="item.url" class="img-responsive"/>
+              <p>{{item.sign}}</p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -79,8 +85,8 @@ export default {
       themeColor: '#D25F46',
       recreation: {
         articleTitle: {
-          title: this.$t('productPage.studyChunk.article.title'),
-          sign: this.$t('productPage.studyChunk.article.sign')
+          title: this.$t('productPage.recreationChunk.article.title'),
+          sign: this.$t('productPage.recreationChunk.article.sign')
         },
         pro_1: {
           content: {
@@ -174,8 +180,34 @@ export default {
               color #666666
     .platformChunk
       .content
+        padding-bottom 50px
         .bg-img
           position relative
+          ul
+            margin-bottom 0
+            li
+              position absolute
+              p
+                margin 26px 0 0 0
+                color #666666
+            & li:nth-child(1)
+              top 35.35%
+              left (362/1920*100)%
+            & li:nth-child(2)
+              top -4.54%
+              left (577/1920*100)%
+            & li:nth-child(3)
+              top -12.62%
+              left (807/1920*100)%
+            & li:nth-child(4)
+              top 41.41%
+              left (1022/1920*100)%
+            & li:nth-child(5)
+              top 1.98%
+              left (1260/1920*100)%
+            & li:nth-child(6)
+              top -16.16%
+              left (1453/1920*100)%
     .rapidChunk
       .content
         position relative
