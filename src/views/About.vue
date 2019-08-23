@@ -231,9 +231,6 @@ export default {
       this.missionList = res.data.list;
     });
   },
-  mounted() {
-    this.WOW.init();
-  },
   components: { RowCarousel, News, breadcrumb, underline, carousel }
 };
 </script>

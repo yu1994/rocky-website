@@ -472,6 +472,7 @@
   import LayoutModuleTitle from "./temp/layoutModuleTitle";
   import LayoutTheme from "./layoutTheme";
   import ProductCarousel from "./temp/productCarousel";
+  import { WOW } from 'wowjs'
   export default {
     name: "productAllDetail",
     data() {
@@ -855,7 +856,8 @@
       }
     },
     mounted() {
-      this.WOW.init();
+      this.wow = new WOW();
+      this.wow.init();
       this.$nextTick(() => {
         this.productContentH = this.$refs.productContent.offsetTop
       })
@@ -905,6 +907,9 @@
     },
     beforeRouteEnter(to, from, next) {
       next(vm => {
+        if (vm.wow){
+          vm.wow.init()
+        } else vm.wow = new WOW();
         window.addEventListener("scroll", vm.throttle(vm.handleScroll, 1000));
       });
     },
