@@ -464,7 +464,7 @@ export default {
     productNav: [
       {
         route: 'product',
-        sign: "首页"
+        sign: "产品介绍"
       },
       {
         route: 'read',
@@ -853,6 +853,10 @@ export default {
   },
   mediaPage: {
     carouselList: [
+      {
+        url: require('../assets/media/banner6.jpg'),
+        remark: '盘石助力“双创”企业海外发展'
+      },
       {
         url: require('../assets/media/banner3.jpg'),
         remark: '2016秋季产品发布会'

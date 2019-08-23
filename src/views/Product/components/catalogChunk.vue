@@ -147,9 +147,9 @@
     }
   }
 </script>
-
 <style scoped  lang="stylus">
   .homePage
+    margin-top 72px
     background-color #FFFFFF
     .chunk
       margin-bottom 99px

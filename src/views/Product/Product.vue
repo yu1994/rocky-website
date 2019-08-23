@@ -132,4 +132,3 @@ export default {
       .navbar-default
         border: none;
 </style>
-

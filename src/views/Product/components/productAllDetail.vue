@@ -6,7 +6,7 @@
               v-show="navShow"
               class="navbar navbar-default navbar-expand-xl navbar-fixed-top  ">
         <div class="container">
-          <div class="navbar-header" >
+          <div class="navbar-header">
             <button
                     type="button"
                     class="navbar-toggle collapsed"
@@ -52,13 +52,14 @@
           <layout-module-title :content="readIP.pro_2.title" :border-color="readIP.themeColor"></layout-module-title>
           <div class="content">
             <div class="img-1">
-              <img v-lazy="readIP.pro_2.path.url_1" class="img-responsive wow bounceInLeft" />
+              <img v-lazy="readIP.pro_2.path.url_1" class="img-responsive wow bounceInLeft"/>
             </div>
             <div class="img-line">
-              <img v-lazy="readIP.pro_2.path.url_2" class="img-responsive wow bounceInLeft"  data-wow-delay="0.5s"/>
+              <img v-lazy="readIP.pro_2.path.url_2" class="img-responsive wow bounceInLeft" data-wow-delay="0.5s"/>
             </div>
             <ul class="img-line-sign">
-              <li class="wow bounceInLeft" data-wow-delay="1s" v-for="(item, key) in $t('productPage.readIPChunk.pro_2.signList')" :key="key"><span >{{item}}</span></li>
+              <li class="wow bounceInLeft" data-wow-delay="1s" v-for="(item, key) in $t('productPage.readIPChunk.pro_2.signList')"
+                  :key="key"><span>{{item}}</span></li>
             </ul>
             <div class="text wow bounceInLeft" data-wow-delay="1.5s">
               <p>{{$t('productPage.readIPChunk.pro_2.remark')}}</p>
@@ -113,13 +114,13 @@
                 <img v-lazy="numGame.pro_2.path.url_1" class="img-responsive"/>
               </li>
               <li class="col-sm-4 classic_text">
-                <img v-lazy="numGame.pro_2.path.url_4" class="img-responsive" />
+                <img v-lazy="numGame.pro_2.path.url_4" class="img-responsive"/>
                 <div class="text">
                   <p class="wow bounceInDown">{{$t('productPage.numGameChunk.pro_2.classicText.text_1')}}</p>
                 </div>
               </li>
               <li class="col-sm-4">
-                <img v-lazy="numGame.pro_2.path.url_2" class="img-responsive" />
+                <img v-lazy="numGame.pro_2.path.url_2" class="img-responsive"/>
               </li>
             </ul>
             <ul class="classic_1 clearfix row">
@@ -130,13 +131,13 @@
                 </div>
               </li>
               <li class="col-sm-4 classic_text">
-                <img v-lazy="numGame.pro_2.path.url_3" class="img-responsive" />
+                <img v-lazy="numGame.pro_2.path.url_3" class="img-responsive"/>
               </li>
               <li class="col-sm-4 classic_text">
-                <img v-lazy="numGame.pro_2.path.url_4" class="img-responsive" />
-                  <div class="text">
-                    <p  class="wow bounceInDown" data-wow-delay="1s">{{$t('productPage.numGameChunk.pro_2.classicText.text_3')}}</p>
-                  </div>
+                <img v-lazy="numGame.pro_2.path.url_4" class="img-responsive"/>
+                <div class="text">
+                  <p class="wow bounceInDown" data-wow-delay="1s">{{$t('productPage.numGameChunk.pro_2.classicText.text_3')}}</p>
+                </div>
               </li>
             </ul>
           </div>
@@ -149,9 +150,9 @@
         </div>
         <div class="content" v-lazy:background-image="numGame.pro_3.path.url_1">
           <div class="gameKind-img">
-            <img v-lazy="numGame.pro_3.path.url_2" class="img-responsive" />
+            <img v-lazy="numGame.pro_3.path.url_2" class="img-responsive"/>
             <ul>
-              <li v-for="(item, key) in $t('productPage.numGameChunk.pro_3.kindList')" :key="key" >
+              <li v-for="(item, key) in $t('productPage.numGameChunk.pro_3.kindList')" :key="key">
                 <p class="wow bounceInDown">{{item}}</p>
               </li>
             </ul>
@@ -164,7 +165,7 @@
           <layout-module-title :content="numGame.pro_4.title" :border-color="numGame.themeColor"></layout-module-title>
           <div class="content">
             <div class="bg-img">
-              <img v-lazy="numGame.pro_4.path.url_1" class="img-responsive wow zoomIn" />
+              <img v-lazy="numGame.pro_4.path.url_1" class="img-responsive wow zoomIn"/>
             </div>
             <ul>
               <li v-for="(item, key) in $t('productPage.numGameChunk.pro_4.kindList')" :key="key">
@@ -181,19 +182,19 @@
           <div class="content">
             <ul>
               <li>
-                <img v-lazy="numGame.pro_5.path.url_1" />
+                <img v-lazy="numGame.pro_5.path.url_1"/>
               </li>
               <li>
                 <p class="wow bounceInDown">{{$t('productPage.numGameChunk.pro_5.kindList[0]')}}</p>
-                <img v-lazy="numGame.pro_5.path.url_2" />
+                <img v-lazy="numGame.pro_5.path.url_2"/>
               </li>
               <li>
-                <img v-lazy="numGame.pro_5.path.url_3" />
+                <img v-lazy="numGame.pro_5.path.url_3"/>
                 <p class="wow bounceInDown">{{$t('productPage.numGameChunk.pro_5.kindList[1]')}}</p>
               </li>
               <li>
                 <p class="wow bounceInDown"> {{$t('productPage.numGameChunk.pro_5.kindList[2]')}}</p>
-                <img v-lazy="numGame.pro_5.path.url_4" />
+                <img v-lazy="numGame.pro_5.path.url_4"/>
               </li>
             </ul>
           </div>
@@ -227,10 +228,10 @@
           <layout-module-title :content="video.pro_2.title" :border-color="video.themeColor"></layout-module-title>
           <div class="content">
             <div class="bg-img">
-              <img v-lazy="video.pro_2.path.url_1"  class="img-responsive"/>
+              <img v-lazy="video.pro_2.path.url_1" class="img-responsive"/>
               <ul>
                 <li v-for="(item, key) in $t('productPage.videoChunk.pro_2.kindList')" :key="key">
-                  <img class="wow zoomIn" v-if="item.url" v-lazy="item.url" />
+                  <img class="wow zoomIn" v-if="item.url" v-lazy="item.url"/>
                   <p class="zoomIn wow">{{item.sign}}</p>
                 </li>
               </ul>
@@ -253,7 +254,7 @@
           <div class="content clearfix">
             <ul class="row">
               <li class="col-xs-6 col-sm-6 col-md-3" v-for="(item, key) in $t('productPage.videoChunk.pro_4.kindList')" :key="key">
-                <img v-lazy="item.url" class="img-responsive wow zoomIn" />
+                <img v-lazy="item.url" class="img-responsive wow zoomIn"/>
                 <p class="wow bounceInLeft" :data-wow-delay="(key*0.5)+'s'">{{item.sign}}</p>
               </li>
             </ul>
@@ -275,7 +276,7 @@
               <img v-lazy="study.pro_2.path.url" class="img-responsive wow zoomIn"/>
               <ul>
                 <li v-for="(item, key) in $t('productPage.studyChunk.pro_2.kindList')" :key="key">
-                  <p class="wow bounceInDown" :data-wow-delay="(key*0.8)+'s'">{{item}}</p>
+                  <p class="wow bounceInDown" :data-wow-delay="(key*0.2)+'s'">{{item}}</p>
                 </li>
               </ul>
             </div>
@@ -285,12 +286,12 @@
           <layout-module-title :content="study.pro_3.title" :border-color="study.themeColor"></layout-module-title>
           <div class="content">
             <div class="bg-img">
-              <img v-lazy="study.pro_3.path.url" class="img-responsive" />
+              <img v-lazy="study.pro_3.path.url" class="img-responsive"/>
               <div class="content-box">
                 <div class="c-color"></div>
                 <ul class="c-line">
                   <li v-for="(item, key) in study.pro_3.onlinePath" :key="key">
-                    <img v-lazy="item" />
+                    <img v-lazy="item"/>
                   </li>
                 </ul>
                 <div class="c-text">
@@ -308,9 +309,10 @@
           <layout-module-title :content="study.pro_4.title" :border-color="study.themeColor"></layout-module-title>
           <div class="content">
             <div class="bg-img">
-              <img v-lazy="study.pro_4.path.url" class="img-responsive" />
+              <img v-lazy="study.pro_4.path.url" class="img-responsive"/>
               <ul>
-                <li v-for="(item, key) in $t('productPage.studyChunk.pro_4.kindList')" :key="key" :style="{backgroundColor: item? '#fff' : 'transparent'}">
+                <li v-for="(item, key) in $t('productPage.studyChunk.pro_4.kindList')" :key="key"
+                    :style="{backgroundColor: item? '#fff' : 'transparent'}">
                   <p class="wow zoomIn">{{item}}</p>
                 </li>
               </ul>
@@ -321,24 +323,25 @@
           <layout-module-title :content="study.pro_5.title" :border-color="study.themeColor"></layout-module-title>
           <div class="content">
             <ul>
-              <li class="wow fadeInLeft" :data-wow-delay="(key*0.4)+'s'" v-for="(item, key) in $t('productPage.studyChunk.pro_5.kindList')" :key="key" :style="{left: (key*(166/1140*100))+'%', zIndex: (99-key)}">
-                <img v-lazy="study.pro_5.path.url_1"  class="img-responsive"/>
+              <li class="wow fadeInLeft" :data-wow-delay="(key*0.4)+'s'" v-for="(item, key) in $t('productPage.studyChunk.pro_5.kindList')"
+                  :key="key" :style="{left: (key*(166/1140*100))+'%', zIndex: (99-key)}">
+                <img v-lazy="study.pro_5.path.url_1" class="img-responsive"/>
                 <p>{{item}}</p>
               </li>
               <li class="upLine_1">
-                <img class="wow zoomIn" data-wow-delay="1.5s" v-lazy="study.pro_5.path.url_2" />
+                <img class="wow zoomIn" data-wow-delay="1.5s" v-lazy="study.pro_5.path.url_2"/>
               </li>
               <li class="upLine_2">
-                <img class="wow zoomIn" data-wow-delay="3s" v-lazy="study.pro_5.path.url_2" />
+                <img class="wow zoomIn" data-wow-delay="3s" v-lazy="study.pro_5.path.url_2"/>
               </li>
               <li class="below_1">
-                <img class="wow zoomIn" data-wow-delay="1s" v-lazy="study.pro_5.path.url_3" />
+                <img class="wow zoomIn" data-wow-delay="1s" v-lazy="study.pro_5.path.url_3"/>
               </li>
               <li class="below_2">
-                <img class="wow zoomIn" data-wow-delay="2s" v-lazy="study.pro_5.path.url_3" />
+                <img class="wow zoomIn" data-wow-delay="2s" v-lazy="study.pro_5.path.url_3"/>
               </li>
               <li class="below_3">
-                <img class="wow zoomIn" data-wow-delay="3.5s" v-lazy="study.pro_5.path.url_3" />
+                <img class="wow zoomIn" data-wow-delay="3.5s" v-lazy="study.pro_5.path.url_3"/>
               </li>
             </ul>
           </div>
@@ -347,7 +350,7 @@
           <layout-module-title :content="study.pro_4.title" :border-color="study.themeColor"></layout-module-title>
           <div class="content">
             <div class="bg-img">
-              <img v-lazy="study.pro_6.path.url" class="img-responsive wow zoomIn" />
+              <img v-lazy="study.pro_6.path.url" class="img-responsive wow zoomIn"/>
               <div class="remark wow zoomIn">
                 <p v-html="$t('productPage.studyChunk.pro_6.remark')"></p>
               </div>
@@ -360,12 +363,13 @@
     <section id="recreation" class="recreationChunk">
       <div class="globalChunk">
         <div class="container">
-          <layout-article-title :styles="{backgroundColor: recreation.themeColor}" :content="recreation.articleTitle"></layout-article-title>
+          <layout-article-title :styles="{backgroundColor: recreation.themeColor}"
+                                :content="recreation.articleTitle"></layout-article-title>
           <div class="content">
             <div class="bg-img">
-              <img :src="recreation.pro_1.path.url_1"  class="img-responsive"/>
+              <img :src="recreation.pro_1.path.url_1" class="img-responsive"/>
               <div class="img_1">
-                <img :src="recreation.pro_1.path.url_2" class="img-responsive" />
+                <img :src="recreation.pro_1.path.url_2" class="img-responsive"/>
               </div>
               <div class="text wow bounceInDown">
                 <h4>{{recreation.pro_1.content.title}}</h4>
@@ -383,7 +387,7 @@
         </div>
         <div class="content">
           <div class="bg-img">
-            <img v-lazy="recreation.pro_2.path.url_1" class="img-responsive" />
+            <img v-lazy="recreation.pro_2.path.url_1" class="img-responsive"/>
             <ul>
               <li class="wow zoomIn" v-for="(item, key) in $t('productPage.recreationChunk.pro_2.kindList')" :key="key">
                 <img v-lazy="item.url" class="img-responsive"/>
@@ -398,7 +402,7 @@
           <layout-module-title :content="recreation.pro_3.title" :border-color="recreation.themeColor"></layout-module-title>
           <div class="content">
             <div class="bg-img">
-              <img v-lazy="recreation.pro_3.path.url" class="img-responsive wow zoomIn" />
+              <img v-lazy="recreation.pro_3.path.url" class="img-responsive wow zoomIn"/>
               <div class="remark wow zoomIn">
                 <p v-html="$t('productPage.recreationChunk.pro_3.remark')"></p>
               </div>
@@ -410,9 +414,9 @@
         <div class="container">
           <layout-module-title :content="recreation.pro_4.title" :border-color="recreation.themeColor"></layout-module-title>
           <div class="content">
-            <img v-lazy="recreation.pro_4.path.url" class="img-responsive wow zoomIn" />
+            <img v-lazy="recreation.pro_4.path.url" class="img-responsive wow zoomIn"/>
             <div class="bg-img">
-              <img v-lazy="recreation.pro_4.path.url_1" class="img-responsive wow zoomIn" data-wow-delay="0.5s" />
+              <img v-lazy="recreation.pro_4.path.url_1" class="img-responsive wow zoomIn" data-wow-delay="0.5s"/>
               <ul>
                 <li v-for="(item, key) in $t('productPage.recreationChunk.pro_4.kindList')" :key="key">
                   <p v-html="item" class="wow bounceInLeft" :data-wow-delay="(key*0.4)+'s'"></p>
@@ -425,7 +429,8 @@
       <div class="lifeChunk">
         <div class="container">
           <layout-module-title :content="recreation.pro_5.title" :border-color="recreation.themeColor"></layout-module-title>
-          <layout-photo-center :is-line="false" :backgrounds="recreation.pro_5.backgrounds" :content="recreation.pro_5.content"></layout-photo-center>
+          <layout-photo-center :is-line="false" :backgrounds="recreation.pro_5.backgrounds"
+                               :content="recreation.pro_5.content"></layout-photo-center>
         </div>
       </div>
     </section>
@@ -579,7 +584,7 @@
           pro_1: {
             content: {
               title: this.$t('productPage.videoChunk.pro_1.title'),
-              sign:  this.$t('productPage.videoChunk.pro_1.sign'),
+              sign: this.$t('productPage.videoChunk.pro_1.sign'),
               remark: this.$t('productPage.videoChunk.pro_1.remark'),
               url: require("../../../assets/product/video/pro_1.png")
             }
@@ -622,7 +627,7 @@
           pro_1: {
             content: {
               title: this.$t('productPage.studyChunk.pro_1.title'),
-              sign:  this.$t('productPage.studyChunk.pro_1.sign'),
+              sign: this.$t('productPage.studyChunk.pro_1.sign'),
               remark: this.$t('productPage.studyChunk.pro_1.remark'),
               url: require("../../../assets/product/study/pro_1.png")
             }
@@ -692,7 +697,7 @@
           pro_1: {
             content: {
               title: this.$t('productPage.recreationChunk.pro_1.title'),
-              sign:  this.$t('productPage.recreationChunk.pro_1.sign'),
+              sign: this.$t('productPage.recreationChunk.pro_1.sign'),
               remark: this.$t('productPage.recreationChunk.pro_1.remark'),
               url: require("../../../assets/product/study/pro_1.png")
             },
@@ -745,6 +750,7 @@
       }
     },
     mounted() {
+      this.WOW.init();
       this.$nextTick(() => {
         this.productContentH = this.$refs.productContent.offsetTop
       })
@@ -754,13 +760,13 @@
         let timeout, context, args;
         let previous = 0;
 
-        let later = function() {
+        let later = function () {
           previous = +new Date();
           timeout = null;
           func.apply(context, args);
         };
 
-        this.throttled = function() {
+        this.throttled = function () {
           let now = +new Date();
           //下次触发 func 剩余的时间
           let remaining = wait - (now - previous);
@@ -785,7 +791,7 @@
           window.pageYOffset ||
           document.documentElement.scrollTop ||
           document.body.scrollTop;
-        if (scrollTop > this.productContentH*2) {
+        if (scrollTop > this.productContentH * 2) {
           this.navShow = true
         } else {
           this.navShow = false;
@@ -802,18 +808,20 @@
       window.removeEventListener("scroll", this.throttled);
       next();
     },
-    components: {LayoutModuleTitle, LayoutPhotoCenter, LayoutArticleTitle, LayoutTheme }
+    components: {LayoutModuleTitle, LayoutPhotoCenter, LayoutArticleTitle, LayoutTheme}
   }
 </script>
 <style scoped lang="stylus">
-  .slide-enter-active,.slide-leave-active
+  .slide-enter-active, .slide-leave-active
     transition all .8s ease;
+
   .slide-enter
     transform translateY(100%)
+
   .slide-leave-to
     transform translateY(-100%)
 </style>
- <!-- 阅读IP-->
+<!-- 阅读IP-->
 <style scoped lang="stylus">
   $ipH = 607px
   .readIpChunk
@@ -833,8 +841,8 @@
           position absolute
           left 31.228%
           top 0
-          width (482/$main_w*100)%
-          height (557/$ipH*100)%
+          width (482 /$main_w * 100) %
+          height (557 /$ipH * 100) %
           z-index 2
         .img-line-sign
           margin 0
@@ -859,24 +867,24 @@
               vertical-align middle
               margin-left 25px
           & li:nth-child(1)
-            left (408/$main_w*100)%
-            top (61/$ipH*100)%
+            left (408 /$main_w * 100) %
+            top (61 /$ipH * 100) %
           & li:nth-child(2)
-            left ((163+356)/$main_w*100 )%
-            top (188/$ipH*100)%
+            left ((163 + 356) /$main_w * 100 ) %
+            top (188 /$ipH * 100) %
           & li:nth-child(3)
-            left ((282+356)/$main_w*100 )%
-            top (328/$ipH*100)%
+            left ((282 + 356) /$main_w * 100 ) %
+            top (328 /$ipH * 100) %
           & li:nth-child(4)
-            left ((398+356)/$main_w*100 )%
-            top (461/$ipH*100)%
+            left ((398 + 356) /$main_w * 100 ) %
+            top (461 /$ipH * 100) %
         .text
           position absolute
           top: 28px
           right 0
           z-index 3
           text-align right
-          max-width (500/$main_w*100)%
+          max-width (500 /$main_w * 100) %
     .qualityContentChunk
       position relative
       width 100%
@@ -889,7 +897,7 @@
           margin 0 auto
         .text
           position absolute
-          width (450/$main_w*100)%
+          width (450 /$main_w * 100) %
           color #999999
         .text_1
           top 50%
@@ -898,15 +906,16 @@
           p
             max-width 317px
             margin 13px auto 0
-          p::before
-              content ""
-              position absolute
-              left 0
-              top 0
-              width 100%
-              background url("../../../assets/product/readIP/line.png") no-repeat
-              height 2px
-              background-size 100% auto
+          p:
+          :before
+            content ""
+            position absolute
+            left 0
+            top 0
+            width 100%
+            background url("../../../assets/product/readIP/line.png") no-repeat
+            height 2px
+            background-size 100% auto
         .text_2
           top 50%
           right 0
@@ -914,15 +923,16 @@
           p
             max-width 317px
             margin 0 auto 13px
-          p::after
-              content ""
-              position absolute
-              right  0
-              bottom 0
-              width 100%
-              background url("../../../assets/product/readIP/line.png") no-repeat
-              height 2px
-              background-size 100% auto
+          p:
+          :after
+            content ""
+            position absolute
+            right 0
+            bottom 0
+            width 100%
+            background url("../../../assets/product/readIP/line.png") no-repeat
+            height 2px
+            background-size 100% auto
     .tailorChunk
       position relative
       width 100%
@@ -932,8 +942,8 @@
         .text
           position absolute
           top 0
-          left (295/$main_w*100)%
-          width (766/$main_w*100)%
+          left (295 /$main_w * 100) %
+          width (766 /$main_w * 100) %
           text-align right
           color #999999
           p
@@ -942,13 +952,13 @@
             margin-bottom 0
         .kind
           position absolute
-          left (295/$main_w*100)%
+          left (295 /$main_w * 100) %
           top 50%
-          width (766/$main_w*100)%
-          height (218/399*100)%
+          width (766 /$main_w * 100) %
+          height (218 / 399 * 100) %
           transform translateY(-50%)
           padding 15px
-          background rgba(54,54,54,.5)
+          background rgba(54, 54, 54, .5)
           ul
             display flex
             align-items center
@@ -958,7 +968,7 @@
             border 2px solid #fff
             li
               display inline-block
-              width (100/3)%
+              width (100 / 3) %
               color #fff
               border-right 2px solid #fff
             & li:last-child
@@ -1010,42 +1020,42 @@
                 margin-bottom 0
             & li:nth-child(1)
               top 30.805%
-              left (582/1284*100)%
+              left (582 / 1284 * 100) %
               color #F73D3D
             & li:nth-child(2)
               top 16.11%
-              left (440/1284*100)%
+              left (440 / 1284 * 100) %
             & li:nth-child(3)
               top 15.48%
-              left (806/1284*100)%
+              left (806 / 1284 * 100) %
             & li:nth-child(4)
               top 46.12%
-              left (428/1284*100)%
+              left (428 / 1284 * 100) %
             & li:nth-child(5)
               top 46.12%
-              left (800/1284*100)%
+              left (800 / 1284 * 100) %
             & li:nth-child(6)
               top 61.92%
-              left (266/1284*100)%
+              left (266 / 1284 * 100) %
             & li:nth-child(7)
               top 61.92%
-              left (961/1284*100)%
+              left (961 / 1284 * 100) %
             & li:nth-child(8)
               top 76.77%
-              left (105/1284*100)%
+              left (105 / 1284 * 100) %
             & li:nth-child(9)
               top 76.77%
-              left (430/1284*100)%
+              left (430 / 1284 * 100) %
             & li:nth-child(10)
               top 76.77%
-              left (804/1284*100)%
+              left (804 / 1284 * 100) %
             & li:nth-child(11)
               top 76.77%
-              left (1135/1284*100)%
+              left (1135 / 1284 * 100) %
     .pushChunk
       .content
         position relative
-        p,ul
+        p, ul
           margin-bottom 0
         ul
           position absolute
@@ -1072,9 +1082,8 @@
               align-items center
               max-height 60px
               color #FFFFFF
-              background-color rgba(86,149,242,1)
-              box-shadow 0 0 10px rgba(0,0,0,.5)
-
+              background-color rgba(86, 149, 242, 1)
+              box-shadow 0 0 10px rgba(0, 0, 0, .5)
     .interactionChunk
       .content
         position relative
@@ -1084,7 +1093,6 @@
             display inline-block
             vertical-align top
             height 349px
-
             p
               margin-bottom 0
               color #666666
@@ -1099,8 +1107,7 @@
               width 140px
               height 50%
               border-right 2px solid #679FF3
-              border-bottom  2px solid #679FF3
-
+              border-bottom 2px solid #679FF3
           & li:nth-child(2)
             border 2px solid #679FF3
             border-top none
@@ -1121,11 +1128,11 @@
               color #666666
               padding-top 20px
               border-left 2px solid #679FF3
-              border-top  2px solid #679FF3
+              border-top 2px solid #679FF3
     .communityChunk
       .content
         position relative
-        ul,p
+        ul, p
           margin-bottom 0
       .wove-img
         position relative
@@ -1139,7 +1146,7 @@
             height 200px
             border-radius 50%
             background-color #5695F2
-            box-shadow 0 0 20px rgba(0,0,0,.5)
+            box-shadow 0 0 20px rgba(0, 0, 0, .5)
             color #FFFFFF
             p
               position absolute
@@ -1182,49 +1189,49 @@
               margin-bottom 0
               color #666666
           & li:nth-child(1)
-            left (-62/$main_w*100)%
+            left (-62 /$main_w * 100) %
             top 0
-            transform translate(0,-50%)
+            transform translate(0, -50%)
             p
               right 0
               top 50%
-              transform translate(100%,-50%)
+              transform translate(100%, -50%)
           & li:nth-child(2)
-            left (119/$main_w*100)%
+            left (119 /$main_w * 100) %
             top 60.29%
-            transform translate(0,-50%)
+            transform translate(0, -50%)
             p
               left 50%
               transform translateX(-50%)
               white-space nowrap
           & li:nth-child(3)
             left 50%
-            bottom  0
-            transform translate(-50%,50%)
+            bottom 0
+            transform translate(-50%, 50%)
             p
               left 50%
               transform translateX(-50%)
               white-space nowrap
           & li:nth-child(4)
-            right  (88/$main_w*100)%
+            right (88 /$main_w * 100) %
             top 60.29%
-            transform translate(0,-50%)
+            transform translate(0, -50%)
             white-space nowrap
             p
               left 50%
               transform translateX(-50%)
           & li:nth-child(5)
-            right (-62/$main_w*100)%
+            right (-62 /$main_w * 100) %
             top 0
-            transform translate(0,-50%)
+            transform translate(0, -50%)
             p
               left 0
               top 50%
-              transform translate(-100%,-50%)
+              transform translate(-100%, -50%)
           & li:nth-child(6)
             left 50%
             top 50%
-            transform translate(-50%,-50%)
+            transform translate(-50%, -50%)
             p
               position relative
               max-width 375px
@@ -1306,13 +1313,13 @@
             top 82.17%
           & li:nth-child(4)
             left 83.403%
-            bottom  -4.54%
+            bottom -4.54%
           & li:nth-child(5)
             left 46.861%
-            bottom  -4.54%
+            bottom -4.54%
           & li:nth-child(6)
             left 14.086%
-            bottom  -4.54%
+            bottom -4.54%
           & li:nth-child(7)
             left -2.09%
             top 82.17%
@@ -1329,7 +1336,7 @@
             position absolute
             bottom 0
             left 50%
-            width  (1078/$main_w*100)%
+            width (1078 /$main_w * 100) %
             height 66.90%
             transform translateX(-50%)
             background-color #fff
@@ -1341,7 +1348,7 @@
               vertical-align middle
               width 30.91%
               height 79.54%
-              background: linear-gradient(#C6C1D6, #B6ABD6,#A696D6,#9985D6,#866BD6,#7656D6,#6640D6)
+              background: linear-gradient(#C6C1D6, #B6ABD6, #A696D6, #9985D6, #866BD6, #7656D6, #6640D6)
             .c-line
               display inline-block
               vertical-align middle
@@ -1354,7 +1361,7 @@
                 margin 20px 0 62px 0
               & li:nth-child(3)
                 max-width 93.39%
-                margin-bottom  20px
+                margin-bottom 20px
             .c-text
               position relative
               display inline-block
@@ -1403,7 +1410,7 @@
           top 0
           width 100%
           height 100%
-        ul,p
+        ul, p
           margin-bottom 0
         li
           position relative
@@ -1428,21 +1435,21 @@
             position absolute
             left 0
           .upLine_1
-            left: (291/$main_w*100)%
+            left: (291 /$main_w * 100) %
             transform translateY(-100%)
           .upLine_2
-            left: (624/$main_w*100)%
+            left: (624 /$main_w * 100) %
             transform translateY(-100%)
           .below_1
-            left: (126/$main_w*100)%
+            left: (126 /$main_w * 100) %
             bottom 0
             transform translateY(100%)
           .below_2
-            left: (457/$main_w*100)%
+            left: (457 /$main_w * 100) %
             bottom 0
             transform translateY(100%)
           .below_3
-            left: (792/$main_w*100)%
+            left: (792 /$main_w * 100) %
             bottom 0
             transform translateY(100%)
         p
@@ -1465,14 +1472,14 @@
             left 50%
             top 0
             height 100%
-            width (498/$main_w*100)%
+            width (498 /$main_w * 100) %
             transform translateX(-50%)
-            background-color rgba(0,0,0,.6)
+            background-color rgba(0, 0, 0, .6)
             p
               position absolute
               left 50%
               top 50%
-              transform translate(-50%,-50%)
+              transform translate(-50%, -50%)
               max-width 250px
               color #fff
               margin-bottom 0
@@ -1490,13 +1497,13 @@
             position absolute
             width 42.10%
             top 5.06%
-            left (152/$main_w*100)%
+            left (152 /$main_w * 100) %
             img
               width 100%
           .text
             position absolute
             bottom 23px
-            left (664/$main_w*100)%
+            left (664 /$main_w * 100) %
             h4
               margin-top 0
             i
@@ -1524,22 +1531,22 @@
                 color #666666
             & li:nth-child(1)
               top 35.35%
-              left (362/1920*100)%
+              left (362 / 1920 * 100) %
             & li:nth-child(2)
               top -4.54%
-              left (577/1920*100)%
+              left (577 / 1920 * 100) %
             & li:nth-child(3)
               top -12.62%
-              left (807/1920*100)%
+              left (807 / 1920 * 100) %
             & li:nth-child(4)
               top 41.41%
-              left (1022/1920*100)%
+              left (1022 / 1920 * 100) %
             & li:nth-child(5)
               top 1.98%
-              left (1260/1920*100)%
+              left (1260 / 1920 * 100) %
             & li:nth-child(6)
               top -16.16%
-              left (1453/1920*100)%
+              left (1453 / 1920 * 100) %
     .rapidChunk
       .content
         position relative
@@ -1552,14 +1559,14 @@
             left 50%
             top 0
             height 100%
-            width (498/$main_w*100)%
+            width (498 /$main_w * 100) %
             transform translateX(-50%)
-            background-color rgba(0,0,0,.6)
+            background-color rgba(0, 0, 0, .6)
             p
               position absolute
               left 50%
               top 50%
-              transform translate(-50%,-50%)
+              transform translate(-50%, -50%)
               max-width 250px
               color #fff
               margin-bottom 0
@@ -1573,23 +1580,23 @@
             li
               position absolute
             & li:nth-child(1)
-              left (68/$main_w*100)%
+              left (68 /$main_w * 100) %
               top 27.47%
             & li:nth-child(2)
-              left (244/$main_w*100)%
+              left (244 /$main_w * 100) %
               top 47.61%
             & li:nth-child(3)
-              left (438/$main_w*100)%
+              left (438 /$main_w * 100) %
               top 27.47%
             & li:nth-child(4)
-              left (616/$main_w*100)%
+              left (616 /$main_w * 100) %
               top 42.85%
             & li:nth-child(5)
-              left (817/$main_w*100)%
+              left (817 /$main_w * 100) %
               top 27.47%
             & li:nth-child(6)
-              left (975/$main_w*100)%
-              top  42.85%
+              left (975 /$main_w * 100) %
+              top 42.85%
             p
               margin-bottom 0
               color #666666

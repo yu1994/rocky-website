@@ -49,7 +49,7 @@
         centeredSlides: true,
         loopedSlides: 5,
         loop: true,
-        autoplay: 3000,
+        // autoplay: 3000,
         autoplayDisableOnInteraction: false,
         prevButton: '.carousel-button-prev',
         nextButton: '.carousel-button-next',

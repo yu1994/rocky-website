@@ -29,7 +29,7 @@
     </section>
     <section class="addressDetail container">
       <ul class="list">
-        <li class="col-md-5" v-for="(item, key) in list" :key="key" :class="{'col-md-offset-2': key%2!= 0}">
+        <li class="col-md-5" v-for="(item, key) in list" :key="key" :class="{'col-md-offset-2': key%2!= 0}" :style="{backgroundImage:'url(' + item.path + ')'}">
           <div>
             <h5>{{item.name}}</h5>
             <p v-if="item.address">{{item.address}}</p>
@@ -53,37 +53,43 @@ export default {
           name: "浙江盘石信息技术股份有限公司",
           address: "浙江杭州市拱墅区祥园路45号北部软件园",
           mobile: "电话：400-100-1110，0571-87755099，0571-89987406",
-          workTime: "工作时间：周一 至 周五 9:00-11:30,13:30-17:00"
+          workTime: "工作时间：周一 至 周五 9:00-11:30,13:30-17:00",
+          path: require("../assets/contact/hz.png")
         },
         {
           name: "RockyPlay Nepal private limited",
           address: "Durbar Marg-1, Kathmandu, Nepal",
           //mobile: "电话：400-100-1110；400-100-1110",
-          workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00"
+          workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00",
+          path: require("../assets/contact/nbe.png")
         },
         {
           name: "RockyPlay Myanmar Corporation Ltd",
           address: "Room 6, Building 232, QUARTER 6, YANKIN. YANGON",
         //  mobile: "电话：959964480636",
-          workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00"
+          workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00",
+          path: require("../assets/contact/md.png")
         },
         {
           name: "RockyPlay International Technology INC",
           address: "4TH Floor PCCI corporate center 118L.P.LEVISTE BEL-AIR CITY OF MARKTI FOURTH DISTRICT,PHILIPPINES",
           //mobile: "电话：400-100-1110；400-100-1110",
-          workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00"
+          workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00",
+          path: require("../assets/contact/flb.png")
         },
         {
           name: "PT. RockyPlay Information Technology Indonesia",
           address: "30th Floor,Sampoerna Strategic Square, South Tower,JL.Jend Sudirman KAV 45-48 RT 003 RW 004,Karet Semanggi Setiabudi.Jakarta Selatan, DKI Jakarta 12930",
         //  mobile: "电话：400-100-1110；400-100-1110",
-          workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00"
+          workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00",
+          path: require("../assets/contact/yn.png")
         },
         {
           name: "Panshi (India) Information Technology Private Limited ",
           address: "Unit Nos 16-006 on 16th Floor,Palms Spring Plaza,Golf Course Road,Sector 54 Gurgaon, Haryna",
         //  mobile: "电话：400-100-1110；400-100-1110",
-          workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00"
+          workTime: "工作时间：周一 至 周六 9:00-11:30,13:30-17:00",
+          path: require("../assets/contact/yd.png")
         }
       ]
     };
@@ -118,20 +124,25 @@ export default {
   .list
     li
       height 190px
-      padding 25px 0 42px
-      border-bottom 1px solid rgba(145,145,145,1)
+      padding 25px 10px 42px
+      background-repeat no-repeat
+      background-position center
+      /*border-bottom 1px solid rgba(145,145,145,1)*/
+      margin-bottom 10px
       h5
         margin 0 0 19px 0
-        color:rgba(51,51,51,1);
+        color #fff
+        /*color:rgba(51,51,51,1);*/
       p
-        color:rgba(51,51,51,1);
+        color #fff
         margin-bottom 5px
+        /*color:rgba(51,51,51,1);*/
 @media (max-width:768px){
   #app{
     .addressDetail{
       li{
         height auto
-        padding 30px 0
+        padding 30px 10px
       }
     }
   }

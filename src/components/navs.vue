@@ -30,13 +30,15 @@
         >
           <ul class="nav navbar-nav">
             <li>
-              <a href="javascript:void (0)" class="dropdown-toggle" data-toggle="dropdown"
+              <!--<a href="javascript:void (0)" class="dropdown-toggle" data-toggle="dropdown"-->
+              <!--&gt;{{ $t("nav.product") }} <i class="underline"></i-->
+              <!--&gt;</a>-->
+              <router-link :to="{path: '/product'}" class="dropdown-toggle" data-toggle="dropdown"
+                           @mouseenter.native="productListToggle"
+
               >{{ $t("nav.product") }} <i class="underline"></i
-              ></a>
-              <!--<router-link :to="{path: '/product'}" class="dropdown-toggle" data-toggle="dropdown"
-              >{{ $t("nav.product") }} <i class="underline"></i
-              ></router-link>-->
-              <ul class="dropdown-menu">
+              ></router-link>
+              <ul class="dropdown-menu" @mouseleave="productListToggle">
                 <li v-for="(item, key) in $t('productPage.productNav')" :key="key"  >
                   <router-link v-if="item.route!== 'product'" :to="{name: 'productDetail',hash: '#'+item.route}">
                     {{item.sign}}
@@ -97,6 +99,11 @@
       vm.$on("navScrollFixed", arg => {
         this.navShow = !arg;
       });
+    },
+    methods: {
+      productListToggle() {
+        $('.dropdown-toggle').dropdown('toggle')
+      }
     }
   };
 </script>
