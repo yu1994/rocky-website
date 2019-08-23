@@ -5,7 +5,8 @@
         <above-bg>
           <img slot="bg" src="../../assets/product/above.png" class="img-responsive" ref="productImg"/>
           <div slot="sign">
-            <h2>产品介绍</h2>
+            <h2> 全球数字娱乐平台<br>
+              让生活充满无限乐趣</h2>
           </div>
         </above-bg>
       </div>

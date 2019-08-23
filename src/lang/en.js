@@ -545,6 +545,10 @@ export default {
         sign: "Personal Tailor",
         remark: "更好的支持海内外多国家同步实时更新及时满足粉丝对于内容的需求",
         signList: [`千人千面的矩阵</br>发行系统`,`大数据精准挖掘和强</br>力渗透能力`,`多语言的同步翻译</br>能力`]
+      },
+      pro_5: {
+        title: "相关产品",
+        sign: "About Products"
       }
     },
     numGameChunk: {
@@ -561,8 +565,8 @@ export default {
         title: "经典游戏",
         sign: "Classic Game",
         classicText: {
-          text_1: "降低游戏门槛",
-          text_2: "体验不同年代的经典",
+          text_1: "体验不同年代的经典",
+          text_2: "降低游戏门槛",
           text_3: "减少学习成本"
         }
       },
@@ -601,6 +605,10 @@ export default {
           "让全球玩家聚集</br>到游戏平台",
           "形成良好的国际文化</br>交流氛围"
         ]
+      },
+      pro_7: {
+          title: "相关产品",
+          sign: "About Products"
       }
     },
     videoChunk: {
@@ -685,6 +693,10 @@ export default {
             url: require("../assets/product/video/pro_4_4.png")
           }
         ]
+      },
+      pro_5: {
+        title: "相关产品",
+        sign: "About Products"
       }
     },
     studyChunk: {
@@ -706,14 +718,15 @@ export default {
       pro_2: {
         title: "知识星球",
         sign: " Knowledge Planet",
+        content: {
+          sign: "满足各年龄段的学习需求</br>打造星球级的知识库"
+        },
         kindList: [
-          "满足各年龄段的学习需求",
-          "打造星球级的知识库",
-          "塑形美妆",
-          "运动健身",
-          "幼儿启蒙",
+          "语言学习",
           "演讲口才",
-          "语言学习"
+          "幼儿启蒙",
+          "运动健身",
+          "塑形美妆",
         ]
       },
       pro_3: {
@@ -768,6 +781,10 @@ export default {
           "自由的思想传播平台</br>" +
           "让世界听到你的意见" +
           "                        "
+      },
+      pro_7: {
+        title: "相关产品",
+        sign: "About Products"
       }
     },
     recreationChunk: {
@@ -848,6 +865,10 @@ export default {
           "容，帮助用户定制娱乐产品，为用户\n" +
           "提供丰富智能生活的更多方案。\n" +
           "                        "
+      },
+      pro_6: {
+        title: "相关产品",
+        sign: "About Products"
       }
     }
   },

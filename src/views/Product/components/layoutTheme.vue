@@ -52,6 +52,7 @@
         margin-bottom 0
         text-align left
       .sign
+        margin-top 10px
         margin-bottom 37px
         color #666666
     .img

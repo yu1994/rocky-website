@@ -49,7 +49,7 @@
         centeredSlides: true,
         loopedSlides: 5,
         loop: true,
-        // autoplay: 3000,
+        autoplay: 3000,
         autoplayDisableOnInteraction: false,
         prevButton: '.carousel-button-prev',
         nextButton: '.carousel-button-next',
@@ -108,10 +108,10 @@
   },
   methods: {
     gradient(node, direction) {
-      node.style.background = "-webkit-linear-gradient(to "+direction+", rgba(0,0,0,0),rgba(51,51,51,0.9), rgba(19,19,19,1))";
-      node.style.background = "-o-linear-gradient("+direction+", rgba(0,0,0,0),rgba(51,51,51,0.9), rgba(19,19,19,1))";
-      node.style.background = "-moz-linear-gradient("+direction+", rgba(0,0,0,0),rgba(51,51,51,0.9), rgba(19,19,19,1))";
-      node.style.background = "linear-gradient(to "+direction+", rgba(0,0,0,0),rgba(51,51,51,0.9), rgba(19,19,19,1))";
+      node.style.background = "-webkit-linear-gradient(to "+direction+", rgba(0,0,0,0),rgba(51,51,51,0.7), rgba(19,19,19,0.9))";
+      node.style.background = "-o-linear-gradient("+direction+", rgba(0,0,0,0),rgba(51,51,51,0.7), rgba(19,19,19,0.9))";
+      node.style.background = "-moz-linear-gradient("+direction+", rgba(0,0,0,0),rgba(51,51,51,0.7), rgba(19,19,19,0.9))";
+      node.style.background = "linear-gradient(to "+direction+", rgba(0,0,0,0),rgba(51,51,51,0.7), rgba(19,19,19,0.9))";
     }
   }
 };

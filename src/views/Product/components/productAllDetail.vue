@@ -96,6 +96,15 @@
             </div>
           </div>
         </div>
+        <!--相关产品-->
+        <div class="aboutProductChunk">
+          <layout-module-title :content="readIP.pro_5.title" :border-color="readIP.themeColor"></layout-module-title>
+          <div class="content">
+            <div class="content-shadow">
+              <product-carousel :carouselList="readIP.pro_5.path"></product-carousel>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- 游戏 -->
@@ -110,34 +119,9 @@
           <layout-module-title :content="numGame.pro_2.title" :border-color="numGame.themeColor"></layout-module-title>
           <div class="content">
             <ul class="classic_1 clearfix row">
-              <li class="col-sm-4">
-                <img v-lazy="numGame.pro_2.path.url_1" class="img-responsive"/>
-              </li>
-              <li class="col-sm-4 classic_text">
-                <img v-lazy="numGame.pro_2.path.url_4" class="img-responsive"/>
-                <div class="text">
-                  <p class="wow bounceInDown">{{$t('productPage.numGameChunk.pro_2.classicText.text_1')}}</p>
-                </div>
-              </li>
-              <li class="col-sm-4">
-                <img v-lazy="numGame.pro_2.path.url_2" class="img-responsive"/>
-              </li>
-            </ul>
-            <ul class="classic_1 clearfix row">
-              <li class="col-sm-4 classic_text">
-                <img v-lazy="numGame.pro_2.path.url_4" class="img-responsive"/>
-                <div class="text">
-                  <p class="wow bounceInDown" data-wow-delay="0.5s">{{$t('productPage.numGameChunk.pro_2.classicText.text_2')}}</p>
-                </div>
-              </li>
-              <li class="col-sm-4 classic_text">
-                <img v-lazy="numGame.pro_2.path.url_3" class="img-responsive"/>
-              </li>
-              <li class="col-sm-4 classic_text">
-                <img v-lazy="numGame.pro_2.path.url_4" class="img-responsive"/>
-                <div class="text">
-                  <p class="wow bounceInDown" data-wow-delay="1s">{{$t('productPage.numGameChunk.pro_2.classicText.text_3')}}</p>
-                </div>
+              <li class="col-sm-4" v-for="(item, key) in numGame.pro_2.path" :key="key">
+                <img v-lazy="item.url" class="img-responsive wow zoomIn" :data-wow-delay="(key*0.3)+'s'"/>
+                <p class="bounceInLeft wow" :data-wow-delay="(key*0.3)+'s'">{{item.sign}}</p>
               </li>
             </ul>
           </div>
@@ -216,6 +200,19 @@
           </div>
         </div>
       </div>
+      <!--相关产品-->
+      <div class="container">
+        <div class="aboutProductChunk">
+          <layout-module-title :content="numGame.pro_7.title" :border-color="numGame.themeColor"></layout-module-title>
+          <div class="content">
+            <ul class="clearfix" style="margin-bottom: 0">
+              <li class="" v-for="(item, key) in numGame.pro_7.path" :key="key" style="display: inline-block">
+                <img v-lazy="item" class="img-responsive wow rollIn" :data-wow-delay="(key*0.3)+'s'"/>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- 视频 -->
     <section id="video" class="videoChunk">
@@ -260,6 +257,14 @@
             </ul>
           </div>
         </div>
+        <div class="aboutProductChunk">
+          <layout-module-title :content="video.pro_5.title" :border-color="video.themeColor"></layout-module-title>
+          <div class="content">
+            <div class="content-shadow">
+              <product-carousel :carouselList="video.pro_5.path"></product-carousel>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!--学习 -->
@@ -269,14 +274,17 @@
         <div class="clearfix">
           <layout-theme :content="study.pro_1.content" :color="study.themeColor"></layout-theme>
         </div>
+        <!--知识星球-->
         <div class="knowledgeChunk">
           <layout-module-title :content="study.pro_2.title" :border-color="study.themeColor"></layout-module-title>
           <div class="content">
             <div class="bg-img">
               <img v-lazy="study.pro_2.path.url" class="img-responsive wow zoomIn"/>
-              <ul>
+              <p class="sign" v-html="$t('productPage.studyChunk.pro_2.content.sign')">
+              </p>
+              <ul class="zoomIn wow" v-lazy:background-image="study.pro_2.path.url_1">
                 <li v-for="(item, key) in $t('productPage.studyChunk.pro_2.kindList')" :key="key">
-                  <p class="wow bounceInDown" :data-wow-delay="(key*0.2)+'s'">{{item}}</p>
+                  <p>{{item}}</p>
                 </li>
               </ul>
             </div>
@@ -288,7 +296,9 @@
             <div class="bg-img">
               <img v-lazy="study.pro_3.path.url" class="img-responsive"/>
               <div class="content-box">
-                <div class="c-color"></div>
+                <div class="c-color">
+                  <img v-for="(item, key) in study.pro_3.rectList" v-lazy="item" :key="key" class="img-responsive"/>
+                </div>
                 <ul class="c-line">
                   <li v-for="(item, key) in study.pro_3.onlinePath" :key="key">
                     <img v-lazy="item"/>
@@ -299,7 +309,7 @@
                 </div>
                 <div class="c-remark">
                   <i></i>
-                  <p class="wow bounceInRight">{{$t('productPage.studyChunk.pro_3.remark')}}</p>
+                  <p class="wow lightSpeedIn" data-wow-delay="1s">{{$t('productPage.studyChunk.pro_3.remark')}}</p>
                 </div>
               </div>
             </div>
@@ -347,7 +357,7 @@
           </div>
         </div>
         <div class="sharingChunk">
-          <layout-module-title :content="study.pro_4.title" :border-color="study.themeColor"></layout-module-title>
+          <layout-module-title :content="study.pro_6.title" :border-color="study.themeColor"></layout-module-title>
           <div class="content">
             <div class="bg-img">
               <img v-lazy="study.pro_6.path.url" class="img-responsive wow zoomIn"/>
@@ -355,6 +365,16 @@
                 <p v-html="$t('productPage.studyChunk.pro_6.remark')"></p>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="productAboutChunk">
+          <layout-module-title :content="study.pro_7.title" :border-color="study.themeColor"></layout-module-title>
+          <div class="content">
+            <ul class="clearfix" style="margin-bottom: 0">
+              <li class="" v-for="(item, key) in study.pro_7.path" :key="key" style="display: inline-block">
+                <img v-lazy="item" class="img-responsive wow rollIn" :data-wow-delay="(key*0.3)+'s'"/>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -389,7 +409,7 @@
           <div class="bg-img">
             <img v-lazy="recreation.pro_2.path.url_1" class="img-responsive"/>
             <ul>
-              <li class="wow zoomIn" v-for="(item, key) in $t('productPage.recreationChunk.pro_2.kindList')" :key="key">
+              <li class="wow zoomIn" :wow-data-delay="(Math.random()*key)+'s'" v-for="(item, key) in $t('productPage.recreationChunk.pro_2.kindList')" :key="key">
                 <img v-lazy="item.url" class="img-responsive"/>
                 <p>{{item.sign}}</p>
               </li>
@@ -433,6 +453,16 @@
                                :content="recreation.pro_5.content"></layout-photo-center>
         </div>
       </div>
+      <div class="productAboutChunk">
+        <div class="container">
+          <layout-module-title :content="recreation.pro_6.title" :border-color="recreation.themeColor"></layout-module-title>
+          <div class="content">
+            <div class="content-shadow">
+              <product-carousel :carouselList="recreation.pro_6.path"></product-carousel>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -441,6 +471,7 @@
   import LayoutPhotoCenter from "./temp/layoutPhotoCenter";
   import LayoutModuleTitle from "./temp/layoutModuleTitle";
   import LayoutTheme from "./layoutTheme";
+  import ProductCarousel from "./temp/productCarousel";
   export default {
     name: "productAllDetail",
     data() {
@@ -489,6 +520,19 @@
             path: {
               url_1: require("../../../assets/product/readIP/pro_4_1.png"),
             }
+          },
+          pro_5: {
+              title: {
+                  title: this.$t('productPage.readIPChunk.pro_5.title'),
+                  sign: this.$t('productPage.readIPChunk.pro_5.sign')
+              },
+              path: [
+                  {url: require("../../../assets/product/readIP/carousel1.png")},
+                  {url: require("../../../assets/product/readIP/carousel2.png")},
+                  {url: require("../../../assets/product/readIP/carousel3.png")},
+                  {url: require("../../../assets/product/readIP/carousel4.png")},
+                  {url: require("../../../assets/product/readIP/carousel5.png")},
+              ]
           }
         },
         numGame: {
@@ -522,17 +566,20 @@
               title: this.$t('productPage.numGameChunk.pro_2.title'),
               sign: this.$t('productPage.numGameChunk.pro_2.sign')
             },
-            path: {
-              url_1: require("../../../assets/product/NumberGame/pro_2_1.png"),
-              url_2: require("../../../assets/product/NumberGame/pro_2_2.png"),
-              url_3: require("../../../assets/product/NumberGame/pro_2_3.png"),
-              url_4: require("../../../assets/product/NumberGame/pro_2_4.png"),
-            },
-            classicText: {
-              text_1: this.$t('productPage.numGameChunk.pro_2.classicText.text_1'),
-              text_2: this.$t('productPage.numGameChunk.pro_2.classicText.text_2'),
-              text_3: this.$t('productPage.numGameChunk.pro_2.classicText.text_3'),
-            }
+            path: [
+                {
+                    sign: this.$t('productPage.numGameChunk.pro_2.classicText.text_1'),
+                    url: require("../../../assets/product/NumberGame/classic_1.png"),
+                },
+                {
+                    sign: this.$t('productPage.numGameChunk.pro_2.classicText.text_2'),
+                    url: require("../../../assets/product/NumberGame/classic_2.png"),
+                },
+                {
+                    sign: this.$t('productPage.numGameChunk.pro_2.classicText.text_3'),
+                    url: require("../../../assets/product/NumberGame/classic_3.png"),
+                }
+            ]
           },
           pro_3: {
             title: {
@@ -573,6 +620,17 @@
             path: {
               url_1: require('../../../assets/product/NumberGame/wave.png')
             }
+          },
+          pro_7: {
+            title: {
+                title: this.$t('productPage.numGameChunk.pro_7.title'),
+                sign: this.$t('productPage.numGameChunk.pro_7.sign')
+            },
+            path:[
+                require("../../../assets/product/NumberGame/about_1.png"),
+                require("../../../assets/product/NumberGame/about_2.png"),
+                require("../../../assets/product/NumberGame/about_3.png")
+            ]
           }
         },
         video: {
@@ -616,6 +674,19 @@
               title: this.$t('productPage.videoChunk.pro_4.title'),
               sign: this.$t('productPage.videoChunk.pro_4.sign')
             },
+          },
+          pro_5: {
+            title: {
+              title: this.$t('productPage.videoChunk.pro_5.title'),
+              sign: this.$t('productPage.videoChunk.pro_5.sign')
+            },
+            path: [
+              {url: require("../../../assets/product/video/carouse_1.png")},
+              {url: require("../../../assets/product/video/carouse_2.png")},
+              {url: require("../../../assets/product/video/carouse_3.png")},
+              {url: require("../../../assets/product/video/carouse_4.png")},
+              {url: require("../../../assets/product/video/carouse_5.png")}
+            ]
           }
         },
         study: {
@@ -638,7 +709,8 @@
               sign: this.$t('productPage.studyChunk.pro_2.sign')
             },
             path: {
-              url: require("../../../assets/product/study/pro_2.png")
+              url: require("../../../assets/product/study/pro_2.png"),
+              url_1: require("../../../assets/product/study/pro_2_1.png"),
             }
           },
           pro_3: {
@@ -655,6 +727,15 @@
               require("../../../assets/product/study/line_2.png"),
               require("../../../assets/product/study/line_3.png"),
               require("../../../assets/product/study/line_4.png"),
+            ],
+            rectList:[
+              require("../../../assets/product/study/rect1.png"),
+              require("../../../assets/product/study/rect2.png"),
+              require("../../../assets/product/study/rect3.png"),
+              require("../../../assets/product/study/rect4.png"),
+              require("../../../assets/product/study/rect5.png"),
+              require("../../../assets/product/study/rect6.png"),
+              require("../../../assets/product/study/rect7.png"),
             ]
           },
           pro_4: {
@@ -687,6 +768,17 @@
               url: require("../../../assets/product/study/pro_6.png")
             }
           },
+          pro_7: {
+            title: {
+              title: this.$t('productPage.studyChunk.pro_7.title'),
+              sign: this.$t('productPage.studyChunk.pro_7.sign'),
+            },
+            path:[
+              require("../../../assets/product/study/pro_6_1.png"),
+              require("../../../assets/product/study/pro_6_2.png"),
+              require("../../../assets/product/study/pro_6_3.png")
+            ]
+          }
         },
         recreation: {
           themeColor: '#D25F46',
@@ -745,6 +837,19 @@
             backgrounds: {
               url: require('../../../assets/product/recreation/pro_5.png')
             }
+          },
+          pro_6: {
+            title: {
+              title: this.$t('productPage.recreationChunk.pro_6.title'),
+              sign: this.$t('productPage.recreationChunk.pro_6.sign')
+            },
+            path: [
+              {url: require("../../../assets/product/recreation/carousel_1.png")},
+              {url: require("../../../assets/product/recreation/carousel_2.png")},
+              {url: require("../../../assets/product/recreation/carousel_3.png")},
+              {url: require("../../../assets/product/recreation/carousel_4.png")},
+              {url: require("../../../assets/product/recreation/carousel_5.png")}
+            ]
           }
         }
       }
@@ -808,10 +913,12 @@
       window.removeEventListener("scroll", this.throttled);
       next();
     },
-    components: {LayoutModuleTitle, LayoutPhotoCenter, LayoutArticleTitle, LayoutTheme}
+    components: {ProductCarousel, LayoutModuleTitle, LayoutPhotoCenter, LayoutArticleTitle, LayoutTheme}
   }
 </script>
 <style scoped lang="stylus">
+  .productAllDetail
+    overflow-x hidden
   .slide-enter-active, .slide-leave-active
     transition all .8s ease;
 
@@ -984,20 +1091,17 @@
     .classicChunk
       .content
         ul
-          display flex
-          align-items center
+          padding-top 20px
+          padding-bottom 20px
+          box-shadow 0 0 20px rgba(0,0,0,.6)
           margin-bottom 0
-          .classic_text
-            .text
-              position absolute
-              left 0
-              top 50%
-              width 100%
-              text-align center
-              transform translateY(-50%)
-              p
-                color #fff
-                margin-bottom 0
+          p
+            width 100%
+            max-width 239px
+            color #fff
+            background-color #5695F2
+            padding 10px 0
+            margin 0 auto
 
     .massiveChunk
       .content
@@ -1288,41 +1392,41 @@
   .studyChunk
     margin-bottom $productChunkBottom
     .knowledgeChunk
+      padding-bottom 50px
       .content
         ul, p
           margin-bottom 0
         .bg-img
           position relative
           display inline-block
+          .sign
+            position absolute
+            left 50%
+            top 50%
+            font-size 30px
+            transform translate(-50%, -50%)
+            color #ffffff
           img
             margin 0 auto
-        ul
-          li
+          ul
             position absolute
-            white-space nowrap
-            p
-              color #666666
-          & li:nth-child(1)
-            left -3.068%
-            top 14.86%
-          & li:nth-child(2)
-            right -3.068%
-            top 14.86%
-          & li:nth-child(3)
-            left 93.72%
-            top 82.17%
-          & li:nth-child(4)
-            left 83.403%
-            bottom -4.54%
-          & li:nth-child(5)
-            left 46.861%
-            bottom -4.54%
-          & li:nth-child(6)
-            left 14.086%
-            bottom -4.54%
-          & li:nth-child(7)
-            left -2.09%
-            top 82.17%
+            width (1000/1140*100)%
+            height 29.629%
+            left 50%
+            transform translateX(-50%)
+            bottom -(8.888)%
+            background-repeat no-repeat
+            li
+              display inline-block
+              margin-top 14.1%
+              width 20%
+              white-space nowrap
+              p
+                font-size 16px
+                color #fff
+            & li:nth-child(even)
+              p
+                color #666666
     .dataChunk
       .content
         .bg-img
@@ -1346,9 +1450,9 @@
             .c-color
               display inline-block
               vertical-align middle
-              width 30.91%
-              height 79.54%
-              background: linear-gradient(#C6C1D6, #B6ABD6, #A696D6, #9985D6, #866BD6, #7656D6, #6640D6)
+              width 38.91%
+              /*height 79.54%*/
+              /*background: linear-gradient(#C6C1D6, #B6ABD6, #A696D6, #9985D6, #866BD6, #7656D6, #6640D6)*/
             .c-line
               display inline-block
               vertical-align middle
