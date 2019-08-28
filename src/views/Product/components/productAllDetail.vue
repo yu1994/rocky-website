@@ -70,12 +70,12 @@
         <div class="qualityContentChunk">
           <layout-module-title :content="readIP.pro_3.title" :border-color="readIP.themeColor"></layout-module-title>
           <div class="content">
-            <img v-lazy="readIP.pro_3.path.url_1" class="img-responsive">
+            <img v-lazy="readIP.pro_3.path.url_1" class="img-responsive wow zoomIn">
             <div class="text_1 text">
-              <p class="wow bounceInLeft" data-wow-delay="0.5s">{{$t('productPage.readIPChunk.pro_3.remark_1')}}</p>
+              <p class="wow fadeIn" data-wow-delay="1s">{{$t('productPage.readIPChunk.pro_3.remark_1')}}</p>
             </div>
             <div class="text_2 text">
-              <p class="wow bounceInLeft">{{$t('productPage.readIPChunk.pro_3.remark_2')}}</p>
+              <p class="wow fadeIn" data-wow-delay="1s">{{$t('productPage.readIPChunk.pro_3.remark_2')}}</p>
             </div>
           </div>
         </div>

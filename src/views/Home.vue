@@ -77,6 +77,8 @@ export default {
   overflow-x hidden
   .dynamicChunk
     position relative
+    video
+      vertical-align top
     .dynamicSign
       position absolute
       width 100%

@@ -70,12 +70,12 @@ export default {
           roam: false, //是否缩放
           itemStyle: {
             normal: {
-              areaColor: ["#8dcfdf"],
+              areaColor: ["#3060ad"],
 
               //borderColor: "red"
             },
             emphasis: {
-              areaColor: "#4a96c7"
+              areaColor: "#13267c"
             }
           }
         },
@@ -112,9 +112,9 @@ export default {
             },
             itemStyle: {
               normal: {
-                color: "#ece6a3",
+                color: "#f8cd03",
                 shadowBlur: 10,
-                shadowColor: "red"
+                shadowColor: "#f6e751"
               }
             },
             zlevel: 1
