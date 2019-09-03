@@ -108,10 +108,10 @@
   },
   methods: {
     gradient(node, direction) {
-      node.style.background = "-webkit-linear-gradient(to "+direction+", rgba(0,0,0,0),rgba(51,51,51,0.5), rgba(19,19,19,0.8))";
-      node.style.background = "-o-linear-gradient("+direction+", rgba(0,0,0,0),rgba(51,51,51,0.5), rgba(19,19,19,0.8))";
-      node.style.background = "-moz-linear-gradient("+direction+", rgba(0,0,0,0),rgba(51,51,51,0.5), rgba(19,19,19,0.8))";
-      node.style.background = "linear-gradient(to "+direction+", rgba(0,0,0,0),rgba(51,51,51,0.5), rgba(19,19,19,0.8))";
+      node.style.background = "-webkit-linear-gradient(to "+direction+", rgba(0,0,0,0),rgba(51,51,51,0.1), rgba(19,19,19,0.5))";
+      node.style.background = "-o-linear-gradient("+direction+", rgba(0,0,0,0),rgba(51,51,51,0.1), rgba(19,19,19,0.5))";
+      node.style.background = "-moz-linear-gradient("+direction+", rgba(0,0,0,0),rgba(51,51,51,0.1), rgba(19,19,19,0.5))";
+      node.style.background = "linear-gradient(to "+direction+", rgba(0,0,0,0),rgba(51,51,51,0.1), rgba(19,19,19,0.5))";
     }
   }
 };

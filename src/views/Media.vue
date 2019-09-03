@@ -10,26 +10,10 @@
               <p>{{item.remark}}</p>
             </div>
           </swiper-slide>
-          <!--<swiper-slide
-            ><img src="../assets/media/banner4.jpg" class="img-responsive"
-          /></swiper-slide>
-          <swiper-slide
-            ><img src="../assets/media/banner5.jpg" class="img-responsive"
-          /></swiper-slide>-->
         </carousel>
     </section>
     <section class="report container">
       <div class="reportNav" ref="mediaType">
-      <!--  <ul class="clearfix reportNav-packing" ref="mediaType">
-          <li v-for="(item, key) in $t('mediaPage.reportList')" :key="key">
-            <a
-                    href="javascript:void 0"
-                    @click="getNewsListApi(item.id)"
-                    :class="{ linkActive: configPage.type === item.id }"
-            ><h2>{{ item.title }}</h2><i></i
-            ></a>
-          </li>
-        </ul>-->
         <slide-navs>
           <swiper-slide v-for="(item, key) in $t('mediaPage.reportList')" :key="key">
             <a
@@ -40,16 +24,6 @@
             ></a>
           </swiper-slide>
         </slide-navs>
-          <!--<swiper :options="navSwiperOption" >
-            <swiper-slide v-for="(item, key) in $t('mediaPage.reportList')" :key="key">
-              <a
-                      href="javascript:void 0"
-                      @click="getNewsListApi(item.id)"
-                      :class="{ linkActive: configPage.type === item.id }"
-              ><h2>{{ item.title }}</h2><i></i
-              ></a>
-            </swiper-slide>
-          </swiper>-->
       </div>
       <div class="list" v-show="show">
         <news

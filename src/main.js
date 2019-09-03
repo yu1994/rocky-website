@@ -15,11 +15,7 @@ Vue.use(VueLazyload);
 Vue.config.productionTip = false;
 Vue.prototype.WOW = new WOW();
 router.afterEach((to,from) => {
-  if (from.path.indexOf("/product") < 0 || to.path.indexOf("/product") < 0){
-    window.scrollTo(0, 0);
-  } else {
-    window.scrollTo(0, window.proHeadImgHeight - 100)
-  }
+  window.scrollTo(0, 0);
 });
 new Vue({
   router,

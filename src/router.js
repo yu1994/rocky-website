@@ -35,31 +35,6 @@ export default new Router({
           path: '/product/detail',
           name: 'productDetail',
           component: () => import("./views/Product/components/productAllDetail.vue")
-        },
-        {
-          path: '/product/read',
-          name: 'read',
-          component: () => import("./views/Product/components/readIpChunk.vue")
-        },
-        {
-          path: '/product/game',
-          name: 'game',
-          component: () => import("./views/Product/components/numGameChunk.vue")
-        },
-        {
-          path: '/product/video', /*视频娱乐*/
-          name: 'video',
-          component: () => import("./views/Product/components/videoChunk.vue")
-        },
-        {
-          path: '/product/study',
-          name: 'study',
-          component: () => import("./views/Product/components/studyChunk.vue")
-        },
-        {
-          path: '/product/recreation',
-          name: 'recreation',
-          component: () => import("./views/Product/components/recreationChunk.vue")
         }
       ]
     },

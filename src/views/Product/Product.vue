@@ -18,13 +18,8 @@
 </template>
 <script>
 import NormalCarousel from "../../components/normalCarousel";
-import NumGameChunk from "./components/numGameChunk";
-import StudyChunk from "./components/studyChunk";
-import RecreationChunk from "./components/recreationChunk";
-import ReadIpChunk from "./components/readIpChunk";
 import AboveBg from "../../components/aboveBg";
 import SlideNavs from "../../components/slideNavs";
-import ProductItemTitle from "./components/temp/productItemTitle";
 import ProductMore from "./components/temp/productMore";
 import ProductCarousel from "./components/temp/productCarousel";
 export default {
@@ -85,13 +80,8 @@ export default {
   components: {
     ProductCarousel,
     ProductMore,
-    ProductItemTitle,
     SlideNavs,
     AboveBg,
-    ReadIpChunk,
-    RecreationChunk,
-    StudyChunk,
-    NumGameChunk,
     NormalCarousel
   }
 };

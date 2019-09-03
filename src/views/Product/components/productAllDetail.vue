@@ -206,7 +206,7 @@
           <layout-module-title :content="numGame.pro_7.title" :border-color="numGame.themeColor"></layout-module-title>
           <div class="content">
             <ul class="clearfix" style="margin-bottom: 0">
-              <li class="" v-for="(item, key) in numGame.pro_7.path" :key="key" style="display: inline-block">
+              <li class="" v-for="(item, key) in numGame.pro_7.path" :key="key" style="display: inline-block;margin: 0 20px">
                 <img v-lazy="item" class="img-responsive wow rollIn" :data-wow-delay="(key*0.3)+'s'"/>
               </li>
             </ul>
@@ -371,7 +371,7 @@
           <layout-module-title :content="study.pro_7.title" :border-color="study.themeColor"></layout-module-title>
           <div class="content">
             <ul class="clearfix" style="margin-bottom: 0">
-              <li class="" v-for="(item, key) in study.pro_7.path" :key="key" style="display: inline-block">
+              <li class="" v-for="(item, key) in study.pro_7.path" :key="key" style="display: inline-block;margin: 0 20px">
                 <img v-lazy="item" class="img-responsive wow rollIn" :data-wow-delay="(key*0.3)+'s'"/>
               </li>
             </ul>

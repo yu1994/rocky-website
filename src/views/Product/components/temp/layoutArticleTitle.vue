@@ -59,7 +59,7 @@
         letter-spacing 6px
         margin 0 0 0 10px
       .sign
-        text-align left
+        text-align center
         color #666666
         margin 10px 0 0 0
 </style>
