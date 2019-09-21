@@ -14,7 +14,7 @@
             ><img src="../assets/media/banner5.jpg" width="100%"
           /></swiper-slide>
         </carousel>
-         <!--<swiper>
+        <!--<swiper>
           <div class="swiper-slide">
             <img src="../assets/media/banner3.jpg" class="img-responsive" />
           </div>
@@ -28,21 +28,13 @@
       </div>
     </section>
     <section class="report container">
-      <ul class="packing">
-        <li>
+      <ul class="packing" ref="mediaType">
+        <li v-for="(item, key) in $t('mediaPage.reportList')" :key="key">
           <a
             href="javascript:void 0"
-            @click="getNewsListApi(2)"
-            :class="{ linkActive: configPage.type === 2 }"
-            >品牌报道<i></i
-          ></a>
-        </li>
-        <li>
-          <a
-            href="javascript:void 0"
-            @click="getNewsListApi(3)"
-            :class="{ linkActive: configPage.type === 3 }"
-            >公司动态<i></i
+            @click="getNewsListApi(item.id)"
+            :class="{ linkActive: configPage.type === item.id }"
+            >{{ item.title }}<i></i
           ></a>
         </li>
       </ul>
@@ -61,6 +53,9 @@
         </div>
       </div>
     </section>
+    <!--  <section class="container videoChunk">
+      <underline :title="'视频媒体'"></underline>
+    </section>-->
   </div>
 </template>
 
@@ -71,6 +66,8 @@ import carousel from "@/components/carousel";
 import news from "@/components/news";
 import navigation from "@/components/navigation";
 import { newsListApi } from "../api/mediaAPI";
+import Underline from "../components/underline";
+import vm from "../utils/events";
 export default {
   name: "template2",
   data() {
@@ -87,7 +84,14 @@ export default {
     };
   },
   created() {
-      this.getNewsListApi(2);
+    this.getNewsListApi(2);
+    vm.$on("newsTypeToggle", arg => {
+      this.getNewsListApi(arg);
+      this.$refs.mediaType.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
   },
   methods: {
     getNewsListApi(type) {
@@ -103,7 +107,7 @@ export default {
       this.getNewsListApi(this.configPage.type);
     }
   },
-  components: { breadcrumb, carousel, news, navigation }
+  components: { Underline, breadcrumb, carousel, news, navigation }
 };
 </script>
 
@@ -150,4 +154,6 @@ export default {
             width 100%
             opacity 1
             background-color: #333333;
+  .videoChunk
+    margin-top 20px
 </style>

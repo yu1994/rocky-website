@@ -1,10 +1,21 @@
 <template>
-  <div id="certify">
-    <swiper v-if="ie > 9" :options="swiperOption" ref="mySwiper" >
-      <slot></slot>
-    </swiper>
-    <div v-else>
+  <div class="certify">
+    <div v-if="ie > 9">
+      <swiper :options="swiperOption" ref="mySwiper">
+        <slot></slot>
+      </swiper>
+      <div
+        v-if="true"
+        class="carousel-button-prev  hidden-sm hidden-xs"
+        slot="button-prev"
+      ></div>
+      <div
+        v-if="true"
+        class="carousel-button-next  hidden-sm hidden-xs"
+        slot="button-next"
+      ></div>
     </div>
+    <div v-else></div>
   </div>
 </template>
 
@@ -31,6 +42,10 @@ export default {
         loop: true,
         autoplay: {
           delay: 3500
+        },
+        navigation: {
+          prevEl: ".carousel-button-prev",
+          nextEl: ".carousel-button-next"
         },
         on: {
           transitionStart() {
@@ -84,16 +99,16 @@ export default {
 </script>
 
 <style>
-#certify {
+.certify {
   position: relative;
 }
-#certify .swiper-slide {
+.certify .swiper-slide {
   background-color: transparent;
   /*max-width: 520px;
   height: 408px;*/
 }
-#certify .swiper-slide img {
-  display: block;
+.certify .swiper-slide img {
+  min-height: 360px;
 }
 .explain {
   display: block;
@@ -115,6 +130,7 @@ export default {
 .explain_box p {
   padding: 30px;
   text-align: center;
+  min-height: 160px;
   background-color: #ffffff;
   margin: 0;
   box-shadow: 0 8px 30px #ddd;
@@ -157,19 +173,19 @@ export default {
   background-size: 100% 100%;
   background: url("../assets/home/linear.png") no-repeat center;
 }
-/*#certify .swiper-slide p {
+/*.certify .swiper-slide p {
   padding-top: 0;
   text-align: center;
   color: #636363;
   margin: 0;
 }*/
 
-#certify .swiper-pagination {
+.certify .swiper-pagination {
   width: 100%;
   bottom: 20px;
 }
 
-#certify .swiper-pagination-bullets .swiper-pagination-bullet {
+.certify .swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 5px;
   border: 3px solid #fff;
   background-color: #d5d5d5;
@@ -178,16 +194,40 @@ export default {
   opacity: 1;
 }
 
-#certify .swiper-pagination-bullets .swiper-pagination-bullet-active {
+.certify .swiper-pagination-bullets .swiper-pagination-bullet-active {
   border: 3px solid #00aadc;
   background-color: #fff;
 }
-#certify .swiper-button-prev:hover {
+.certify .swiper-button-prev:hover {
   background-position: 0 -46px;
   background-size: 100%;
 }
-#certify .swiper-button-next:hover {
+.certify .swiper-button-next:hover {
   background-position: 0 -139px;
   background-size: 100%;
 }
+</style>
+<style scoped lang="stylus">
+.certify
+  .carousel-button-prev,.carousel-button-next
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    width 44px
+    height 44px
+    background-repeat no-repeat
+    background-size 100% 100%
+    &:focus
+      outline none
+      border none
+  .carousel-button-prev
+    left -50px
+    background-image url("img/prev.png")
+    &:focus
+      background-image url("img/prev_active.png")
+  .carousel-button-next
+    right -50px
+    background-image url("img/next.png")
+    &:focus
+      background-image url("img/next_active.png")
 </style>
